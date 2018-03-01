@@ -1,199 +1,261 @@
 <!DOCTYPE html>
 <html>
-	<head lang="en">
 
-		<title>
-			MyThesis
-		</title>
+<head lang="en">
 
-		<!--Bootstrap required Libraries-->
+    <title>
+        MyThesis
+    </title>
 
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="">
-		<meta name="author" content="">
+    <!--Bootstrap required Libraries-->
 
-		<!-- css sheet for how the page is laid out -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-			  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		<!--Scripts for Modal-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- css sheet for how the page is laid out -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-		<!-- Custom styles for this template -->
-		<style>
-			body {
-				padding-top: 54px;
-			}
+    <!--Scripts for Modal-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-			@media (min-width: 992px) {
-				body {
-					padding-top: 56px;
-				}
-			}
+    <!-- Custom styles for this template -->
+    <style>
+        body {
+            padding-top: 54px;
+        }
 
-		</style>
-		<!-- /Bootstrap required Libraries-->
+        @media (min-width: 992px) {
+            body {
+                padding-top: 56px;
+            }
+        }
+    </style>
+    <!-- /Bootstrap required Libraries-->
+
+    <!--MyCss-->
+    <link rel="stylesheet" href="HomeScreen.css">
 
 
-		<!-- jqueury stuff.  Only used for the animation speed slider. -->
-		<!--<link rel="stylesheet" href="ThirdParty/jquery-ui-1.8.11.custom.css">
+    <!-- jqueury stuff.  Only used for the animation speed slider. -->
+    <!--<link rel="stylesheet" href="ThirdParty/jquery-ui-1.8.11.custom.css">
 <script src="ThirdParty/jquery-1.5.2.min.js"></script>
 <script src="ThirdParty/jquery-ui-1.8.11.custom.min.js"></script>-->
 
-		<!-- Javascript for the actual visualization code -->
-		<!--<script type = "text/javascript" src = ""> </script>-->
+    <!-- Javascript for the actual visualization code -->
+    <!--<script type = "text/javascript" src = ""> </script>-->
 
 
-	</head>
+</head>
 
-	<body class="MainPageStyling">
+<body class="MainPageStyling">
 
-		<!-- Navigation -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-			<div class="container">
-				<a class="navbar-brand" href="HomeScreen.html"><img src="resources/logo1.png" style="margin-bottom: 5px"/>
-					Implementation and use of Search in Visualized Environment</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-						aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="HomeScreen.html"><img src="resources/ic_action_home.png"
-																			style="margin-bottom: 5px"/> Home
-								<span class="sr-only">(current)</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" data-toggle="modal" data-target="#myModal"><img src="resources/ic_action_info.png" style="margin-bottom: 5px"/> About</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="HomeScreen.html">
+            <img src="resources/logo1.png"/> Implementation and use of Search in Visualized Environment</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="HomeScreen.html">
+                        <img src="resources/ic_action_home.png"/> Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#myModal">
+                        <img src="resources/ic_action_info.png"/> About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header" style="background-color: green">
-						<!--<h5 class="modal-title" id="myModalLabel">About</h5>-->
-						<img src="resources/teiser_logo.png" style="display: block; margin-left: auto; margin-left: auto;">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<table>
-							<tr>
-								<td style="text-align: center;"><img src="resources/ic_action_thesis.png"/></td>
-								<td style="text-align: center;"><b><p>Thesis</p></b></td>
-							</tr>
-							<tr>
-								<td style="text-align: center;"><img src="resources/ic_action_subject.png"/></td>
-								<td style="text-align: center;"><p>Development of an application for the Implemantation and use of search methods in a visualized enviroment</p></td>
-							</tr>
-							<tr>
-								<td><img src="resources/ic_action_supervisor.png"/></td>
-								<td style="text-align: center;"><p>Supervisor Professor: Evangelos Outsios</p></td>
-							</tr>
-							<tr>
-								<td><img src="resources/ic_action_person.png"/></td>
-								<td style="text-align: center;"><p>Student: Anastasios Tilsizoglou</p></td>
-							</tr>
-							<tr>
-								<td style="text-align: center;"><img src="resources/ic_action_credit.png"/></td>
-								<td style="text-align: center;"><p>AEM: 3878</p></td>
-							</tr>
-							<tr>
-								<td><img src="resources/ic_action_link.png"/></td>
-								<td style="text-align: center;"><a href="https://git.io/vAM41">Github Repository</a></td>
-							</tr>
-							<tr>
-								<td style="text-align: center;"><img src="resources/ic_action_public.png"/></td>
-								<td style="text-align: center;"><p><a href="https://git.io/vAM4F">MIT License</a><br />Copyright &copy; <a href="https://git.io/vNjE6">Anastasios Tilsizoglou</a></p></td>
-							</tr>
-						</table>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Page Content -->
-		<div id="container" style="margin-bottom: 5px; margin-top: 5px;">
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<h5 class="modal-title" id="myModalLabel">About</h5>-->
+                <img src="resources/teiser_logo.png"/>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="resources/ic_action_thesis.png"/>
+                        </td>
+                        <td>
+                            <b>
+                                <p>Thesis</p>
+                            </b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="resources/ic_action_subject.png"/>
+                        </td>
+                        <td>
+                            <p>Development of an application for the Implemantation and use of search methods in a
+                                visualized enviroment</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="resources/ic_action_supervisor.png"/>
+                        </td>
+                        <td>
+                            <p>Supervisor Professor: Evangelos Outsios</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="resources/ic_action_person.png"/>
+                        </td>
+                        <td>
+                            <p>Student: Anastasios Tilsizoglou</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="resources/ic_action_credit.png"/>
+                        </td>
+                        <td>
+                            <p>AEM: 3878</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="resources/ic_action_link.png"/>
+                        </td>
+                        <td>
+                            <a href="https://git.io/vAM41">Github Repository</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="resources/ic_action_public.png"/>
+                        </td>
+                        <td>
+                            <p>
+                                <a href="https://git.io/vAM4F">MIT License</a>
+                                <br/>Copyright &copy;
+                                <a href="https://git.io/vNjE6">Anastasios Tilsizoglou</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Content -->
+<div id="container">
 
-			<div id="mainContent">
+    <div id="mainContent">
 
-				<div id="AlgorithmControlSection">
-					<!-- Table for buttons to control specific animation (insert/find/etc) -->
-					<!-- (filled in by javascript code specific to the animation) -->
-					<table id="AlgorithmControls">
-						<tr>
-							<td><input class="form-control" id="arraySize" type="tel" placeholder="Specify Array Size"/></td>
-							<td><input class="form-control" id="numbersRange" type="tel" placeholder="Specify Numbers Range"/>
-							</td>
-							<td><input onclick="myAlert()" class="btn btn-info" id="generateNumbers" type="button" value="Generate Numbers"/>
-							</td>
-							<td><input class="form-control" id="searchingNumber" type="tel"
-									   placeholder="Specify Searching Number"/></td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td><input class="btn" id="linearSearch" type="button" value="Linear Search"/></td>
-							<td><input class="btn" id="binarySearch" type="button" value="Binary Search"/></td>
-							<td><input class="btn" id="jumpSearch" type="button" value="Jump Search"/></td>
-							<td><input class="btn" id="interpolationSearch" type="button" value="Interpolation Search"/></td>
-							<td><input class="btn" id="fibonacciSearch" type="button" value="Fibonacci Search"/></td>
-							<td><input class="btn" id="stratosSearch" type="button" value="Stratos Search"/></td>
-						</tr>
-					</table>
-				</div>
+        <div id="AlgorithmControlSection">
+            <!-- Table for buttons to control specific animation (insert/find/etc) -->
+            <!-- (filled in by javascript code specific to the animation) -->
+            <table id="inputs">
+                <tr>
+                    <td>
+                        <input class="form-control" maxlength="8" id="arraySize" type="tel"
+                               placeholder="Specify Array Size"/>
+                    </td>
+                    <td>
+                        <input class="form-control" maxlength="8" id="numbersRange" type="tel"
+                               placeholder="Specify Numbers Range"/>
+                    </td>
+                    <td>
+                        <input class="btn btn-info" id="generateNumbers" type="button" value="Generate Numbers"/>
+                    </td>
+                    <td>
+                        <input class="form-control" maxlength="8" id="searchingNumber" type="tel"
+                               placeholder="Specify Searching Number"/>
+                    </td>
+                </tr>
+            </table>
+            <table id="buttons">
+                <tr>
+                    <td>
+                        <input class="btn" id="linearSearch" type="button" value="Linear Search"/>
+                    </td>
+                    <td>
+                        <input class="btn" id="binarySearch" type="button" value="Binary Search"/>
+                    </td>
+                    <td>
+                        <input class="btn" id="jumpSearch" type="button" value="Jump Search"/>
+                    </td>
+                    <td>
+                        <input class="btn" id="interpolationSearch" type="button" value="Interpolation Search"/>
+                    </td>
+                    <td>
+                        <input class="btn" id="fibonacciSearch" type="button" value="Fibonacci Search"/>
+                    </td>
+                    <td>
+                        <input class="btn" id="stratosSearch" type="button" value="Stratos Search"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-				<!-- Drawing canvas where all animation is done.  Note:  can be resized in code -->
+        <!-- Drawing canvas where all animation is done.  Note:  can be resized in code -->
 
-				<canvas id="canvas" width="1024" height="1080"></canvas>
+        <canvas id="canvas" width="1024" height="1080"></canvas>
 
-				<div id="AnimationControlSection">
-					<!-- Table for buttons to control general animation (play/pause/undo/etc) ->
+        <div id="AnimationControlSection">
+            <!-- Table for buttons to control general animation (play/pause/undo/etc) ->
 <!-- (filled in by javascript code, specifically AnimationMain.js)  -->
 
-					<table id="AnimationControls"></table>
-				</div>
+            <table id="AnimationControls"></table>
+        </div>
 
-			</div> <!-- mainContent -->
+    </div>
+    <!-- mainContent -->
 
-			<!-- Footer -->
-			<footer class="py-5 bg-dark">
-				<div class="footer">
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="footer">
 
-					<p class="m-0 text-center text-white">MIT License</p>
-					<p class="m-0 text-center text-white">Copyright &copy; Anastasios Tilsizoglou 2018</p>
-				</div>
-				<!-- /.footer -->
-			</footer>
+            <p class="m-0 text-center text-white">MIT License</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Anastasios Tilsizoglou 2018</p>
+        </div>
+        <!-- /.footer -->
+    </footer>
 
-		</div><!-- container -->
+</div>
+<!-- container -->
 
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-				integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-				crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-				integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-				crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-				integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-				crossorigin="anonymous"></script>
-		 
-		 <!--myScripts-->
-		<script src="GenerateRandomNumbers.js"></script>
-	</body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<!--myScripts-->
+<script src="GenerateRandomNumbers.js"></script>
+</body>
+
 </html>

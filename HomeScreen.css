@@ -1,0 +1,29 @@
+.container img {
+    margin-bottom: 5px;
+}
+
+.modal-header {
+    background-color: green;
+}
+
+.modal-header img {
+    display: block;
+    margin-left: 150px;
+}
+
+.modal-body td {
+    text-align: center;
+}
+
+#container {
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
+}
+
+#inputs, #buttons {
+    width: 100%;
+}
+
+.btn {
+    width: 100%;
+}
