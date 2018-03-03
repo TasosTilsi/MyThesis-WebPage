@@ -16,78 +16,26 @@ function displayArray() {
     var numbers_range = document.getElementById("numbersRange").value;
     numbers_range = numbers_range == "" ? DEFAULT_NUMBERS_RANGE : parseInt(numbers_range);
     new_array = generateRandomNumbers(array_size, numbers_range);
-    draw(new_array, array_size, numbers_range);
+    draw(new_array, array_size);
     return 0;
 }
 
-function draw(new_array, array_size, numbers_range) {
+function draw(new_array, array_size) {
     var numbers_container = document.getElementById("numbers_container");
-    /*numbers_container.innerHTML = new_array;*/
     var table_container = document.getElementById("table_container");
-
-
-    /*for (var i = 0; i < array_size; i += 10) {
-        var rowa = $("<div>");
-        rowa.addClass();
-    }*/
-
 
     for (var i = 0; i < array_size; i += 10) {
         var row = document.createElement("div");
         row.setAttribute("class", "row");
-        var col1 = document.createElement("div");
-        col1.setAttribute("class", "col-sm");
-        var text = document.createTextNode(new_array[i]);
-        col1.appendChild(text);
-        row.appendChild(col1);
-        var col2 = document.createElement("div");
-        col2.setAttribute("class", "col-sm");
-        text = document.createTextNode(new_array[i + 1]);
-        col2.appendChild(text);
-        row.appendChild(col2);
-        var col3 = document.createElement("div");
-        col3.setAttribute("class", "col-sm");
-        text = document.createTextNode(new_array[i + 2]);
-        col3.appendChild(text);
-        row.appendChild(col3);
-        var col4 = document.createElement("div");
-        col4.setAttribute("class", "col-sm");
-        text = document.createTextNode(new_array[i + 3]);
-        col4.appendChild(text);
-        row.appendChild(col4);
-        var col5 = document.createElement("div");
-        col5.setAttribute("class", "col-sm");
-        text = document.createTextNode(new_array[i + 4]);
-        col5.appendChild(text);
-        row.appendChild(col5);
-        var col6 = document.createElement("div");
-        col6.setAttribute("class", "col-sm");
-        text = document.createTextNode(new_array[i + 5]);
-        col6.appendChild(text);
-        row.appendChild(col6);
-        var col7 = document.createElement("div");
-        col7.setAttribute("class", "col-sm");
-        text = document.createTextNode(new_array[i + 6]);
-        col7.appendChild(text);
-        row.appendChild(col7);
-        var col8 = document.createElement("div");
-        col8.setAttribute("class", "col-sm");
-        text = document.createTextNode(new_array[i + 7]);
-        col8.appendChild(text);
-        row.appendChild(col8);
-        var col9 = document.createElement("div");
-        col9.setAttribute("class", "col-sm");
-        text = document.createTextNode(new_array[i + 8]);
-        col9.appendChild(text);
-        row.appendChild(col9);
-        var col10 = document.createElement("div");
-        col10.setAttribute("class", "col-sm");
-        text = document.createTextNode(new_array[i + 9]);
-        col10.appendChild(text);
-        row.appendChild(col10);
-        table_container.appendChild(row);
+        for (var k = i; k < i + 10; k++) {
+            var col = document.createElement("div");
+            col.setAttribute("class", "col-sm");
+            var text = document.createTextNode(new_array[k]);
+            col.appendChild(text);
+            row.appendChild(col);
+            table_container.appendChild(row);
+        }
     }
-    //table_container.appendChild(row);
     console.log(new_array.length);
 }
 

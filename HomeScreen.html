@@ -167,75 +167,61 @@
 <!-- Page Content -->
 <div id="container">
 
-    <div id="mainContent">
+    <div id="AlgorithmControlSection">
+        <!-- Table for buttons to control specific animation (insert/find/etc) -->
+        <!-- (filled in by javascript code specific to the animation) -->
+        <table id="inputs">
+            <tr>
+                <td>
+                    <input class="form-control" maxlength="8" id="arraySize" type="tel"
+                           placeholder="Specify Array Size"/>
+                </td>
+                <td>
+                    <input class="form-control" maxlength="8" id="numbersRange" type="tel"
+                           placeholder="Specify Numbers Range"/>
+                </td>
+                <td>
+                    <input class="btn btn-info" id="generateNumbers" type="button" value="Generate Numbers"/>
+                </td>
+                <td>
+                    <input class="form-control" maxlength="8" id="searchingNumber" type="tel"
+                           placeholder="Specify Searching Number"/>
+                </td>
+            </tr>
+        </table>
 
-        <div id="AlgorithmControlSection">
-            <!-- Table for buttons to control specific animation (insert/find/etc) -->
-            <!-- (filled in by javascript code specific to the animation) -->
-            <table id="inputs">
-                <tr>
-                    <td>
-                        <input class="form-control" maxlength="8" id="arraySize" type="tel"
-                               placeholder="Specify Array Size"/>
-                    </td>
-                    <td>
-                        <input class="form-control" maxlength="8" id="numbersRange" type="tel"
-                               placeholder="Specify Numbers Range"/>
-                    </td>
-                    <td>
-                        <input class="btn btn-info" id="generateNumbers" type="button" value="Generate Numbers"/>
-                    </td>
-                    <td>
-                        <input class="form-control" maxlength="8" id="searchingNumber" type="tel"
-                               placeholder="Specify Searching Number"/>
-                    </td>
-                </tr>
-            </table>
-            <table id="buttons">
-                <tr>
-                    <td>
-                        <input class="btn" id="linearSearch" type="button" value="Linear Search"/>
-                    </td>
-                    <td>
-                        <input class="btn" id="binarySearch" type="button" value="Binary Search"/>
-                    </td>
-                    <td>
-                        <input class="btn" id="jumpSearch" type="button" value="Jump Search"/>
-                    </td>
-                    <td>
-                        <input class="btn" id="interpolationSearch" type="button" value="Interpolation Search"/>
-                    </td>
-                    <td>
-                        <input class="btn" id="fibonacciSearch" type="button" value="Fibonacci Search"/>
-                    </td>
-                    <td>
-                        <input class="btn" id="stratosSearch" type="button" value="Stratos Search"/>
-                    </td>
-                </tr>
-            </table>
+        <div id="buttons" class="btn-group" role="group">
+            <button type="button" class="btn btn-secondary">Linear Search</button>
+            <button type="button" class="btn btn-secondary">Binary Search</button>
+            <button type="button" class="btn btn-secondary">Jump Search</button>
+            <button type="button" class="btn btn-secondary">Interpolation Search</button>
+            <button type="button" class="btn btn-secondary">Fibonacci Search</button>
+            <button type="button" class="btn btn-secondary">Stratos Search</button>
         </div>
 
-        <div id="numbers_container" class="container-fluid">
-
+        <div id="stepButtons" class="btn-group" role="group">
+            <button type="button" class="btn btn-outline-secondary">Undo Step</button>
+            <button type="button" class="btn btn-outline-secondary">Pause</button>
+            <button type="button" class="btn btn-outline-secondary">Next Step</button>
+            <button type="button" class="btn btn-outline-secondary">Skip Forward</button>
         </div>
+    </div>
 
-        <div id="table_container" class="container-fluid">
 
-        </div>
-
-        <div id="AnimationControlSection">
-            <table id="AnimationControls"></table>
-        </div>
+    <div id="numbers_container" class="container-fluid">
 
     </div>
-    <!-- mainContent -->
 
-    <!-- Footer
+    <div id="table_container" class="container-fluid">
+
+    </div>
+
+    <!--Footer-->
     <div class="bg-dark navbar fixed-bottom footer">
         <p class="m-0 text-center text-white">MIT License</p>
         <p class="m-0 text-center text-white">Copyright &copy; Anastasios Tilsizoglou 2018</p>
     </div>
-     /.footer -->
+    <!--/.footer -->
 
 </div>
 <!-- container -->
