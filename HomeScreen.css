@@ -53,6 +53,18 @@
     border: 2px solid black;
 }
 
+#index {
+    color: darkgreen;
+}
+
+#value {
+    color: darkred;
+}
+
+hr {
+    border: 1px solid darkcyan;
+}
+
 p.col-sm {
     text-align: center;
 }
@@ -60,7 +72,7 @@ p.col-sm {
 body {
     position: relative;
     margin: 0;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     min-height: 100%;
     font-family: "Helvetica Neue", Arial, sans-serif;
 }
@@ -70,7 +82,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 1rem;
+    padding: 0.1rem;
     text-align: center;
 }
 

@@ -173,18 +173,18 @@
         <table id="inputs">
             <tr>
                 <td>
-                    <input class="form-control" maxlength="8" id="arraySize" type="number"
+                    <input class="form-control" min="0" max="99999999" id="arraySize" type="number"
                            placeholder="Specify Array Size"/>
                 </td>
                 <td>
-                    <input class="form-control" maxlength="8" id="numbersRange" type="number"
+                    <input class="form-control" min="0" max="99999999" id="numbersRange" type="number"
                            placeholder="Specify Numbers Range"/>
                 </td>
                 <td>
                     <input class="btn btn-info" id="generateNumbers" type="button" value="Generate Numbers"/>
                 </td>
                 <td>
-                    <input class="form-control" maxlength="8" id="searchingNumber" type="number"
+                    <input class="form-control" min="0" max="99999999" id="searchingNumber" type="number"
                            placeholder="Specify Searching Number"/>
                 </td>
             </tr>
@@ -215,8 +215,8 @@
     <div id="table_container" class="container-fluid">
 
     </div>
-	
-	<div id="snackbar">This message handled in javascript</div>
+
+    <div id="snackbar">This message handled in javascript</div>
 
     <!--Footer-->
     <div class="bg-dark navbar fixed-bottom footer">
