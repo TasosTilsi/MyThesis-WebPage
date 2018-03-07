@@ -1,15 +1,15 @@
 const DEFAULT_ARRAY_SIZE = 100;
 const DEFAULT_NUMBERS_RANGE = 100;
-const ARRAY_COLUMN_WIDTH = 10;
+const ARRAY_COLUMN_WIDTH = 20;
 const SNACKBAR_TIME_OUT = 3000;
-const MAX_INPUT_LENGTH = 8;
+const MAX_INPUT_LENGTH = 4;
 
 function generateRandomNumbers(arraySize, numbersRange) {
     var generatedNumbers = [];
     for (var i = 0; i < arraySize; i++) {
-        generatedNumbers[i] = Math.floor(Math.random() * numbersRange + 1);
+        generatedNumbers[i] = Math.floor(Math.random() * numbersRange);
     }
-    return generatedNumbers;
+    return sortArray(generatedNumbers);
 }
 
 function displayArray() {
@@ -22,7 +22,7 @@ function displayArray() {
     var numbers_range = document.getElementById("numbersRange").value;
     numbers_range = numbers_range == "" ? DEFAULT_NUMBERS_RANGE : Math.abs(parseInt(numbers_range));
     new_array = generateRandomNumbers(array_size, numbers_range);
-    draw(sortArray(new_array), array_size);
+    draw(new_array, array_size);
     return 0;
 }
 
@@ -36,13 +36,13 @@ function draw(new_array, array_size) {
         for (var k = 0; k < ARRAY_COLUMN_WIDTH; k++) {
             var col = document.createElement("div");
             col.setAttribute("class", "col-sm with-number");
-            var value_p = document.createElement("p");
+            var value_p = document.createElement("div");
             value_p.setAttribute("id", "value");
             var text = document.createTextNode(new_array[k + i * ARRAY_COLUMN_WIDTH]); //"value: "+
             value_p.appendChild(text);
             if (k + i * ARRAY_COLUMN_WIDTH < array_size) {
                 var hr = document.createElement("hr");
-                var index_p = document.createElement("p");
+                var index_p = document.createElement("div");
                 index_p.setAttribute("id", "index");
                 var index = document.createTextNode((k + i * ARRAY_COLUMN_WIDTH).toString()); //"index: "+
                 index_p.appendChild(index);
