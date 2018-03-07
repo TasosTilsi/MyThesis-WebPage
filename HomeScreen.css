@@ -44,27 +44,27 @@
 .col-sm {
     margin: 1px;
     text-align: center;
-	padding: 0;
-	border: 2px solid white;
+    padding: 0;
+    border: 2px solid white;
 }
 
-.with-number{
-	margin: 1px;
-	padding: 0;
+.with-number {
+    margin: 1px;
+    padding: 0;
     text-align: center;
     border: 2px solid black;
 }
 
-#index {
+.index {
     color: darkgreen;
 }
 
-#value {
+.value {
     color: darkred;
 }
 
 hr {
-	margin-top: 0;
+    margin-top: 0;
     margin-bottom: 0;
     border: 1px solid darkcyan;
 }
@@ -114,22 +114,46 @@ body {
 }
 
 @-webkit-keyframes fadein {
-    from {bottom: 0; opacity: 0;} 
-    to {bottom: 30px; opacity: 1;}
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
 }
 
 @keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
 }
 
 @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;} 
-    to {bottom: 0; opacity: 0;}
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
 
 @keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
 
