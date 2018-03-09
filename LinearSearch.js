@@ -13,37 +13,21 @@ function checkForGeneratedNumbers() {
 }
 
 function doTheSearch(searching_array, asked_number) {
-    // var cell_ids = document.querySelectorAll("[cell_id]");
-    // var cell_value = cell_ids[0].getElementsByClassName("value").item(0).innerHTML;
-
-    /*for (var i = 0; i < parseInt(searching_array.length); i++) {
-        var step = document.querySelector("[cell_id='" + i + "']").style.backgroundColor = "orange";
-        if (searching_array[i] == asked_number) {
-            document.querySelector("[cell_id='" + i + "']").style.backgroundColor = "lightgreen";
-            showSnackBar("The number you searched found in position " + i.toString());
-            return i;
-        }
-        step = document.querySelector("[cell_id='" + i + "']").style.backgroundColor = "blue";
-    }
-    return -1;*/
-
     var i = 0;
     let handle = setInterval(function () {
         if (i < searching_array.length) {
-            document.querySelector("[cell_id='" + i + "']").style.backgroundColor = "orange";
+			document.querySelector("[cell_id='" + Math.max(i-1,0) + "']").style.backgroundColor = "white";
             if (searching_array[i] == asked_number) {
                 document.querySelector("[cell_id='" + i + "']").style.backgroundColor = "lightgreen";
                 showSnackBar("The number you searched found in position " + i.toString());
                 clearInterval(handle);
                 return i;
-            } else {
-                document.querySelector("[cell_id='" + (i) + "']").style.backgroundColor = "white";
             }
+			document.querySelector("[cell_id='" + (i) + "']").style.backgroundColor = "orange";
             i++;
         }
         return -1;
-    }, 200);
-
+    }, 500);
 }
 
 document.getElementById("linearSearch").addEventListener("click", checkForGeneratedNumbers);
