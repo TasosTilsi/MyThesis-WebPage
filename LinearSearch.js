@@ -1,9 +1,10 @@
 function checkForGeneratedNumbers() {
     if (document.getElementsByClassName("index").item(0) != null) {
+        makeTheTableWhite();
         var searching_number = parseInt(document.getElementById("searchingNumber").value);
         // alert(the_array);
         if (!isNaN(searching_number)) {
-            doTheSearch(the_array, searching_number);
+            var position = linearSearch(the_array, searching_number);
         } else {
             showSnackBar("Please <strong>Specify a Number</strong> for search");
         }
@@ -12,21 +13,27 @@ function checkForGeneratedNumbers() {
     }
 }
 
-function doTheSearch(searching_array, asked_number) {
+function linearSearch(searching_array, asked_number) {
     var i = 0;
     let handle = setInterval(function () {
         if (i < searching_array.length) {
-			document.querySelector("[cell_id='" + Math.max(i-1,0) + "']").style.backgroundColor = "white";
+            document.querySelector("[cell_id='" + Math.max(i - 1, 0) + "']").style.backgroundColor = "white";
             if (searching_array[i] == asked_number) {
                 document.querySelector("[cell_id='" + i + "']").style.backgroundColor = "lightgreen";
-                showSnackBar("The number you searched found in position " + i.toString());
                 clearInterval(handle);
+                showSnackBar("The number you searched found in position " + i);
                 return i;
+            } else if (searching_array.length - 1 == i) {
+                //document.querySelector("[cell_id='" + (searching_array.length - 1) + "']").style.backgroundColor = "white";
+                showSnackBar("The number you searched for is not in the generated array!");
+                clearInterval(handle);
+                return -1;
+            } else {
+                document.querySelector("[cell_id='" + (i) + "']").style.backgroundColor = "orange";
+                i++;
             }
-			document.querySelector("[cell_id='" + (i) + "']").style.backgroundColor = "orange";
-            i++;
         }
-        return -1;
+
     }, 500);
 }
 
