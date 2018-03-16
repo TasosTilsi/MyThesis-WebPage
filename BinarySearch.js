@@ -35,16 +35,28 @@ function binarySearch(searching_array, asked_number) {
 			document.querySelector("[cell_id='" + (middleIndex) + "']").style.backgroundColor = "white";
 			middleIndex = Math.floor((lastIndex + firstIndex) / 2);
 			document.querySelector("[cell_id='" + (middleIndex) + "']").style.backgroundColor = "orange";
-			/*if (searching_array[middleIndex] != asked_number) {
-				showSnackBar("The number you searched for is not in the generated array!");
-				return -1;*/
 		}else{
 			document.querySelector("[cell_id='" + (middleIndex) + "']").style.backgroundColor = "lightgreen";
 			clearInterval(handle);
 			showSnackBar("The number you searched found in position " + middleIndex);
 			return middleIndex;
 		}
+		if (lastIndex == firstIndex && 
+			firstIndex == middleIndex && 
+			lastIndex == middleIndex && 
+			(searching_array[middleIndex]!= asked_number || 
+				(searching_array[firstIndex] > asked_number && searching_array[firstIndex] !=asked_number) || 
+				(searching_array[lastIndex]<asked_number && searching_array[lastIndex] !=asked_number))
+			) {
+			showSnackBar("The number you searched for is not in the generated array!");
+			clearInterval(handle);
+			return -1;
+		}
+
 	}, 750);
 }
 
 document.getElementById("binarySearch").addEventListener("click", checkForGeneratedNumbers);
+
+// lastIndex == firstIndex && firstIndex == middleIndex && lastIndex == middleIndex && (searching_array[middleIndex]!= asked_number 
+// 	|| searching_array[firstIndex] != asked_number || searching_array[lastIndex]!=asked_number)
