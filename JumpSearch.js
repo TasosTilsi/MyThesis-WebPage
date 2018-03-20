@@ -31,7 +31,7 @@ function jumpSearch(searching_array, asked_number) {
 
             if (step < size) {
                 document.querySelector("[cell_id='" + (step) + "']").style.backgroundColor = "white";
-                step += Math.floor(Math.sqrt(size));
+                step = Math.min(step + Math.floor(Math.sqrt(size)), size-1);
                 document.querySelector("[cell_id='" + (step) + "']").style.backgroundColor = "lightblue";
             }
             if (previous > size) {

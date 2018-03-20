@@ -5,17 +5,39 @@ const SNACKBAR_TIME_OUT = 3000;
 const MAX_INPUT_LENGTH = 4;
 
 var the_array;
+var generation_profile;
+
+// Generate the numbers
 
 function generateRandomNumbers(arraySize, numbersRange) {
     var generatedNumbers = [];
     for (var i = 0; i < arraySize; i++) {
-        generatedNumbers[i] = Math.floor(Math.random() * numbersRange);
+        // Linear Random numbers
+        var random_uniform = Math.random() * numbersRange;
+        // do this to find the range you give in the input
+        var random_with_profile = random_uniform;
+
+        if (generation_profile == "exponential") {
+            // Exponential Random numbers β = N^(x/N)
+            random_with_profile = Math.pow(numbersRange, random_with_profile / numbersRange);
+        }else if(generation_profile == "logarithmic"){
+            // Logarithmic Random numbers β = N * log(x) / log(n)
+            random_with_profile = Math.max(((numbersRange * Math.log(random_with_profile)) / Math.log(numbersRange)),0);
+        }else if(generation_profile == "geometric"){
+            // Geometric Random numbers
+            random_with_profile = random_with_profile^2 / numbersRange;
+        }else{
+            //go with linear
+        }
+
+        generatedNumbers[i] = Math.floor(random_with_profile);
     }
     return sortArray(generatedNumbers);
 }
 
+// Run on click
+
 function displayArray() {
-    //var the_array;
     var array_size = document.getElementById("arraySize").value;
     if (parseInt(array_size) == 0) {
         showSnackBar("You can not generate numbers with 0 array size!!!");
@@ -27,6 +49,8 @@ function displayArray() {
     draw(the_array, array_size);
     return 0;
 }
+
+// Drawing the table in the body
 
 function draw(new_array, array_size) {
     var table_container = document.getElementById("table_container");
@@ -63,31 +87,9 @@ function draw(new_array, array_size) {
             }
         }
     }
-    console.log(new_array.length);
 }
 
-function showSnackBar(message) {
-    var x = document.getElementById("snackbar");
-    x.className = "show";
-    x.innerHTML = message;
-    setTimeout(function () {
-        x.className = x.className.replace("show", "");
-    }, SNACKBAR_TIME_OUT);
-}
-
-function onlyNumbersOnInput() {
-    if (isNumber(parseInt(this.value))) {
-        if (this.value.length > MAX_INPUT_LENGTH) {
-            this.value = this.value.slice(0, MAX_INPUT_LENGTH);
-        }
-    } else {
-        this.value = this.value.slice(0, 0);
-    }
-}
-
-function isNumber(n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
-}
+// QuickSort the Array
 
 function sortArray(array) {
     if (array.length <= 1) {
@@ -106,8 +108,7 @@ function sortArray(array) {
     return sortArray(left).concat(pivot, sortArray(right));
 };
 
-document.getElementById("generateNumbers").addEventListener("click", displayArray);
-document.getElementById("arraySize").addEventListener("input", onlyNumbersOnInput);
-document.getElementById("numbersRange").addEventListener("input", onlyNumbersOnInput);
-document.getElementById("searchingNumber").addEventListener("input", onlyNumbersOnInput);
-//setInterval(function(){alert("adding listener"); document.body.addEventListener("click", myAlert);}, 2000)
+document.getElementById("generateNumbers").addEventListener("click", () => { generation_profile = "linear"; displayArray() });
+document.getElementById("exponential").addEventListener("click", () => { generation_profile = "exponential"; displayArray() });
+document.getElementById("logarithmic").addEventListener("click", () => { generation_profile = "logarithmic"; displayArray() });
+document.getElementById("geometric").addEventListener("click", () => { generation_profile = "geometric"; displayArray() });

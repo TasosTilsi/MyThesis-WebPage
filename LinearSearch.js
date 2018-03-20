@@ -23,6 +23,12 @@ function linearSearch(searching_array, asked_number) {
                 clearInterval(handle);
                 showSnackBar("The number you searched found in position " + i);
                 return i;
+            } else if (asked_number < searching_array[i + 1]) {
+                document.querySelector("[cell_id='" + (i) + "']").style.backgroundColor = "orange";
+                document.querySelector("[cell_id='" + (i+1) + "']").style.backgroundColor = "lightblue";
+                showSnackBar("The number you searched for is not in the generated array!");
+                clearInterval(handle);
+                return -1;
             } else if (searching_array.length - 1 == i) {
                 //document.querySelector("[cell_id='" + (searching_array.length - 1) + "']").style.backgroundColor = "white";
                 showSnackBar("The number you searched for is not in the generated array!");

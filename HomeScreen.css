@@ -29,28 +29,13 @@
     margin-top: 0.5%;
 }
 
-#inputs, #buttons, #stepButtons {
+#inputs, #buttons, #stepButtons{
     width: 100%;
 }
 
 .container-fluid {
     padding: 15px;
 }
-
-/*#table_container{
-	float: left;
-   	width: 50%;
-	padding: 0;
-	margin: 10px;
-}
-
-#code_container{
-	float: right;
-   width: 200px;
-   background: blue;
-		padding: 0;
-
-}*/
 
 .btn {
     width: 100%;
@@ -95,7 +80,7 @@ p.col-sm {
 body {
     position: relative;
     margin: 0;
-    padding-bottom: 2rem;
+    padding-bottom: 0.1rem;
     min-height: 100%;
     font-family: "Helvetica Neue", Arial, sans-serif;
 }
