@@ -1,3 +1,8 @@
+const SNACKBAR_TIME_OUT = 3000;
+const MAX_INPUT_LENGTH = 4;
+
+// Showing a message with this android like snackbar
+
 function showSnackBar(message) {
     var x = document.getElementById("snackbar");
     x.className = "show";
@@ -6,6 +11,8 @@ function showSnackBar(message) {
         x.className = x.className.replace("show", "");
     }, SNACKBAR_TIME_OUT);
 }
+
+// Clearing only the cells that has background colors
 
 function makeTheTableWhite() {
     for (var i = 0; i < the_array.length; i++) {
@@ -17,6 +24,8 @@ function makeTheTableWhite() {
     }
 }
 
+// Allow only numbers on input
+
 function onlyNumbersOnInput() {
     if (isNumber(parseInt(this.value))) {
         if (this.value.length > MAX_INPUT_LENGTH) {
@@ -27,9 +36,13 @@ function onlyNumbersOnInput() {
     }
 }
 
+// Check a value if is number
+
 function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
+
+// Add event listeners
 
 document.getElementById("arraySize").addEventListener("input", onlyNumbersOnInput);
 document.getElementById("numbersRange").addEventListener("input", onlyNumbersOnInput);
