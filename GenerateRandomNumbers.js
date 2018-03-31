@@ -15,13 +15,13 @@ function generateRandomNumbers(arraySize, numbersRange) {
         // doing this to find the range you give in the input
         var random_with_profile = random_uniform;
 
-        if (generation_profile == "exponential") {
+        if (generation_profile === "exponential") {
             // Exponential Random numbers β = N^(x/N)
             random_with_profile = Math.pow(numbersRange, random_with_profile / numbersRange);
-        }else if(generation_profile == "logarithmic"){
+        } else if (generation_profile === "logarithmic") {
             // Logarithmic Random numbers β = N * log(x) / log(n)
             random_with_profile = Math.max(((numbersRange * Math.log(random_with_profile)) / Math.log(numbersRange)),0);
-        }else if(generation_profile == "geometric"){
+        } else if (generation_profile === "geometric") {
             // Geometric Random numbers
             random_with_profile = random_with_profile^2 / numbersRange;
         }else{
@@ -39,16 +39,16 @@ function displayArray() {
     // Getting the value from arraySize input
     var array_size = document.getElementById("arraySize").value;
     // Checking if the value is zero
-    if (parseInt(array_size) == 0) {
+    if (parseInt(array_size) === 0) {
         // and throwing a message if it is
         showSnackBar("You can not generate numbers with 0 array size!!!");
     }
     // If array_size is null, get the default else get the absolute value from the input
-    array_size = array_size == "" ? DEFAULT_ARRAY_SIZE : Math.abs(parseInt(array_size));
+    array_size = array_size === "" ? DEFAULT_ARRAY_SIZE : Math.abs(parseInt(array_size));
     // Getting the value from numbersRange input
     var numbers_range = document.getElementById("numbersRange").value;
     // If numbers_range is null, get the default else get the absolute value from the input
-    numbers_range = numbers_range == "" ? DEFAULT_NUMBERS_RANGE : Math.abs(parseInt(numbers_range));
+    numbers_range = numbers_range === "" ? DEFAULT_NUMBERS_RANGE : Math.abs(parseInt(numbers_range));
     // Generate and return the array sorted
     the_array = generateRandomNumbers(array_size, numbers_range);
     // Draw the table in the html body
