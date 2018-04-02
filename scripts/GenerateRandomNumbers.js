@@ -4,6 +4,8 @@ const ARRAY_COLUMN_WIDTH = 20;
 
 var the_array;
 var generation_profile;
+var array_size;
+var numbers_range;
 
 // Generate the numbers
 
@@ -37,7 +39,7 @@ function generateRandomNumbers(arraySize, numbersRange) {
 
 function displayArray() {
     // Getting the value from arraySize input
-    var array_size = document.getElementById("arraySize").value;
+    array_size = document.getElementById("arraySize").value;
     // Checking if the value is zero
     if (parseInt(array_size) === 0) {
         // and throwing a message if it is
@@ -46,7 +48,7 @@ function displayArray() {
     // If array_size is null, get the default else get the absolute value from the input
     array_size = array_size === "" ? DEFAULT_ARRAY_SIZE : Math.abs(parseInt(array_size));
     // Getting the value from numbersRange input
-    var numbers_range = document.getElementById("numbersRange").value;
+    numbers_range = document.getElementById("numbersRange").value;
     // If numbers_range is null, get the default else get the absolute value from the input
     numbers_range = numbers_range === "" ? DEFAULT_NUMBERS_RANGE : Math.abs(parseInt(numbers_range));
     // Generate and return the array sorted

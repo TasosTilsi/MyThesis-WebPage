@@ -1,17 +1,3 @@
-function checkForGeneratedNumbers() {
-    if (document.getElementsByClassName("index").item(0) != null) {
-        makeTheTableWhite();
-        var searching_number = parseInt(document.getElementById("searchingNumber").value);
-        if (!isNaN(searching_number)) {
-            var position = jumpSearch(the_array, searching_number);
-        } else {
-            showSnackBar("Please <strong>Specify a Number</strong> for search");
-        }
-    } else {
-        showSnackBar("You have to <strong>Generate Numbers</strong> first");
-    }
-}
-
 function jumpSearch(searching_array, asked_number) {
     console.log("Starting the search...");
     //Finding the array size
@@ -95,4 +81,4 @@ function jumpSearch(searching_array, asked_number) {
     }, 750);
 }
 
-document.getElementById("jumpSearch").addEventListener("click", checkForGeneratedNumbers);
+document.getElementById("jumpSearch").addEventListener("click", () => { searching_profile = "jump"; checkForGeneratedNumbers() });
