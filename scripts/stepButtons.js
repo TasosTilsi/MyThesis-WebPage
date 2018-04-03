@@ -16,4 +16,5 @@ function undo(){
     } else if (searching_profile === "stratos") {
 
     }
+    return 0;
 }
