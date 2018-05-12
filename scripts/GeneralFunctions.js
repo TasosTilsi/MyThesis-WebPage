@@ -24,6 +24,7 @@ function checkForGeneratedNumbers() {
             } else if (searching_profile === "binary") {
                 binarySearch(the_array, searching_number);
             } else if (searching_profile === "jump") {
+                makeTheTableWhite();
                 jumpSearch(the_array, searching_number);
             } else if (searching_profile === "interpolation") {
 

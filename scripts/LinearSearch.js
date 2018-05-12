@@ -41,6 +41,29 @@ function linearSearch(searching_array, asked_number) {
     }
 }
 
-document.getElementById("linearSearch").addEventListener("click", () => { searching_profile = "linear"; checkForGeneratedNumbers(); });
-document.getElementById("undo").addEventListener("click", () => { searching_profile = "linear"; undo(); });
-//document.getElementById("next").addEventListener("click", );
+function runLinearSearch() {
+    let handle = setInterval(() => {
+        //document.getElementById("next").click();
+        checkForGeneratedNumbers();
+        /*if (document.querySelector(`[cell_id='${i}']`).style.backgroundColor === "lightgreen" || document.querySelector(`[cell_id='${i + 1}']`).style.backgroundColor === "lightblue") {
+            clearInterval(handle);
+        }*/
+        let snackbar = document.getElementById("snackbar");
+        if (snackbar.className === "show") {
+            clearInterval(handle);
+        }
+    }, 500);
+}
+
+document.getElementById("linearSearch").addEventListener("click", () => {
+    runLinearSearch();
+});
+document.getElementById("undo").addEventListener("click", () => {
+    searching_profile = "linear";
+    undo();
+});
+document.getElementById("next").addEventListener("click", () => {
+    searching_profile = "linear";
+    next();
+    //checkForGeneratedNumbers();
+});
