@@ -1,5 +1,5 @@
 var first_time_run_linear = true;
-var i;
+var i = 0;
 
 function linearSearch(searching_array, asked_number) {
     // Setting the step
@@ -17,6 +17,7 @@ function linearSearch(searching_array, asked_number) {
         if (searching_array[i] === asked_number) {
             document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "lightgreen";
             showSnackBar("The number you searched found in position " + i);
+            document.getElementById("pause").click();
             first_time_run_linear = true;
             only_at_next_search_run = true;
             return i;
@@ -24,12 +25,14 @@ function linearSearch(searching_array, asked_number) {
             document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "orange";
             document.querySelector(`[cell_id='${i + 1}']`).style.backgroundColor = "lightblue";
             showSnackBar("The number you searched for is not in the generated array!");
+            document.getElementById("pause").click();
             first_time_run_linear = true;
             only_at_next_search_run = true;
             return -1;
         } else if (searching_array.length - 1 === i) {
             //document.querySelector("[cell_id='" + (searching_array.length - 1) + "']").style.backgroundColor = "white";
             showSnackBar("The number you searched for is not in the generated array!");
+            document.getElementById("pause").click();
             first_time_run_linear = true;
             only_at_next_search_run = true;
             return -1;
@@ -42,20 +45,18 @@ function linearSearch(searching_array, asked_number) {
 }
 
 function runLinearSearch() {
-    let handle = setInterval(() => {
-        //document.getElementById("next").click();
+
+    if (document.getElementById("searchingNumber").value.length > 0) {
+        handle = setInterval(() => {
+            checkForGeneratedNumbers();
+        }, 750);
+    } else {
         checkForGeneratedNumbers();
-        /*if (document.querySelector(`[cell_id='${i}']`).style.backgroundColor === "lightgreen" || document.querySelector(`[cell_id='${i + 1}']`).style.backgroundColor === "lightblue") {
-            clearInterval(handle);
-        }*/
-        let snackbar = document.getElementById("snackbar");
-        if (snackbar.className === "show") {
-            clearInterval(handle);
-        }
-    }, 500);
+    }
 }
 
 document.getElementById("linearSearch").addEventListener("click", () => {
+    searching_profile = "linear";
     runLinearSearch();
 });
 document.getElementById("undo").addEventListener("click", () => {
@@ -65,5 +66,8 @@ document.getElementById("undo").addEventListener("click", () => {
 document.getElementById("next").addEventListener("click", () => {
     searching_profile = "linear";
     next();
-    //checkForGeneratedNumbers();
+});
+document.getElementById("pause").addEventListener("click", () => {
+    searching_profile = "linear";
+    pause();
 });

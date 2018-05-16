@@ -19,6 +19,7 @@ function checkForGeneratedNumbers() {
         searching_number = parseInt(document.getElementById("searchingNumber").value);
         if (!isNaN(searching_number)) {
             // If is number do the search
+            enableStepButtons();
             if (searching_profile === "linear") {
                 linearSearch(the_array, searching_number);
             } else if (searching_profile === "binary") {
@@ -43,12 +44,24 @@ function checkForGeneratedNumbers() {
     }
 }
 
+// Enable Step Buttons only if a search button clicked
+
+function enableStepButtons() {
+    if (searching_profile !== undefined) {
+        document.getElementById("undo").disabled = false;
+        document.getElementById("pause").disabled = false;
+        document.getElementById("next").disabled = false;
+        document.getElementById("skipForward").disabled = false;
+    }
+}
+
 // Showing a message with this android like snackbar
 
 function showSnackBar(message) {
     var x = document.getElementById("snackbar");
     x.className = "show";
     x.innerHTML = message;
+    console.log("SnackBar Shows");
     setTimeout(function () {
         x.className = x.className.replace("show", "");
     }, SNACKBAR_TIME_OUT);

@@ -55,10 +55,17 @@ function binarySearch(searching_array, asked_number) {
 // Add event listener
 
 document.getElementById("binarySearch").addEventListener("click", () => { searching_profile = "binary"; checkForGeneratedNumbers() });
-// document.getElementById("undo").addEventListener("click",()=>{
-//     if(i !== 0){
-//         makeTheTableWhite();
-//         i--;
-//         document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "orange";
-//     }
-// });
+document.getElementById("undo").addEventListener("click", () => {
+    searching_profile = "binary";
+    undo();
+});
+document.getElementById("next").addEventListener("click", () => {
+    searching_profile = "binary";
+    next();
+    //checkForGeneratedNumbers();
+});
+document.getElementById("pause").addEventListener("click", () => {
+    searching_profile = "binary";
+    pause();
+    //checkForGeneratedNumbers();
+});
