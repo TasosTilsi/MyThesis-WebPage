@@ -56,18 +56,22 @@ function runLinearSearch() {
 }
 
 document.getElementById("linearSearch").addEventListener("click", () => {
+    console.log("Linear Search Button Clicked");
     searching_profile = "linear";
     runLinearSearch();
 });
 document.getElementById("undo").addEventListener("click", () => {
-    searching_profile = "linear";
+    console.log("Linear Undo Button Clicked");
+    //searching_profile = "linear";
     undo();
 });
 document.getElementById("next").addEventListener("click", () => {
-    searching_profile = "linear";
+    console.log("Linear Next Button Clicked");
+    //searching_profile = "linear";
     next();
 });
 document.getElementById("pause").addEventListener("click", () => {
-    searching_profile = "linear";
+    console.log("Linear Pause Button Clicked");
+    //searching_profile = "linear";
     pause();
 });

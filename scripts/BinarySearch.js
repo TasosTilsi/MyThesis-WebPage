@@ -36,6 +36,7 @@ function binarySearch(searching_array, asked_number) {
         showSnackBar("The number you searched found in position " + middleIndex);
         only_at_next_search_run = true;
         first_time_run_binary = true;
+        document.getElementById("pause").click();
         return middleIndex;
     }
     if (lastIndex === firstIndex &&
@@ -45,27 +46,44 @@ function binarySearch(searching_array, asked_number) {
             (searching_array[firstIndex] > asked_number && searching_array[firstIndex] !== asked_number) ||
             (searching_array[lastIndex] < asked_number && searching_array[lastIndex] !== asked_number))) {
         showSnackBar("The number you searched for is not in the generated array!");
-
+        document.getElementById("pause").click();
         first_time_run_binary = true;
         only_at_next_search_run = true;
         return -1;
     }
 }
 
+function runBinarySearch() {
+    if (document.getElementById("searchingNumber").value.length > 0) {
+        handle = setInterval(() => {
+            checkForGeneratedNumbers();
+        }, 750);
+    } else {
+        checkForGeneratedNumbers();
+    }
+}
+
 // Add event listener
 
-document.getElementById("binarySearch").addEventListener("click", () => { searching_profile = "binary"; checkForGeneratedNumbers() });
-document.getElementById("undo").addEventListener("click", () => {
+document.getElementById("binarySearch").addEventListener("click", () => {
+    console.log("Binary Search Button Clicked");
     searching_profile = "binary";
+    runBinarySearch();
+});
+document.getElementById("undo").addEventListener("click", () => {
+    console.log("Binary Undo Button Clicked");
+    //searching_profile = "binary";
     undo();
 });
 document.getElementById("next").addEventListener("click", () => {
-    searching_profile = "binary";
+    console.log("Binary Next Button Clicked");
+    //searching_profile = "binary";
     next();
     //checkForGeneratedNumbers();
 });
 document.getElementById("pause").addEventListener("click", () => {
-    searching_profile = "binary";
+    console.log("Binary Pause Button Clicked");
+    //searching_profile = "binary";
     pause();
     //checkForGeneratedNumbers();
 });

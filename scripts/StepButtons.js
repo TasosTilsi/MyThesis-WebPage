@@ -20,18 +20,10 @@ function undo() {
 }
 
 function next() {
-    if (searching_profile === "linear") {
-        /*if (i !== 0) {
-            if (document.querySelector(`[cell_id='${i}']`).style.backgroundColor !== "lightgreen") {
-                makeTheTableWhite();
-                i++;
-                document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "orange";
-            }
-        }*/
-        makeTheTableWhite();
+    /*if (searching_profile === "linear") {
         checkForGeneratedNumbers();
     } else if (searching_profile === "binary") {
-        console.log("eeee");
+        checkForGeneratedNumbers();
     } else if (searching_profile === "jump") {
 
     } else if (searching_profile === "interpolation") {
@@ -40,15 +32,16 @@ function next() {
 
     } else if (searching_profile === "stratos") {
 
-    }
+    }*/
+    checkForGeneratedNumbers();
     return 0;
 }
 
 function pause() {
-    if (searching_profile === "linear") {
+    /*if (searching_profile === "linear") {
         clearInterval(handle);
     } else if (searching_profile === "binary") {
-
+        clearInterval(handle);
     } else if (searching_profile === "jump") {
 
     } else if (searching_profile === "interpolation") {
@@ -57,6 +50,7 @@ function pause() {
 
     } else if (searching_profile === "stratos") {
 
-    }
+    }*/
+    clearInterval(handle);
     return 0;
 }
