@@ -47,7 +47,7 @@ function linearSearch(searching_array, asked_number) {
 function runLinearSearch() {
 
     if (document.getElementById("searchingNumber").value.length > 0) {
-        handle = setInterval(() => {
+        intervalHandle = setInterval(() => {
             checkForGeneratedNumbers();
         }, 750);
     } else {
@@ -56,6 +56,7 @@ function runLinearSearch() {
 }
 
 document.getElementById("linearSearch").addEventListener("click", () => {
+    document.getElementById("pause").click();
     console.log("Linear Search Button Clicked");
     searching_profile = "linear";
     runLinearSearch();

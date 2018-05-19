@@ -1,3 +1,5 @@
+var intervalHandle;
+
 function undo() {
     if (searching_profile === "linear") {
         if (i !== 0) {
@@ -51,6 +53,6 @@ function pause() {
     } else if (searching_profile === "stratos") {
 
     }*/
-    clearInterval(handle);
+    clearInterval(intervalHandle);
     return 0;
 }

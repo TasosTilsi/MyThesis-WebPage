@@ -55,7 +55,7 @@ function binarySearch(searching_array, asked_number) {
 
 function runBinarySearch() {
     if (document.getElementById("searchingNumber").value.length > 0) {
-        handle = setInterval(() => {
+        intervalHandle = setInterval(() => {
             checkForGeneratedNumbers();
         }, 750);
     } else {
@@ -66,6 +66,7 @@ function runBinarySearch() {
 // Add event listener
 
 document.getElementById("binarySearch").addEventListener("click", () => {
+    document.getElementById("pause").click();
     console.log("Binary Search Button Clicked");
     searching_profile = "binary";
     runBinarySearch();
