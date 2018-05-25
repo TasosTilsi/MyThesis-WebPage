@@ -29,8 +29,21 @@
     margin-top: 0.5%;
 }
 
+.AlgorithmControlSection {
+    background-color: #ffffff;
+    position: fixed;
+    top: 3.8rem;
+    min-width: 100%;
+    z-index: 100;
+}
+
+#table_container {
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+}
+
 #inputs, #searchButtons, #stepButtons {
-    width: 100%;
+    min-width: 100%;
 }
 
 .container {

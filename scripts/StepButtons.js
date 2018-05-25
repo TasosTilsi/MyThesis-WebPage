@@ -54,5 +54,6 @@ function pause() {
 
     }*/
     clearInterval(intervalHandle);
+    only_at_next_search_run = true;
     return 0;
 }

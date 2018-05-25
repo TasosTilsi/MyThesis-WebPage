@@ -26,7 +26,6 @@ function checkForGeneratedNumbers() {
                 binarySearch(the_array, searching_number);
             } else if (searching_profile === "jump") {
                 jumpSearch(the_array, searching_number);
-                only_at_next_search_run = true;
             } else if (searching_profile === "interpolation") {
 
             } else if (searching_profile === "fibonacci") {
