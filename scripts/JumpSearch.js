@@ -50,7 +50,7 @@ function jumpSearch(searching_array, asked_number) {
             only_at_next_search_run = true;
             document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
             document.getElementById("pause").click();
-            return -1
+            return -1;
         }
 
     } else if (searching_array[previous] === asked_number) {
@@ -66,7 +66,7 @@ function jumpSearch(searching_array, asked_number) {
         only_at_next_search_run = true;
         document.getElementById("pause").click();
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
-        return -1
+        return -1;
     }
 }
 
@@ -89,18 +89,13 @@ document.getElementById("jumpSearch").addEventListener("click", () => {
 
 document.getElementById("undo").addEventListener("click", () => {
     console.log("Jump Undo Button Clicked");
-    //searching_profile = "binary";
     undo();
 });
 document.getElementById("next").addEventListener("click", () => {
     console.log("Jump Next Button Clicked");
-    //searching_profile = "binary";
     next();
-    //checkForGeneratedNumbers();
 });
 document.getElementById("pause").addEventListener("click", () => {
     console.log("Jump Pause Button Clicked");
-    //searching_profile = "binary";
     pause();
-    //checkForGeneratedNumbers();
 });

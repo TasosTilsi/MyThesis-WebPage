@@ -27,9 +27,9 @@ function checkForGeneratedNumbers() {
             } else if (searching_profile === "jump") {
                 jumpSearch(the_array, searching_number);
             } else if (searching_profile === "interpolation") {
-
+                interpolationSearch(the_array,searching_number);
             } else if (searching_profile === "fibonacci") {
-
+                fibonacciSearch(the_array,searching_number);
             } else if (searching_profile === "stratos") {
 
             }
