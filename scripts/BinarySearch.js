@@ -38,9 +38,9 @@ function binarySearch(searching_array, asked_number) {
         document.getElementById("pause").click();
         return middleIndex;
     }
-    if (lastIndex === firstIndex &&
-        firstIndex === middleIndex &&
-        lastIndex === middleIndex &&
+    if ((lastIndex === firstIndex ||
+        firstIndex === middleIndex ||
+        lastIndex === middleIndex) &&
         (searching_array[middleIndex] !== asked_number ||
             (searching_array[firstIndex] > asked_number && searching_array[firstIndex] !== asked_number) ||
             (searching_array[lastIndex] < asked_number && searching_array[lastIndex] !== asked_number))) {
@@ -69,18 +69,4 @@ document.getElementById("binarySearch").addEventListener("click", () => {
     console.log("Binary Search Button Clicked");
     searching_profile = "binary";
     runBinarySearch();
-});
-document.getElementById("undo").addEventListener("click", () => {
-    console.log("Binary Undo Button Clicked");
-    undo();
-});
-document.getElementById("next").addEventListener("click", () => {
-    console.log("Binary Next Button Clicked");
-    //searching_profile = "binary";
-    next();
-});
-document.getElementById("pause").addEventListener("click", () => {
-    console.log("Binary Pause Button Clicked");
-    //searching_profile = "binary";
-    pause();
 });

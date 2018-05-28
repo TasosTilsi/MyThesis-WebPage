@@ -50,7 +50,7 @@ function interpolationSearch(searching_array, asked_number) {
         }
     } else {
         showSnackBar("The number you searched for is not in the generated array!");
-        first_time_run_jump = true;
+        first_time_run_inter = true;
         only_at_next_search_run = true;
         document.getElementById("pause").click();
         document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
@@ -74,17 +74,4 @@ document.getElementById("interpolationSearch").addEventListener("click", () => {
     console.log("Interpolation Search Button Clicked");
     searching_profile = "interpolation";
     runInterpolationSearch();
-});
-
-document.getElementById("undo").addEventListener("click", () => {
-    console.log("Interpolation Undo Button Clicked");
-    undo();
-});
-document.getElementById("next").addEventListener("click", () => {
-    console.log("Interpolation Next Button Clicked");
-    next();
-});
-document.getElementById("pause").addEventListener("click", () => {
-    console.log("Interpolation Pause Button Clicked");
-    pause();
 });

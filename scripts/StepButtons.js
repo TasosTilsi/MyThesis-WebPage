@@ -57,3 +57,18 @@ function pause() {
     only_at_next_search_run = true;
     return 0;
 }
+
+// Add event listener
+
+document.getElementById("undo").addEventListener("click", () => {
+    console.log("Undo Button Clicked");
+    undo();
+});
+document.getElementById("next").addEventListener("click", () => {
+    console.log("Next Button Clicked");
+    next();
+});
+document.getElementById("pause").addEventListener("click", () => {
+    console.log("Pause Button Clicked");
+    pause();
+});

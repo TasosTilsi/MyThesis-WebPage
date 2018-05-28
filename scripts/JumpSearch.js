@@ -86,16 +86,3 @@ document.getElementById("jumpSearch").addEventListener("click", () => {
     searching_profile = "jump";
     runJumpSearch();
 });
-
-document.getElementById("undo").addEventListener("click", () => {
-    console.log("Jump Undo Button Clicked");
-    undo();
-});
-document.getElementById("next").addEventListener("click", () => {
-    console.log("Jump Next Button Clicked");
-    next();
-});
-document.getElementById("pause").addEventListener("click", () => {
-    console.log("Jump Pause Button Clicked");
-    pause();
-});

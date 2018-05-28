@@ -61,18 +61,3 @@ document.getElementById("linearSearch").addEventListener("click", () => {
     searching_profile = "linear";
     runLinearSearch();
 });
-document.getElementById("undo").addEventListener("click", () => {
-    console.log("Linear Undo Button Clicked");
-    //searching_profile = "linear";
-    undo();
-});
-document.getElementById("next").addEventListener("click", () => {
-    console.log("Linear Next Button Clicked");
-    //searching_profile = "linear";
-    next();
-});
-document.getElementById("pause").addEventListener("click", () => {
-    console.log("Linear Pause Button Clicked");
-    //searching_profile = "linear";
-    pause();
-});
