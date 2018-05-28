@@ -1,62 +1,82 @@
 var first_time_run_fib = true;
 var size;
-var low;
-var high;
-var delta;
+var m2 = 0;
+var m1 = 1;
 var position;
+
+function min(x, y) {
+    return (x <= y) ? x : y;
+}
 
 function fibonacciSearch(searching_array, asked_number) {
 
-    /*if (first_time_run_fib) {
+    if (first_time_run_fib) {
         console.log("Starting the Interpolation search...");
         //Finding the array size
         size = searching_array.length;
-        low = 0;
-        high = size - 1;
-        console.log("Setting the low " + low + " and high " + high);
-        document.querySelector(`[cell_id='${low}']`).style.backgroundColor = "lightblue";
-        document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "lightblue";
-        delta = (asked_number - searching_array[low]) / (searching_array[high] - searching_array[low]);
-        position = low + Math.floor((high - low) * delta);
+        var m2 = 0;
+        var m1 = 1;
+        position = m1 + m2;
+        console.log("Setting the m2 " + m2 + " and m1 " + m1 + " and position " + position);
+        document.querySelector(`[cell_id='${m2}']`).style.backgroundColor = "lightblue";
+        document.querySelector(`[cell_id='${m1}']`).style.backgroundColor = "lightblue";
         document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
         first_time_run_fib = false;
     }
 
-    if (low <= high && asked_number >= searching_array[low] && asked_number <= searching_array[high]) {
-        document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "white";
-        delta = (asked_number - searching_array[low]) / (searching_array[high] - searching_array[low]);
-        position = low + Math.floor((high - low) * delta);
-        document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
+    if (position < size) {
+        m2 = m1;
+        m1 = position;
+        position = m2 + m1;
+    }
 
-        if (searching_array[position] === asked_number) {
-            document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "lightgreen";
-            showSnackBar("The number you searched found in position " + position);
+    let offset = -1;
+
+    if (position > 1) {
+        let i = min(offset + m2, asked_number - 1);
+
+        if (searching_array[i] < asked_number) {
+            position = m1;
+            m1 = m2;
+            m2 = position - m1;
+            offset = i;
+        } else if (searching_array[i] > asked_number) {
+            position = m2;
+            m1 = m1 - m2;
+            m2 = position - m1;
+        } else {
+            document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "lightgreen";
+            showSnackBar("The number you searched found in position " + i);
             first_time_run_fib = true;
             only_at_next_search_run = true;
             document.getElementById("pause").click();
-            return position;
+            return i;
         }
-
-        if (searching_array[position] < asked_number) {
-            document.querySelector(`[cell_id='${low}']`).style.backgroundColor = "white";
-            low = position + 1;
-            document.querySelector(`[cell_id='${low}']`).style.backgroundColor = "lightblue";
-            console.log("Setting the low " + low + " and high " + high);
-        } else {
-            document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "white";
-            high = position - 1;
-            document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "lightblue";
-            console.log("Setting the low " + low + " and high " + high);
-        }
-    } else {
+    }/*else{
         showSnackBar("The number you searched for is not in the generated array!");
-        first_time_run_fib = true;
+        first_time_run_jump = true;
         only_at_next_search_run = true;
         document.getElementById("pause").click();
-        document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
+        document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "orange";
         return -1;
     }*/
 
+    if (m1 && searching_array[offset + 1] == asked_number) {
+        document.querySelector(`[cell_id='${offset +1}']`).style.backgroundColor = "lightgreen";
+        showSnackBar("The number you searched found in position " + offset + 1);
+        first_time_run_fib = true;
+        only_at_next_search_run = true;
+        document.getElementById("pause").click();
+        return offset + 1;
+    }
+    //else{
+        // showSnackBar("The number you searched for is not in the generated array!");
+        // first_time_run_jump = true;
+        // only_at_next_search_run = true;
+        // document.getElementById("pause").click();
+        // document.querySelector(`[cell_id='${offset + 1}']`).style.backgroundColor = "orange";
+        // return -1;
+    //}
 }
 
 function runFibonacciSearch() {
