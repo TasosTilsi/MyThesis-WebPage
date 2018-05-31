@@ -14,8 +14,8 @@ function fibonacciSearch(searching_array, asked_number) {
         console.log("Starting the Interpolation search...");
         //Finding the array size
         size = searching_array.length;
-        var m2 = 0;
-        var m1 = 1;
+        m2 = 0;
+        m1 = 1;
         position = m1 + m2;
         console.log("Setting the m2 " + m2 + " and m1 " + m1 + " and position " + position);
         document.querySelector(`[cell_id='${m2}']`).style.backgroundColor = "lightblue";
@@ -25,31 +25,49 @@ function fibonacciSearch(searching_array, asked_number) {
     }
 
     if (position < size) {
+        document.querySelector(`[cell_id='${m2}']`).style.backgroundColor = "white";
+        document.querySelector(`[cell_id='${m1}']`).style.backgroundColor = "white";
+        document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "white";
         m2 = m1;
         m1 = position;
         position = m2 + m1;
+        document.querySelector(`[cell_id='${m2}']`).style.backgroundColor = "lightblue";
+        document.querySelector(`[cell_id='${m1}']`).style.backgroundColor = "lightblue";
+        document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
     }
 
-    let offset = -1;
+    var offset = -1;
 
     if (position > 1) {
-        let i = min(offset + m2, asked_number - 1);
+        var i = min(offset + m2, asked_number - 1);
 
         if (searching_array[i] < asked_number) {
+            document.querySelector(`[cell_id='${m2}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${m1}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "white";
             position = m1;
             m1 = m2;
             m2 = position - m1;
             offset = i;
+            document.querySelector(`[cell_id='${m2}']`).style.backgroundColor = "lightblue";
+            document.querySelector(`[cell_id='${m1}']`).style.backgroundColor = "lightblue";
+            document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
         } else if (searching_array[i] > asked_number) {
+            document.querySelector(`[cell_id='${m2}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${m1}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "white";
             position = m2;
             m1 = m1 - m2;
             m2 = position - m1;
+            document.querySelector(`[cell_id='${m2}']`).style.backgroundColor = "lightblue";
+            document.querySelector(`[cell_id='${m1}']`).style.backgroundColor = "lightblue";
+            document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
         } else {
             document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "lightgreen";
             showSnackBar("The number you searched found in position " + i);
             first_time_run_fib = true;
             only_at_next_search_run = true;
-            document.getElementById("pause").click();
+            //document.getElementById("pause").click();
             return i;
         }
     }/*else{
@@ -66,17 +84,16 @@ function fibonacciSearch(searching_array, asked_number) {
         showSnackBar("The number you searched found in position " + offset + 1);
         first_time_run_fib = true;
         only_at_next_search_run = true;
-        document.getElementById("pause").click();
+        //document.getElementById("pause").click();
         return offset + 1;
+    } else {
+        showSnackBar("The number you searched for is not in the generated array!");
+        first_time_run_jump = true;
+        only_at_next_search_run = true;
+        document.getElementById("pause").click();
+        document.querySelector(`[cell_id='${offset + 1}']`).style.backgroundColor = "orange";
+        return -1;
     }
-    //else{
-        // showSnackBar("The number you searched for is not in the generated array!");
-        // first_time_run_jump = true;
-        // only_at_next_search_run = true;
-        // document.getElementById("pause").click();
-        // document.querySelector(`[cell_id='${offset + 1}']`).style.backgroundColor = "orange";
-        // return -1;
-    //}
 }
 
 function runFibonacciSearch() {
