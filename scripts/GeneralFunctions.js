@@ -96,8 +96,18 @@ function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-// Add event listeners
+function collapseNavBar(){
+    //if(document.getElementById("navbarResponsive").classList == "show"){
+        //document.getElementById("navbarResponsive").classList.remove("show");
+    //}
+    console.log(document.getElementById("navbarResponsive").classList);
+    document.getElementById("navbarResponsive").classList.remove("show");
+    console.log(document.getElementById("navbarResponsive").classList);
+    document.getElementById("navBar_toggler").setAttribute("aria-expanded","false");
+}
 
+// Add event listeners
+//document.getElementById("navBar_toggler").addEventListener("click",collapseNavBar);
 document.getElementById("arraySize").addEventListener("input", onlyNumbersOnInput);
 document.getElementById("numbersRange").addEventListener("input", onlyNumbersOnInput);
 document.getElementById("searchingNumber").addEventListener("input", onlyNumbersOnInput);
