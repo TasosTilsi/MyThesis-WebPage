@@ -27,12 +27,15 @@ function checkForGeneratedNumbers() {
             } else if (searching_profile === "jump") {
                 jumpSearch(the_array, searching_number);
             } else if (searching_profile === "interpolation") {
-                interpolationSearch(the_array,searching_number);
+                interpolationSearch(the_array, searching_number);
+            } else if (searching_profile === "exponential") {
+                exponentialSearch(the_array, searching_number);
             } else if (searching_profile === "fibonacci") {
-                fibonacciSearch(the_array,searching_number);
-            } else if (searching_profile === "stratos") {
-
+                fibonacciSearch(the_array, searching_number);
             }
+            /*else if (searching_profile === "stratos") {
+
+                       }*/
         } else {
             // Show this message
             showSnackBar("Please <strong>Specify a Number</strong> for search");
@@ -96,7 +99,7 @@ function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-function collapseNavBar(){
+/*function collapseNavBar(){
     //if(document.getElementById("navbarResponsive").classList == "show"){
         //document.getElementById("navbarResponsive").classList.remove("show");
     //}
@@ -104,7 +107,7 @@ function collapseNavBar(){
     document.getElementById("navbarResponsive").classList.remove("show");
     console.log(document.getElementById("navbarResponsive").classList);
     document.getElementById("navBar_toggler").setAttribute("aria-expanded","false");
-}
+}*/
 
 // Add event listeners
 //document.getElementById("navBar_toggler").addEventListener("click",collapseNavBar);

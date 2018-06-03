@@ -22,37 +22,11 @@ function undo() {
 }
 
 function next() {
-    /*if (searching_profile === "linear") {
-        checkForGeneratedNumbers();
-    } else if (searching_profile === "binary") {
-        checkForGeneratedNumbers();
-    } else if (searching_profile === "jump") {
-
-    } else if (searching_profile === "interpolation") {
-
-    } else if (searching_profile === "fibonacci") {
-
-    } else if (searching_profile === "stratos") {
-
-    }*/
     checkForGeneratedNumbers();
     return 0;
 }
 
 function pause() {
-    /*if (searching_profile === "linear") {
-        clearInterval(handle);
-    } else if (searching_profile === "binary") {
-        clearInterval(handle);
-    } else if (searching_profile === "jump") {
-
-    } else if (searching_profile === "interpolation") {
-
-    } else if (searching_profile === "fibonacci") {
-
-    } else if (searching_profile === "stratos") {
-
-    }*/
     clearInterval(intervalHandle);
     only_at_next_search_run = true;
     return 0;
