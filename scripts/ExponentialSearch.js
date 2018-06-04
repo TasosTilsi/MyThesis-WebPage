@@ -1,6 +1,6 @@
 var first_time_run_expo = true;
 var expo_i;
-var size;
+var expo_size;
 var mid;
 
 function exponentialSearch(searching_array, asked_number) {
@@ -9,7 +9,7 @@ function exponentialSearch(searching_array, asked_number) {
         expo_i = 1;
         mid = 0;
         document.querySelector(`[cell_id='${expo_i}']`).style.backgroundColor = "lightblue";
-        size = searching_array.length - 1;
+        expo_size = searching_array.length - 1;
         first_time_run_expo = false;
     }
 
@@ -24,51 +24,60 @@ function exponentialSearch(searching_array, asked_number) {
 
     //document.querySelector(`[cell_id='${expo_i}']`).style.backgroundColor = "white";
 
-    if (expo_i < size && searching_array[expo_i] <= asked_number) {
+    if (expo_i < expo_size && searching_array[expo_i] <= asked_number) {
         expo_i = expo_i * 2;
     }
     console.log(`expo_i before binary = '${expo_i}'`);
-    document.querySelector(`[cell_id='${Math.min(expo_i, size)}']`).style.backgroundColor = "lightblue";
-    document.querySelector(`[cell_id='${expo_i / 2}']`).style.backgroundColor = "lightblue";
-    return binSearch(searching_array, asked_number, expo_i / 2, Math.min(expo_i, size));
+    /*document.querySelector(`[cell_id='${Math.min(expo_i, expo_size)}']`).style.backgroundColor = "lightblue";
+    document.querySelector(`[cell_id='${expo_i / 2}']`).style.backgroundColor = "lightblue";*/
+    return binSearch(searching_array, asked_number, expo_i / 2, Math.min(expo_i, expo_size));
 }
 
 function binSearch(arr, x, left, right) {
+
+    document.querySelector(`[cell_id='${left}']`).style.backgroundColor = "lightblue";
+    document.querySelector(`[cell_id='${right}']`).style.backgroundColor = "lightblue";
+    document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "orange";
+
+    console.log(`>>left = '${left}', right = '${right}', mid = '${mid}'`);
+
     if (arr[mid] !== x && left <= right) {
-        document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "white";
-        mid = Math.floor((right + left) / 2);
-        document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "orange";
-        console.log(`left = '${left}', right = '${right}', mid = '${mid}'`);
-        if (arr[mid] === x) {
-            document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "lightgreen";
-            showSnackBar("The number you searched found in position " + mid);
-            only_at_next_search_run = true;
-            first_time_run_expo = true;
-            document.getElementById("pause").click();
-            return mid;
-        } else if (x < arr[mid]) {
-            //document.querySelector(`[cell_id='${right}']`).style.backgroundColor = "white";
+        if (x < arr[mid]) {
+            document.querySelector(`[cell_id='${right}']`).style.backgroundColor = "white";
             right = mid - 1;
             document.querySelector(`[cell_id='${right}']`).style.backgroundColor = "lightblue";
-        } else {
-            //document.querySelector(`[cell_id='${left}']`).style.backgroundColor = "white";
+        } else if (x > arr[mid]) {
+            document.querySelector(`[cell_id='${left}']`).style.backgroundColor = "white";
             left = mid + 1;
             document.querySelector(`[cell_id='${left}']`).style.backgroundColor = "lightblue";
         }
-        return binSearch(arr, x, left, right);
+        document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "white";
+        mid = Math.floor((right + left) / 2);
+        document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "orange";
     }
-    if ((right === left &&
-        left === mid &&
-        right === mid) &&
-        (arr[mid] !== x ||
-            (arr[mid] > x && arr[mid] !== x) ||
-            (arr[mid] < x && arr[mid] !== x))) {
-        showSnackBar("The number you searched for is not in the generated array!");
+    if (arr[mid] === x) {
+        document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "lightgreen";
+        showSnackBar("The number you searched found in position " + mid);
         only_at_next_search_run = true;
         first_time_run_expo = true;
         document.getElementById("pause").click();
+        return mid;
+    }
+    console.log(`Check for number if not in the array!`);
+    console.log(`left = '${left}', right = '${right}', mid = '${mid}', arr[mid] = '${arr[mid]}', x = '${x}'`);
+    if ((right === left ||
+        left === mid ||
+        right === mid) &&
+        (arr[mid] !== x &&
+            (arr[left] > x && arr[left] !== x) &&
+            (arr[right] < x && arr[right] !== x))) {
+        showSnackBar("The number you searched for is not in the generated array!");
+        document.getElementById("pause").click();
+        first_time_run_expo = true;
+        only_at_next_search_run = true;
         return -1;
     }
+    return binSearch(arr, x, left, right);
 }
 
 function runExponentialSearch() {
