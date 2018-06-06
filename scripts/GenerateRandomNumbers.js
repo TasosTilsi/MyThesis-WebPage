@@ -1,5 +1,5 @@
 const DEFAULT_ARRAY_SIZE = 100;
-const DEFAULT_NUMBERS_RANGE = 100;
+const DEFAULT_NUMBERS_RANGE = 300;
 const ARRAY_COLUMN_WIDTH = 20;
 
 var the_array;
@@ -11,9 +11,10 @@ var numbers_range;
 
 function generateRandomNumbers(arraySize, numbersRange) {
     var generatedNumbers = [];
+
     for (var i = 0; i < arraySize; i++) {
         // Linear Random numbers
-        var random_uniform = Math.random() * numbersRange;
+        var random_uniform = Math.floor(Math.random() * numbersRange);
         // doing this to find the range you give in the input
         var random_with_profile = random_uniform;
 
@@ -28,11 +29,26 @@ function generateRandomNumbers(arraySize, numbersRange) {
             random_with_profile = random_with_profile^2 / numbersRange;
         }else{
             //go with linear
+            if (numbersRange >= arraySize) {
+                return getUniqueNumber(generatedNumbers, arraySize, numbersRange);
+            } else {
+                //go with normal linear
+            }
         }
 
         generatedNumbers[i] = Math.floor(random_with_profile);
     }
     return sortArray(generatedNumbers);
+}
+
+function getUniqueNumber(arr, size, range) {
+    var arr = [];
+    while (arr.length < size) {
+        let randomnumber = Math.floor(Math.random() * range) + 1;
+        if (arr.indexOf(randomnumber) > -1) continue;
+        arr[arr.length] = randomnumber;
+    }
+    return (sortArray(arr));
 }
 
 // Runs on click

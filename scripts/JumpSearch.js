@@ -18,12 +18,12 @@ function jumpSearch(searching_array, asked_number) {
     }
 
     if (searching_array[Math.min(step, size) - 1] < asked_number) {
-        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "white";
+        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "red";
         previous = step;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
 
         if (step < size) {
-            document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "red";
             step = Math.min(step + Math.floor(Math.sqrt(size)), size - 1);
             document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "lightblue";
             console.log("Setting the step " + step);
@@ -40,7 +40,7 @@ function jumpSearch(searching_array, asked_number) {
     }
 
     if (searching_array[previous] < asked_number) {
-        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "white";
+        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "yellow";
         previous++;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
 
@@ -74,7 +74,7 @@ function runJumpSearch() {
     if (document.getElementById("searchingNumber").value.length > 0) {
         intervalHandle = setInterval(() => {
             checkForGeneratedNumbers();
-        }, 750);
+        }, intervalSpeed);
     } else {
         checkForGeneratedNumbers();
     }

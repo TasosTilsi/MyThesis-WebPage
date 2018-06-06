@@ -17,28 +17,33 @@ function checkForGeneratedNumbers() {
         }
         // Getting the searching number
         searching_number = parseInt(document.getElementById("searchingNumber").value);
-        if (!isNaN(searching_number)) {
-            // If is number do the search
-            enableStepButtons();
-            if (searching_profile === "linear") {
-                linearSearch(the_array, searching_number);
-            } else if (searching_profile === "binary") {
-                binarySearch(the_array, searching_number);
-            } else if (searching_profile === "jump") {
-                jumpSearch(the_array, searching_number);
-            } else if (searching_profile === "interpolation") {
-                interpolationSearch(the_array, searching_number);
-            } else if (searching_profile === "exponential") {
-                exponentialSearch(the_array, searching_number);
-            } else if (searching_profile === "fibonacci") {
-                fibonacciSearch(the_array, searching_number);
-            }
-            /*else if (searching_profile === "stratos") {
+        if (searching_number <= the_array[the_array.length - 1]) {
+            if (!isNaN(searching_number)) {
+                // If is number do the search
+                enableStepButtons();
+                if (searching_profile === "linear") {
+                    linearSearch(the_array, searching_number);
+                } else if (searching_profile === "binary") {
+                    binarySearch(the_array, searching_number);
+                } else if (searching_profile === "jump") {
+                    jumpSearch(the_array, searching_number);
+                } else if (searching_profile === "interpolation") {
+                    interpolationSearch(the_array, searching_number);
+                } else if (searching_profile === "exponential") {
+                    exponentialSearch(the_array, searching_number);
+                } else if (searching_profile === "fibonacci") {
+                    fibonacciSearch(the_array, searching_number);
+                }
+                /*else if (searching_profile === "stratos") {
 
-                       }*/
+                           }*/
+            } else {
+                // Show this message
+                showSnackBar("Please <strong>Specify a Number</strong> for search");
+            }
         } else {
-            // Show this message
-            showSnackBar("Please <strong>Specify a Number</strong> for search");
+            showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
+            document.getElementById("pause").click();
         }
     } else {
         // Show this message
@@ -53,7 +58,7 @@ function enableStepButtons() {
         //document.getElementById("undo").disabled = false;
         document.getElementById("pause").disabled = false;
         document.getElementById("next").disabled = false;
-        //document.getElementById("skipForward").disabled = false;
+        document.getElementById("skipForward").disabled = false;
     }
 }
 
@@ -99,18 +104,7 @@ function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-/*function collapseNavBar(){
-    //if(document.getElementById("navbarResponsive").classList == "show"){
-        //document.getElementById("navbarResponsive").classList.remove("show");
-    //}
-    console.log(document.getElementById("navbarResponsive").classList);
-    document.getElementById("navbarResponsive").classList.remove("show");
-    console.log(document.getElementById("navbarResponsive").classList);
-    document.getElementById("navBar_toggler").setAttribute("aria-expanded","false");
-}*/
-
 // Add event listeners
-//document.getElementById("navBar_toggler").addEventListener("click",collapseNavBar);
 document.getElementById("arraySize").addEventListener("input", onlyNumbersOnInput);
 document.getElementById("numbersRange").addEventListener("input", onlyNumbersOnInput);
 document.getElementById("searchingNumber").addEventListener("input", onlyNumbersOnInput);

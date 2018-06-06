@@ -63,7 +63,7 @@ function runInterpolationSearch() {
     if (document.getElementById("searchingNumber").value.length > 0) {
         intervalHandle = setInterval(() => {
             checkForGeneratedNumbers();
-        }, 750);
+        }, intervalSpeed);
     } else {
         checkForGeneratedNumbers();
     }

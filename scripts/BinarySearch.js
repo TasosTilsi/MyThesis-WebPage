@@ -56,7 +56,7 @@ function runBinarySearch() {
     if (document.getElementById("searchingNumber").value.length > 0) {
         intervalHandle = setInterval(() => {
             checkForGeneratedNumbers();
-        }, 900);
+        }, intervalSpeed);
     } else {
         checkForGeneratedNumbers();
     }

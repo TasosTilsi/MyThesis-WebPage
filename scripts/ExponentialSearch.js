@@ -2,6 +2,7 @@ var first_time_run_expo = true;
 var expo_i;
 var expo_size;
 var mid;
+var found_number;
 
 function exponentialSearch(searching_array, asked_number) {
 
@@ -30,7 +31,12 @@ function exponentialSearch(searching_array, asked_number) {
     console.log(`expo_i before binary = '${expo_i}'`);
     /*document.querySelector(`[cell_id='${Math.min(expo_i, expo_size)}']`).style.backgroundColor = "lightblue";
     document.querySelector(`[cell_id='${expo_i / 2}']`).style.backgroundColor = "lightblue";*/
-    return binSearch(searching_array, asked_number, expo_i / 2, Math.min(expo_i, expo_size));
+
+    if (asked_number < Math.min(expo_i, expo_size)) {
+        found_number = binSearch(searching_array, asked_number, expo_i / 2, Math.min(expo_i, expo_size));
+    }
+
+    return found_number;
 }
 
 function binSearch(arr, x, left, right) {
@@ -84,7 +90,7 @@ function runExponentialSearch() {
     if (document.getElementById("searchingNumber").value.length > 0) {
         intervalHandle = setInterval(() => {
             checkForGeneratedNumbers();
-        }, 750);
+        }, intervalSpeed);
     } else {
         checkForGeneratedNumbers();
     }
