@@ -50,10 +50,10 @@ function checkForGeneratedNumbers() {
 
 function enableStepButtons() {
     if (searching_profile !== undefined) {
-        document.getElementById("undo").disabled = false;
+        //document.getElementById("undo").disabled = false;
         document.getElementById("pause").disabled = false;
         document.getElementById("next").disabled = false;
-        document.getElementById("skipForward").disabled = false;
+        //document.getElementById("skipForward").disabled = false;
     }
 }
 
