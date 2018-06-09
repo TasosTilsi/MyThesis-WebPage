@@ -17,8 +17,8 @@ function checkForGeneratedNumbers() {
         }
         // Getting the searching number
         searching_number = parseInt(document.getElementById("searchingNumber").value);
-        if (searching_number <= the_array[the_array.length - 1]) {
-            if (!isNaN(searching_number)) {
+        if (!isNaN(searching_number)) {
+            if (searching_number <= the_array[the_array.length - 1]) {
                 // If is number do the search
                 enableStepButtons();
                 if (searching_profile === "linear") {
@@ -37,13 +37,14 @@ function checkForGeneratedNumbers() {
                 /*else if (searching_profile === "stratos") {
 
                            }*/
+
             } else {
-                // Show this message
-                showSnackBar("Please <strong>Specify a Number</strong> for search");
+                showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
+                document.getElementById("pause").click();
             }
         } else {
-            showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
-            document.getElementById("pause").click();
+            // Show this message
+            showSnackBar("Please <strong>Specify a Number</strong> for search");
         }
     } else {
         // Show this message

@@ -38,6 +38,22 @@ function binarySearch(searching_array, asked_number) {
         document.getElementById("pause").click();
         return middleIndex;
     }
+    if (searching_array[firstIndex] === asked_number) {
+        document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightgreen";
+        showSnackBar("The number you searched found in position " + firstIndex);
+        only_at_next_search_run = true;
+        first_time_run_binary = true;
+        document.getElementById("pause").click();
+        return firstIndex;
+    }
+    if (searching_array[lastIndex] === asked_number) {
+        document.querySelector(`[cell_id='${lastIndex}']`).style.backgroundColor = "lightgreen";
+        showSnackBar("The number you searched found in position " + lastIndex);
+        only_at_next_search_run = true;
+        first_time_run_binary = true;
+        document.getElementById("pause").click();
+        return lastIndex;
+    }
     if ((lastIndex === firstIndex ||
         firstIndex === middleIndex ||
         lastIndex === middleIndex) &&
