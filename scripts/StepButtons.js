@@ -66,4 +66,12 @@ document.getElementById("rangeinput").addEventListener("change", () => {
     let output = document.getElementById("rangevalue");
     output.innerHTML = slider.value;
     intervalSpeed = slider.value;
+    document.getElementById("pause").click();
+    if (document.getElementById("searchingNumber").value.length > 0) {
+        intervalHandle = setInterval(() => {
+            checkForGeneratedNumbers();
+        }, intervalSpeed);
+    } else {
+        checkForGeneratedNumbers();
+    }
 });

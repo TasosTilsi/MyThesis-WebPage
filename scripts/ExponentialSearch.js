@@ -28,11 +28,15 @@ function exponentialSearch(searching_array, asked_number) {
         return 0;
     }
 
-    document.querySelector(`[cell_id='${expo_i}']`).style.backgroundColor = "white";
+    if (expo_i < expo_size) {
+        document.querySelector(`[cell_id='${expo_i}']`).style.backgroundColor = "white";
+    }
 
     if (expo_i < expo_size && searching_array[expo_i] <= asked_number) {
         expo_i = expo_i * 2;
-        document.querySelector(`[cell_id='${expo_i}']`).style.backgroundColor = "red";
+        if (expo_i < expo_size) {
+            document.querySelector(`[cell_id='${expo_i}']`).style.backgroundColor = "red";
+        }
         console.log(`expo_i = '${expo_i}'`);
     }else{
         document.getElementById("pause").click();

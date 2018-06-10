@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c91689c1-9811-40e5-a259-e16dbfa12007" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/stylesheets/Slider.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomeScreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomeScreen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/BinarySearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/BinarySearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/ExponentialSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ExponentialSearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/FibonacciSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/FibonacciSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/GeneralFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/GeneralFunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/GenerateRandomNumbers.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/GenerateRandomNumbers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/InterpolationSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/InterpolationSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/JumpSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/JumpSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/LinearSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/LinearSearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/StepButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/StepButtons.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -27,47 +19,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GeneralFunctions.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/GeneralFunctions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StepButtons.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/StepButtons.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeScreen.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HomeScreen.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="207" column="35" selection-start-line="207" selection-start-column="24" selection-end-line="207" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BinarySearch.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/BinarySearch.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LinearSearch.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/LinearSearch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="34" column="53" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="53" />
+            <state relative-caret-position="1035">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JumpSearch.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/JumpSearch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1748">
+              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InterpolationSearch.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/InterpolationSearch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1495">
+              <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BinarySearch.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/BinarySearch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -111,15 +94,15 @@
         <option value="$PROJECT_DIR$/stylesheets/HomeScreen.css" />
         <option value="$PROJECT_DIR$/stylesheets/Slider.css" />
         <option value="$PROJECT_DIR$/scripts/BinarySearch.js" />
-        <option value="$PROJECT_DIR$/scripts/ExponentialSearch.js" />
         <option value="$PROJECT_DIR$/scripts/JumpSearch.js" />
-        <option value="$PROJECT_DIR$/scripts/FibonacciSearch.js" />
         <option value="$PROJECT_DIR$/scripts/InterpolationSearch.js" />
         <option value="$PROJECT_DIR$/scripts/LinearSearch.js" />
         <option value="$PROJECT_DIR$/scripts/GenerateRandomNumbers.js" />
         <option value="$PROJECT_DIR$/HomeScreen.html" />
-        <option value="$PROJECT_DIR$/scripts/StepButtons.js" />
         <option value="$PROJECT_DIR$/scripts/GeneralFunctions.js" />
+        <option value="$PROJECT_DIR$/scripts/StepButtons.js" />
+        <option value="$PROJECT_DIR$/scripts/ExponentialSearch.js" />
+        <option value="$PROJECT_DIR$/scripts/FibonacciSearch.js" />
       </list>
     </option>
   </component>
@@ -160,6 +143,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MyThesis-WebPage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyThesis-WebPage" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -185,17 +179,6 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="MyThesis-WebPage" type="cbb8eebc:String" user="MyThesis-WebPage" />
               <item name=".idea" type="cbb8eebc:String" user=".idea" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="MyThesis-WebPage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyThesis-WebPage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -278,7 +261,9 @@
       <workItem from="1528025639197" duration="18220000" />
       <workItem from="1528106347145" duration="13755000" />
       <workItem from="1528284268700" duration="114000" />
-      <workItem from="1528284397985" duration="22735000" />
+      <workItem from="1528284397985" duration="23518000" />
+      <workItem from="1528639504070" duration="52000" />
+      <workItem from="1528639572164" duration="14146000" />
     </task>
     <task id="LOCAL-00001" summary="creating the table">
       <created>1520030759994</created>
@@ -378,21 +363,27 @@
       <option name="project" value="LOCAL" />
       <updated>1528132403716</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="slider and skip forward implemented such as generate unique numbers">
+      <created>1528318292059</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1528318292059</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193763000" />
+    <option name="totallyTimeSpent" value="208744000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="771" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49944136" visible="true" weight="0.16405308" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49944136" visible="true" weight="0.16405308" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50060314" side_tool="true" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.326257" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32789558" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" sideWeight="0.5005587" side_tool="true" weight="0.13510254" />
@@ -405,6 +396,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.326257" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +420,8 @@
     <MESSAGE value="bug in binary and step buttons bug fixed, interpolation completed, fibonacci started" />
     <MESSAGE value="exponential search added, having problems visualizing it and when the asked number is not in the array!" />
     <MESSAGE value="exponential search half completed, visualing problems and found a bug if the number is greater than the array range!" />
-    <option name="LAST_COMMIT_MESSAGE" value="exponential search half completed, visualing problems and found a bug if the number is greater than the array range!" />
+    <MESSAGE value="slider and skip forward implemented such as generate unique numbers" />
+    <option name="LAST_COMMIT_MESSAGE" value="slider and skip forward implemented such as generate unique numbers" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -546,23 +539,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HomeScreen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/GenerateRandomNumbers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/GeneralFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/StepButtons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/ExponentialSearch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
+        <state relative-caret-position="-1242">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/FibonacciSearch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
+        <state relative-caret-position="3657">
+          <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/LinearSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/JumpSearch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
+        <state relative-caret-position="1748">
           <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
         </state>
       </provider>
@@ -574,45 +602,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/GenerateRandomNumbers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1495">
-          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HomeScreen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="207" column="35" selection-start-line="207" selection-start-column="24" selection-end-line="207" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/LinearSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="34" column="53" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/BinarySearch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/StepButtons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/GeneralFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
+        <state relative-caret-position="207">
+          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
         </state>
       </provider>
     </entry>
