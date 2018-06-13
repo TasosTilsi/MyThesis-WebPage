@@ -6,7 +6,7 @@
 #slider .bar {
     -webkit-appearance: none; /* Override default CSS styles */
     width: 100%; /* Full-width */
-    height: 37px; /* Specified height */
+    height: 43px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -21,15 +21,15 @@
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 #slider .bar::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
-    width: 35px; /* Set a specific slider handle width */
-    height: 35px; /* Slider handle height */
+    width: 40px; /* Set a specific slider handle width */
+    height: 40px; /* Slider handle height */
     background: #17a2b8; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
 
 #slider .bar::-moz-range-thumb {
-    width: 35px; /* Set a specific slider handle width */
-    height: 35px; /* Slider handle height */
+    width: 40px; /* Set a specific slider handle width */
+    height: 40px; /* Slider handle height */
     background: #17a2b8; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
@@ -58,22 +58,19 @@ input[type="range"]:hover ~ #rangevalue, input[type="range"]:active ~ #rangevalu
 /* Tool Tip */
 #rangevalue {
     color: white;
-    font-size: 10px;
-    text-align: center;
+    font-size: 12px;
+    text-align: start;
     font-family: Arial, sans-serif;
     display: block;
-    margin: 20px 0;
+    margin: 5px 0;
     position: relative;
     /*left: 50%;*/
-    padding: 6px 12px;
+    padding: 10px 30px;
     border: 1px solid black;
     -webkit-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
     box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #222931), color-stop(100%, #181D21));
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
     width: 18px;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);

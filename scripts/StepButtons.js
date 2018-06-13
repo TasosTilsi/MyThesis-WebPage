@@ -71,7 +71,5 @@ document.getElementById("rangeinput").addEventListener("change", () => {
         intervalHandle = setInterval(() => {
             checkForGeneratedNumbers();
         }, intervalSpeed);
-    } else {
-        checkForGeneratedNumbers();
     }
 });

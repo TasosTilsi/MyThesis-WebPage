@@ -38,7 +38,7 @@ function binarySearch(searching_array, asked_number) {
         document.getElementById("pause").click();
         return middleIndex;
     }
-    if (searching_array[firstIndex] === asked_number) {
+    /*if (searching_array[firstIndex] === asked_number) {
         document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightgreen";
         showSnackBar("The number you searched found in position " + firstIndex);
         only_at_next_search_run = true;
@@ -53,7 +53,7 @@ function binarySearch(searching_array, asked_number) {
         first_time_run_binary = true;
         document.getElementById("pause").click();
         return lastIndex;
-    }
+    }*/
     if ((lastIndex === firstIndex ||
         firstIndex === middleIndex ||
         lastIndex === middleIndex) &&

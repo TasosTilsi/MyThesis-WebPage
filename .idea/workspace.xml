@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c91689c1-9811-40e5-a259-e16dbfa12007" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/DragableContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stylesheets/DragableContainer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/ExponentialSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ExponentialSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/FibonacciSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/FibonacciSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeScreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/HomeScreen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/BinarySearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/BinarySearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/StepButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/StepButtons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stylesheets/HomeScreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheets/HomeScreen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stylesheets/Slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheets/Slider.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,35 +26,38 @@
       <file leaf-file-name="LinearSearch.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/LinearSearch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="774">
+              <caret line="51" column="26" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JumpSearch.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/JumpSearch.js">
+      <file leaf-file-name="HomeScreen.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HomeScreen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1748">
-              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+            <state relative-caret-position="291">
+              <caret line="111" column="32" lean-forward="true" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InterpolationSearch.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/InterpolationSearch.js">
+      <file leaf-file-name="DragableContainer.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stylesheets/DragableContainer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1495">
-              <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+            <state relative-caret-position="322">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BinarySearch.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/BinarySearch.js">
+      <file leaf-file-name="DragableContainer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/DragableContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+            <state relative-caret-position="751">
+              <caret line="65" column="58" lean-forward="true" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -91,18 +98,20 @@
         <option value="$PROJECT_DIR$/BinarySearch.js" />
         <option value="$PROJECT_DIR$/GenerateRandomNumbers.js" />
         <option value="$PROJECT_DIR$/GeneralFunctions.js" />
-        <option value="$PROJECT_DIR$/stylesheets/HomeScreen.css" />
-        <option value="$PROJECT_DIR$/stylesheets/Slider.css" />
-        <option value="$PROJECT_DIR$/scripts/BinarySearch.js" />
         <option value="$PROJECT_DIR$/scripts/JumpSearch.js" />
         <option value="$PROJECT_DIR$/scripts/InterpolationSearch.js" />
-        <option value="$PROJECT_DIR$/scripts/LinearSearch.js" />
         <option value="$PROJECT_DIR$/scripts/GenerateRandomNumbers.js" />
-        <option value="$PROJECT_DIR$/HomeScreen.html" />
-        <option value="$PROJECT_DIR$/scripts/GeneralFunctions.js" />
-        <option value="$PROJECT_DIR$/scripts/StepButtons.js" />
         <option value="$PROJECT_DIR$/scripts/ExponentialSearch.js" />
         <option value="$PROJECT_DIR$/scripts/FibonacciSearch.js" />
+        <option value="$PROJECT_DIR$/scripts/BinarySearch.js" />
+        <option value="$PROJECT_DIR$/scripts/GeneralFunctions.js" />
+        <option value="$PROJECT_DIR$/stylesheets/HomeScreen.css" />
+        <option value="$PROJECT_DIR$/stylesheets/Slider.css" />
+        <option value="$PROJECT_DIR$/scripts/StepButtons.js" />
+        <option value="$PROJECT_DIR$/stylesheets/DragableContainer.css" />
+        <option value="$PROJECT_DIR$/scripts/DragableContainer.js" />
+        <option value="$PROJECT_DIR$/scripts/LinearSearch.js" />
+        <option value="$PROJECT_DIR$/HomeScreen.html" />
       </list>
     </option>
   </component>
@@ -143,17 +152,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="MyThesis-WebPage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyThesis-WebPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -165,6 +163,11 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="MyThesis-WebPage" type="cbb8eebc:String" user="MyThesis-WebPage" />
               <item name="scripts" type="cbb8eebc:String" user="scripts" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="MyThesis-WebPage" type="cbb8eebc:String" user="MyThesis-WebPage" />
+              <item name="stylesheets" type="cbb8eebc:String" user="stylesheets" />
             </path>
           </expand>
           <select />
@@ -179,6 +182,17 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="MyThesis-WebPage" type="cbb8eebc:String" user="MyThesis-WebPage" />
               <item name=".idea" type="cbb8eebc:String" user=".idea" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MyThesis-WebPage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyThesis-WebPage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -263,7 +277,8 @@
       <workItem from="1528284268700" duration="114000" />
       <workItem from="1528284397985" duration="23518000" />
       <workItem from="1528639504070" duration="52000" />
-      <workItem from="1528639572164" duration="14146000" />
+      <workItem from="1528639572164" duration="14399000" />
+      <workItem from="1528887901647" duration="20666000" />
     </task>
     <task id="LOCAL-00001" summary="creating the table">
       <created>1520030759994</created>
@@ -370,11 +385,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528318292059</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="bug in exponential at last positions found &amp; fixed, fibo finally completed, interval speed now change automatically">
+      <created>1528659341432</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1528659341432</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208744000" />
+    <option name="totallyTimeSpent" value="229663000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="771" width="1680" height="1050" extended-state="6" />
@@ -421,7 +443,8 @@
     <MESSAGE value="exponential search added, having problems visualizing it and when the asked number is not in the array!" />
     <MESSAGE value="exponential search half completed, visualing problems and found a bug if the number is greater than the array range!" />
     <MESSAGE value="slider and skip forward implemented such as generate unique numbers" />
-    <option name="LAST_COMMIT_MESSAGE" value="slider and skip forward implemented such as generate unique numbers" />
+    <MESSAGE value="bug in exponential at last positions found &amp; fixed, fibo finally completed, interval speed now change automatically" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug in exponential at last positions found &amp; fixed, fibo finally completed, interval speed now change automatically" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -432,30 +455,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HomeScreen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4114">
-          <caret line="242" column="71" selection-start-line="242" selection-start-column="71" selection-end-line="242" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JumpSearch.js" />
-    <entry file="file://$PROJECT_DIR$/HomeScreen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4114">
-          <caret line="242" column="71" selection-start-line="242" selection-start-column="71" selection-end-line="242" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JumpSearch.js" />
-    <entry file="file://$PROJECT_DIR$/HomeScreen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4853">
-          <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GenerateRandomNumbers.js" />
     <entry file="file://$PROJECT_DIR$/HomeScreen.css" />
     <entry file="file://$PROJECT_DIR$/HomeScreen.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -525,27 +524,6 @@
     <entry file="file://$PROJECT_DIR$/stylesheets/SnackBar.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/HomeScreen.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/Slider.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="66" column="18" lean-forward="true" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HomeScreen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/GenerateRandomNumbers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -553,38 +531,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/GeneralFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/StepButtons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/ExponentialSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1242">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/FibonacciSearch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3657">
           <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/LinearSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
@@ -602,10 +552,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ExponentialSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/ic_action_person.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/ic_action_info.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/ic_action_home.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/ic_action_thesis.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/GeneralFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="71" column="34" lean-forward="true" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheets/Slider.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheets/HomeScreen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/StepButtons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1027">
+          <caret line="74" column="3" lean-forward="true" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/BinarySearch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+        <state relative-caret-position="322">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheets/DragableContainer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/DragableContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="65" column="58" lean-forward="true" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/LinearSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="51" column="26" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HomeScreen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="111" column="32" lean-forward="true" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

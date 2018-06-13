@@ -12,7 +12,6 @@
 }
 
 .AlgorithmControlSection {
-    background-color: #ffffff;
     position: fixed;
     display: grid;
     top: 3.8rem;
@@ -22,13 +21,22 @@
 
 #table_container {
     margin-top: 7rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 #inputs,
 #searchButtons,
 #stepButtons {
     min-width: 100%;
+    background-color: #ffffff;
+}
+
+#stepButtons {
+    min-width: 83%;
+}
+
+#options {
+    width: 10%;
 }
 
 .container {
