@@ -64,4 +64,14 @@ document.getElementById("options").addEventListener("click", () => {
 function showTheManual(title, message) {
     document.getElementById("search_title").innerHTML = title;
     document.getElementById("manual").innerHTML = message;
+    document.getElementById("left_pane").scrollTop = 0;
 }
+
+//
+// document.getElementById("linearSearch").addEventListener("click", () => {
+//     //document.getElementById("pause").click();
+//     console.log("Linear Search Button Clicked");
+//     searching_profile = "linear";
+//     showTheManual("Linear Search","MANUAL");
+//     //runLinearSearch();
+// });

@@ -68,21 +68,12 @@ function binarySearch(searching_array, asked_number) {
     }
 }
 
-function runBinarySearch() {
-    if (document.getElementById("searchingNumber").value.length > 0) {
-        intervalHandle = setInterval(() => {
-            checkForGeneratedNumbers();
-        }, intervalSpeed);
-    } else {
-        checkForGeneratedNumbers();
-    }
-}
-
 // Add event listener
 
 document.getElementById("binarySearch").addEventListener("click", () => {
+    showTheManual(manual.BinarySearch.title, manual.BinarySearch.message);
     document.getElementById("pause").click();
     console.log("Binary Search Button Clicked");
     searching_profile = "binary";
-    runBinarySearch();
+    runTheSearch();
 });

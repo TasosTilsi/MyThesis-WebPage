@@ -141,21 +141,12 @@ function fibonacciSearch(searching_array, asked_number) {
     }
 }
 
-function runFibonacciSearch() {
-    if (document.getElementById("searchingNumber").value.length > 0) {
-        intervalHandle = setInterval(() => {
-            checkForGeneratedNumbers();
-        }, intervalSpeed);
-    } else {
-        checkForGeneratedNumbers();
-    }
-}
-
 document.getElementById("fibonacciSearch").addEventListener("click", () => {
+    showTheManual(manual.FibonacciSearch.title, manual.FibonacciSearch.message);
     document.getElementById("pause").click();
     console.log("Fibonacci Search Button Clicked");
     searching_profile = "fibonacci";
-    runFibonacciSearch();
+    runTheSearch();
 });
 
 // https://www.youtube.com/watch?v=5_zlqKi01zQ

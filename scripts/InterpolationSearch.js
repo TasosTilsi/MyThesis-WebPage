@@ -59,19 +59,10 @@ function interpolationSearch(searching_array, asked_number) {
 
 }
 
-function runInterpolationSearch() {
-    if (document.getElementById("searchingNumber").value.length > 0) {
-        intervalHandle = setInterval(() => {
-            checkForGeneratedNumbers();
-        }, intervalSpeed);
-    } else {
-        checkForGeneratedNumbers();
-    }
-}
-
 document.getElementById("interpolationSearch").addEventListener("click", () => {
+    showTheManual(manual.InterpolationSearch.title, manual.InterpolationSearch.message);
     document.getElementById("pause").click();
     console.log("Interpolation Search Button Clicked");
     searching_profile = "interpolation";
-    runInterpolationSearch();
+    runTheSearch();
 });

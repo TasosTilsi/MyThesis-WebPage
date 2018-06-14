@@ -36,7 +36,12 @@
 }
 
 #options {
-    width: 10%;
+    width: 5%;
+}
+
+#options i {
+    padding-top: 5px;
+    font-size: 18px;
 }
 
 .container {

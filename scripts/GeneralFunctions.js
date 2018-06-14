@@ -52,6 +52,16 @@ function checkForGeneratedNumbers() {
     }
 }
 
+function runTheSearch() {
+    if (document.getElementById("searchingNumber").value.length > 0) {
+        intervalHandle = setInterval(() => {
+            checkForGeneratedNumbers();
+        }, intervalSpeed);
+    } else {
+        checkForGeneratedNumbers();
+    }
+}
+
 // Enable Step Buttons only if a search button clicked
 
 function enableStepButtons() {

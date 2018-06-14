@@ -2,7 +2,6 @@
     position: absolute;
     z-index: 9;
     min-width: 40%;
-    text-align: center;
 }
 
 #dragable_container_header {
@@ -11,6 +10,7 @@
     z-index: 10;
     background-color: #17a2b8;
     color: #fff;
+    text-align: center;
 }
 
 #dragable_container_header:hover {
@@ -19,6 +19,7 @@
 
 /* Split the screen in half */
 .split {
+    height: 250px;
     position: absolute;
     margin-bottom: 2rem;
     width: 50%;
@@ -37,4 +38,8 @@
 /* Control the right side */
 .right {
     right: 0;
+}
+
+#search_title {
+    text-align: center;
 }

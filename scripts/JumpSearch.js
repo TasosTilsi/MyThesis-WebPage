@@ -70,19 +70,10 @@ function jumpSearch(searching_array, asked_number) {
     }
 }
 
-function runJumpSearch() {
-    if (document.getElementById("searchingNumber").value.length > 0) {
-        intervalHandle = setInterval(() => {
-            checkForGeneratedNumbers();
-        }, intervalSpeed);
-    } else {
-        checkForGeneratedNumbers();
-    }
-}
-
 document.getElementById("jumpSearch").addEventListener("click", () => {
+    showTheManual(manual.JumpSearch.title, manual.JumpSearch.message);
     document.getElementById("pause").click();
     console.log("Jump Search Button Clicked");
     searching_profile = "jump";
-    runJumpSearch();
+    runTheSearch();
 });

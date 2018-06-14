@@ -124,21 +124,12 @@ function runBinSearch(searching_array, asked_number){
     }, intervalSpeed);
 }
 
-function runExponentialSearch() {
-    if (document.getElementById("searchingNumber").value.length > 0) {
-        intervalHandle = setInterval(() => {
-            checkForGeneratedNumbers();
-        }, intervalSpeed);
-    } else {
-        checkForGeneratedNumbers();
-    }
-}
-
 // Add event listener
 
 document.getElementById("exponentialSearch").addEventListener("click", () => {
+    showTheManual(manual.ExponentialSearch.title, manual.ExponentialSearch.message);
     document.getElementById("pause").click();
     console.log("Exponential Search Button Clicked");
     searching_profile = "exponential";
-    runExponentialSearch();
+    runTheSearch();
 });

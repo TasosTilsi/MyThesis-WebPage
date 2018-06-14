@@ -44,20 +44,10 @@ function linearSearch(searching_array, asked_number) {
     }
 }
 
-function runLinearSearch() {
-
-    if (document.getElementById("searchingNumber").value.length > 0) {
-        intervalHandle = setInterval(() => {
-            checkForGeneratedNumbers();
-        }, intervalSpeed);
-    } else {
-        checkForGeneratedNumbers();
-    }
-}
-
 document.getElementById("linearSearch").addEventListener("click", () => {
+    showTheManual(manual.LinearSearch.title, manual.LinearSearch.message);
     document.getElementById("pause").click();
     console.log("Linear Search Button Clicked");
     searching_profile = "linear";
-    runLinearSearch();
+    runTheSearch();
 });
