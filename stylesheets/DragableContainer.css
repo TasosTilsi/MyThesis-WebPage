@@ -1,10 +1,10 @@
-#dragable_container {
+.dragable_container {
     position: absolute;
     z-index: 9;
-    min-width: 40%;
+    min-width: 30%;
 }
 
-#dragable_container_header {
+.dragable_container_header {
     padding: 10px;
     cursor: move;
     z-index: 10;
@@ -13,16 +13,15 @@
     text-align: center;
 }
 
-#dragable_container_header:hover {
+.dragable_container_header:hover {
     background-color: #383e49;
 }
 
-/* Split the screen in half */
-.split {
-    height: 250px;
+.dragable_container_content {
     position: absolute;
+    resize: vertical;
+    width: 100%;
     margin-bottom: 2rem;
-    width: 50%;
     z-index: 1;
     overflow-x: hidden;
     padding: 20px;
@@ -30,14 +29,14 @@
     border: 1px solid #d3d3d3;
 }
 
-/* Control the left side */
-.left {
+#dragable_container_manual {
+    top: 489px;
     left: 0;
 }
 
-/* Control the right side */
-.right {
-    right: 0;
+#dragable_container_step {
+    top: 489px;
+    left: 443px;
 }
 
 #search_title {

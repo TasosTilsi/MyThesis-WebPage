@@ -1,5 +1,6 @@
 //Make the DIV element draggagle:
-dragElement(document.getElementById(("dragable_container")));
+dragElement(document.getElementById(("dragable_container_manual")));
+dragElement(document.getElementById(("dragable_container_step")));
 
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -40,9 +41,31 @@ function dragElement(elmnt) {
     }
 }
 
-document.getElementById("collapse").addEventListener("click", () => {
-    let content = document.getElementById("dragable_container_content");
-    let icon = document.getElementById("collapse_icon");
+function showTheManual(title, message) {
+    document.getElementById("search_title").innerHTML = title;
+    document.getElementById("manual").innerHTML = message;
+    document.getElementById("dragable_container_step_content").scrollTop = 0;
+}
+
+function displayManualDiv() {
+    let manual = document.getElementById("dragable_container_manual");
+    if (manual.style.display === "none") {
+        manual.style.display = "block";
+    } else {
+        manual.style.display = "none";
+    }
+}
+
+function displayStepDiv() {
+    let step = document.getElementById("dragable_container_step");
+    if (step.style.display === "none") {
+        step.style.display = "block";
+    } else {
+        step.style.display = "none";
+    }
+}
+
+function collapseDivs(content, icon) {
     if (content.style.display === "none") {
         content.style.display = "block";
         icon.innerHTML = "expand_more";
@@ -50,28 +73,24 @@ document.getElementById("collapse").addEventListener("click", () => {
         content.style.display = "none";
         icon.innerHTML = "chevron_right";
     }
-});
-
-document.getElementById("options").addEventListener("click", () => {
-    let div = document.getElementById("dragable_container");
-    if (div.style.display === "none") {
-        div.style.display = "block";
-    } else {
-        div.style.display = "none";
-    }
-});
-
-function showTheManual(title, message) {
-    document.getElementById("search_title").innerHTML = title;
-    document.getElementById("manual").innerHTML = message;
-    document.getElementById("left_pane").scrollTop = 0;
 }
 
-//
-// document.getElementById("linearSearch").addEventListener("click", () => {
-//     //document.getElementById("pause").click();
-//     console.log("Linear Search Button Clicked");
-//     searching_profile = "linear";
-//     showTheManual("Linear Search","MANUAL");
-//     //runLinearSearch();
-// });
+document.getElementById("collapse_manual").addEventListener("click", () => {
+    let content = document.getElementById("dragable_container_manual_content");
+    let icon = document.getElementById("collapse_manual_icon");
+    collapseDivs(content, icon);
+});
+
+document.getElementById("collapse_step").addEventListener("click", () => {
+    let content = document.getElementById("dragable_container_step_content");
+    let icon = document.getElementById("collapse_step_icon");
+    collapseDivs(content, icon);
+});
+
+document.getElementById("show_hide_manual").addEventListener("click", () => {
+    displayManualDiv();
+});
+
+document.getElementById("show_hide_step").addEventListener("click", () => {
+    displayStepDiv();
+});

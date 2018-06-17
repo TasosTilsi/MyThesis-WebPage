@@ -204,8 +204,16 @@
 
         <div id="stepButtons" class="btn-group" role="group">
             <!-- <button id="undo" type="button" class="btn btn-outline-secondary" disabled>Undo Step</button> -->
-            <button id="options" type="button" class="btn btn-outline-secondary"><i class="material-icons">settings</i>
-            </button>
+            <div class="btn-group" role="group">
+                <button id="options" type="button" class="btn btn-outline-secondary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">settings</i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <button class="dropdown-item" type="button" id="show_hide_manual">Show/Hide Help</button>
+                    <button class="dropdown-item" type="button" id="show_hide_step">Show/Hide Steps</button>
+                </div>
+            </div>
             <button id="pause" type="button" class="btn btn-outline-secondary" disabled>Pause</button>
             <button id="next" type="button" class="btn btn-outline-secondary" disabled>Next Step</button>
             <button id="skipForward" type="button" class="btn btn-outline-secondary" disabled>Skip Forward</button>
@@ -223,24 +231,33 @@
     </div>
 
     <!--Draggable DIV:-->
-    <div id="dragable_container">
+    <div class="dragable_container" id="dragable_container_manual">
         <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
-        <div id="dragable_container_header">
-            <div id="collapse" class="float-left"><i id="collapse_icon" class="material-icons">expand_more</i></div>
-            <div id="collapse_right" class="float-left" hidden><i class="material-icons">chevron_right</i></div>
-            Click And Drag
+        <div class="dragable_container_header" id="dragable_container_manual_header">
+            <div id="collapse_manual" class="float-left"><i id="collapse_manual_icon"
+                                                            class="material-icons">expand_more</i></div>
+            <div id="collapse_manual_right" class="float-left" hidden><i class="material-icons">chevron_right</i></div>
+            Help
             <div class="float-right"><i class="material-icons right" style="font-size:24px">drag_handle</i></div>
         </div>
-        <div id="dragable_container_content">
-            <div id="left_pane" class="split left">
-                <h4 id="search_title">Press a Search Button</h4>
-                <p id="manual">A manual for this search will appear hear</p>
-            </div>
+        <div class="dragable_container_content" id="dragable_container_manual_content">
+            <h4 id="search_title">Press a Search Button</h4>
+            <p id="manual">A manual for this search will appear hear</p>
+        </div>
+    </div>
 
-            <div id="right_pane" class="split right">
-                <h4>Step by Step</h4>
-                <p>You will see the steps of every search you run </br>(Not Implemented Yet)</p>
+    <!--Draggable DIV:-->
+    <div class="dragable_container" id="dragable_container_step">
+        <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
+        <div class="dragable_container_header" id="dragable_container_step_header">
+            <div id="collapse_step" class="float-left"><i id="collapse_step_icon" class="material-icons">expand_more</i>
             </div>
+            <div id="collapse_step_right" class="float-left" hidden><i class="material-icons">chevron_right</i></div>
+            Step by Step
+            <div class="float-right"><i class="material-icons right" style="font-size:24px">drag_handle</i></div>
+        </div>
+        <div class="dragable_container_content" id="dragable_container_step_content">
+            <p>You will see the steps of every search you run </br>(Not Implemented Yet)</p>
         </div>
     </div>
 

@@ -23,11 +23,11 @@ function generateRandomNumbers(arraySize, numbersRange) {
             random_with_profile = Math.pow(numbersRange, random_with_profile / numbersRange);
         } else if (generation_profile === "logarithmic") {
             // Logarithmic Random numbers β = N * log(x) / log(n)
-            random_with_profile = Math.max(((numbersRange * Math.log(random_with_profile)) / Math.log(numbersRange)),0);
+            random_with_profile = Math.max(((numbersRange * Math.log(random_with_profile)) / Math.log(numbersRange)), 0);
         } else if (generation_profile === "geometric") {
             // Geometric Random numbers
-            random_with_profile = random_with_profile^2 / numbersRange;
-        }else{
+            random_with_profile = random_with_profile ^ 2 / numbersRange;
+        } else {
             //go with linear
             if (numbersRange >= arraySize) {
                 return getUniqueNumber(generatedNumbers, arraySize, numbersRange);
@@ -160,7 +160,19 @@ function sortArray(array) {
 
 // Adding event listeners
 
-document.getElementById("generateNumbers").addEventListener("click", () => { generation_profile = "linear"; displayArray() });
-document.getElementById("exponential").addEventListener("click", () => { generation_profile = "exponential"; displayArray() });
-document.getElementById("logarithmic").addEventListener("click", () => { generation_profile = "logarithmic"; displayArray() });
-document.getElementById("geometric").addEventListener("click", () => { generation_profile = "geometric"; displayArray() });
+document.getElementById("generateNumbers").addEventListener("click", () => {
+    generation_profile = "linear";
+    displayArray();
+});
+document.getElementById("exponential").addEventListener("click", () => {
+    generation_profile = "exponential";
+    displayArray();
+});
+document.getElementById("logarithmic").addEventListener("click", () => {
+    generation_profile = "logarithmic";
+    displayArray();
+});
+document.getElementById("geometric").addEventListener("click", () => {
+    generation_profile = "geometric";
+    displayArray();
+});

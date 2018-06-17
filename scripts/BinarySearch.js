@@ -14,8 +14,6 @@ function binarySearch(searching_array, asked_number) {
         first_time_run_binary = false;
     }
 
-    console.log(`firstIndex = '${firstIndex}', lastIndex = '${lastIndex}', middleIndex = '${middleIndex}'`);
-
     if (searching_array[middleIndex] !== asked_number && firstIndex < lastIndex) {
         if (asked_number < searching_array[middleIndex]) {
             document.querySelector(`[cell_id='${lastIndex}']`).style.backgroundColor = "white";
@@ -27,9 +25,16 @@ function binarySearch(searching_array, asked_number) {
             document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightblue";
         }
         document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "white";
+        console.log(`firstIndex = '${firstIndex}', lastIndex = '${lastIndex}', middleIndex = '${middleIndex}'`);
+        //if(lastIndex-firstIndex === 1 && (lastIndex < 4 || lastIndex > searching_array.length-10)){
+        //   middleIndex = Math.ceil((lastIndex + firstIndex) / 2);
+        //}else{
         middleIndex = Math.floor((lastIndex + firstIndex) / 2);
+        //}
+
         document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
     }
+
     if (searching_array[middleIndex] === asked_number) {
         document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "lightgreen";
         showSnackBar("The number you searched found in position " + middleIndex);
@@ -75,5 +80,14 @@ document.getElementById("binarySearch").addEventListener("click", () => {
     document.getElementById("pause").click();
     console.log("Binary Search Button Clicked");
     searching_profile = "binary";
+    if (first_time_run_binary) {
+        makeTheTableWhite();
+        firstIndex = 0;
+        document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightblue";
+        lastIndex = the_array.length - 1;
+        document.querySelector(`[cell_id='${lastIndex}']`).style.backgroundColor = "lightblue";
+        middleIndex = Math.floor((lastIndex + firstIndex) / 2);
+        document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
+    }
     runTheSearch();
 });
