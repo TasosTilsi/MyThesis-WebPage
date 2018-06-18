@@ -61,23 +61,28 @@ function interpolationSearch(searching_array, asked_number) {
 
 document.getElementById("interpolationSearch").addEventListener("click", () => {
     showTheManual(manual.InterpolationSearch.title, manual.InterpolationSearch.message);
-    makeTheTableWhite();
     document.getElementById("pause").click();
     console.log("Interpolation Search Button Clicked");
     searching_profile = "interpolation";
     let number = parseInt(document.getElementById("searchingNumber").value);
     if (!isNaN(number)) {
-        if (first_time_run_inter) {
-            size = the_array.length;
-            low = 0;
-            high = size - 1;
-            console.log("Setting the low " + low + " and high " + high);
-            document.querySelector(`[cell_id='${low}']`).style.backgroundColor = "lightblue";
-            document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "lightblue";
-            delta = (number - the_array[low]) / (the_array[high] - the_array[low]);
-            position = low + Math.floor((high - low) * delta);
-            console.log("position " + position);
-            document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
+        if (searching_number <= the_array[the_array.length - 1]) {
+            if (first_time_run_inter) {
+                makeTheTableWhite();
+                size = the_array.length;
+                low = 0;
+                high = size - 1;
+                console.log("Setting the low " + low + " and high " + high);
+                document.querySelector(`[cell_id='${low}']`).style.backgroundColor = "lightblue";
+                document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "lightblue";
+                delta = (number - the_array[low]) / (the_array[high] - the_array[low]);
+                position = low + Math.floor((high - low) * delta);
+                console.log("position " + position);
+                document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
+            }
+        } else {
+            showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
+            document.getElementById("pause").click();
         }
     } else {
         // Show this message

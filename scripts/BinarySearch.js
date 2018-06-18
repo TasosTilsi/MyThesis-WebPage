@@ -77,20 +77,24 @@ function binarySearch(searching_array, asked_number) {
 
 document.getElementById("binarySearch").addEventListener("click", () => {
     showTheManual(manual.BinarySearch.title, manual.BinarySearch.message);
-    makeTheTableWhite();
     document.getElementById("pause").click();
     console.log("Binary Search Button Clicked");
     searching_profile = "binary";
     let number = parseInt(document.getElementById("searchingNumber").value);
     if (!isNaN(number)) {
-        if (first_time_run_binary) {
-            makeTheTableWhite();
-            firstIndex = 0;
-            document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightblue";
-            lastIndex = the_array.length - 1;
-            document.querySelector(`[cell_id='${lastIndex}']`).style.backgroundColor = "lightblue";
-            middleIndex = Math.floor((lastIndex + firstIndex) / 2);
-            document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
+        if (searching_number <= the_array[the_array.length - 1]) {
+            if (first_time_run_binary) {
+                makeTheTableWhite();
+                firstIndex = 0;
+                document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightblue";
+                lastIndex = the_array.length - 1;
+                document.querySelector(`[cell_id='${lastIndex}']`).style.backgroundColor = "lightblue";
+                middleIndex = Math.floor((lastIndex + firstIndex) / 2);
+                document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
+            }
+        } else {
+            showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
+            document.getElementById("pause").click();
         }
     } else {
         // Show this message

@@ -72,21 +72,26 @@ function jumpSearch(searching_array, asked_number) {
 
 document.getElementById("jumpSearch").addEventListener("click", () => {
     showTheManual(manual.JumpSearch.title, manual.JumpSearch.message);
-    makeTheTableWhite();
     document.getElementById("pause").click();
     console.log("Jump Search Button Clicked");
     searching_profile = "jump";
     let number = parseInt(document.getElementById("searchingNumber").value);
     if (!isNaN(number)) {
-        if (first_time_run_jump) {
-            console.log("Starting the search...");
-            //Finding the array size
-            size = the_array.length;
-            step = Math.floor(Math.sqrt(size));
-            console.log("Setting the step " + step);
-            document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "lightblue";
-            previous = 0;
-            document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
+        if (searching_number <= the_array[the_array.length - 1]) {
+            if (first_time_run_jump) {
+                makeTheTableWhite();
+                console.log("Starting the search...");
+                //Finding the array size
+                size = the_array.length;
+                step = Math.floor(Math.sqrt(size));
+                console.log("Setting the step " + step);
+                document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "lightblue";
+                previous = 0;
+                document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
+            }
+        } else {
+            showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
+            document.getElementById("pause").click();
         }
     } else {
         // Show this message

@@ -30,7 +30,7 @@ function generateRandomNumbers(arraySize, numbersRange) {
         } else {
             //go with linear
             if (numbersRange >= arraySize) {
-                return getUniqueNumber(generatedNumbers, arraySize, numbersRange);
+                return getUniqueNumber(arraySize, numbersRange);
             } else {
                 //go with normal linear
             }
@@ -41,8 +41,8 @@ function generateRandomNumbers(arraySize, numbersRange) {
     return sortArray(generatedNumbers);
 }
 
-function getUniqueNumber(arr, size, range) {
-    var arr = [];
+function getUniqueNumber(size, range) {
+    let arr = [];
     while (arr.length < size) {
         let randomnumber = Math.floor(Math.random() * range) + 1;
         if (arr.indexOf(randomnumber) > -1) continue;

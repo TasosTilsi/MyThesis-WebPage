@@ -9,7 +9,7 @@ var only_at_next_search_run;
 
 function checkForGeneratedNumbers() {
     // If there are generated numbers
-    if (document.getElementsByClassName("index").item(0) != null) {
+    if (document.getElementsByClassName("index").item(0).innerHTML === "0") {
         // Clearing the backgound colors if there is any
         if (only_at_next_search_run) {
             makeTheTableWhite();
