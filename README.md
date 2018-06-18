@@ -20,6 +20,8 @@ The searches that I have implemented are:
 <li>Fibonacci Search</li>
 </ul>
 
+<h3>Documentation</h3>
+
 <h4>Linear Search</h4>
 
 <b>Little Words:</b>
@@ -94,7 +96,7 @@ int binarySearch(int arr[], int l, int r, int x)
         
     // We reach here when element is not present in array
     
-    return -1;
+   return -1;
 }
 ```
 

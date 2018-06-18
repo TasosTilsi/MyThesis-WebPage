@@ -39,6 +39,16 @@
     left: 454px;
 }
 
+#dragable_container_step_content {
+    text-align: center;
+}
+
+#dragable_container_step_content .row {
+    margin: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 #search_title {
     text-align: center;
 }

@@ -3,7 +3,7 @@ const MAX_INPUT_LENGTH = 4;
 
 var searching_number;
 var searching_profile;
-var only_at_next_search_run = true;
+var only_at_next_search_run;
 
 // Checking for generated numbers and doing the selected search
 
@@ -76,7 +76,7 @@ function enableStepButtons() {
 // Showing a message with this android like snackbar
 
 function showSnackBar(message) {
-    var x = document.getElementById("snackbar");
+    let x = document.getElementById("snackbar");
     x.className = "show";
     x.innerHTML = message;
     console.log("SnackBar Shows");
@@ -88,7 +88,7 @@ function showSnackBar(message) {
 // Clearing only the cells that has background colors
 
 function makeTheTableWhite() {
-    for (var i = 0; i < the_array.length; i++) {
+    for (let i = 0; i < the_array.length; i++) {
         let cell = document.querySelector(`[cell_id='${i}']`).style.backgroundColor;
         if (cell.length > 0 && cell !== "white") {
             console.log("Clearing " + i + " cell");
