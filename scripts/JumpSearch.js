@@ -18,12 +18,12 @@ function jumpSearch(searching_array, asked_number) {
     }
 
     if (searching_array[Math.min(step, size) - 1] < asked_number) {
-        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "red";
+        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "white";
         previous = step;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
 
         if (step < size) {
-            document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "red";
+            document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "white";
             step = Math.min(step + Math.floor(Math.sqrt(size)), size - 1);
             document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "lightblue";
             console.log("Setting the step " + step);
@@ -40,7 +40,7 @@ function jumpSearch(searching_array, asked_number) {
     }
 
     if (searching_array[previous] < asked_number) {
-        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "yellow";
+        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "white";
         previous++;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
 
@@ -72,8 +72,25 @@ function jumpSearch(searching_array, asked_number) {
 
 document.getElementById("jumpSearch").addEventListener("click", () => {
     showTheManual(manual.JumpSearch.title, manual.JumpSearch.message);
+    makeTheTableWhite();
     document.getElementById("pause").click();
     console.log("Jump Search Button Clicked");
     searching_profile = "jump";
+    let number = parseInt(document.getElementById("searchingNumber").value);
+    if (!isNaN(number)) {
+        if (first_time_run_jump) {
+            console.log("Starting the search...");
+            //Finding the array size
+            size = the_array.length;
+            step = Math.floor(Math.sqrt(size));
+            console.log("Setting the step " + step);
+            document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "lightblue";
+            previous = 0;
+            document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
+        }
+    } else {
+        // Show this message
+        showSnackBar("Please <strong>Specify a Number</strong> for search");
+    }
     runTheSearch();
 });

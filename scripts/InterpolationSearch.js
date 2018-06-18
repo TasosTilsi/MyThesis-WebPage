@@ -61,6 +61,7 @@ function interpolationSearch(searching_array, asked_number) {
 
 document.getElementById("interpolationSearch").addEventListener("click", () => {
     showTheManual(manual.InterpolationSearch.title, manual.InterpolationSearch.message);
+    makeTheTableWhite();
     document.getElementById("pause").click();
     console.log("Interpolation Search Button Clicked");
     searching_profile = "interpolation";

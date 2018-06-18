@@ -62,8 +62,8 @@ function binarySearch(searching_array, asked_number) {
     if ((lastIndex === firstIndex ||
         firstIndex === middleIndex ||
         lastIndex === middleIndex) &&
-        (searching_array[middleIndex] !== asked_number ||
-            (searching_array[firstIndex] > asked_number && searching_array[firstIndex] !== asked_number) ||
+        (searching_array[middleIndex] !== asked_number &&
+            (searching_array[firstIndex] > asked_number && searching_array[firstIndex] !== asked_number) &&
             (searching_array[lastIndex] < asked_number && searching_array[lastIndex] !== asked_number))) {
         showSnackBar("The number you searched for is not in the generated array!");
         document.getElementById("pause").click();
@@ -77,17 +77,24 @@ function binarySearch(searching_array, asked_number) {
 
 document.getElementById("binarySearch").addEventListener("click", () => {
     showTheManual(manual.BinarySearch.title, manual.BinarySearch.message);
+    makeTheTableWhite();
     document.getElementById("pause").click();
     console.log("Binary Search Button Clicked");
     searching_profile = "binary";
-    if (first_time_run_binary) {
-        makeTheTableWhite();
-        firstIndex = 0;
-        document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightblue";
-        lastIndex = the_array.length - 1;
-        document.querySelector(`[cell_id='${lastIndex}']`).style.backgroundColor = "lightblue";
-        middleIndex = Math.floor((lastIndex + firstIndex) / 2);
-        document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
+    let number = parseInt(document.getElementById("searchingNumber").value);
+    if (!isNaN(number)) {
+        if (first_time_run_binary) {
+            makeTheTableWhite();
+            firstIndex = 0;
+            document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightblue";
+            lastIndex = the_array.length - 1;
+            document.querySelector(`[cell_id='${lastIndex}']`).style.backgroundColor = "lightblue";
+            middleIndex = Math.floor((lastIndex + firstIndex) / 2);
+            document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
+        }
+    } else {
+        // Show this message
+        showSnackBar("Please <strong>Specify a Number</strong> for search");
     }
     runTheSearch();
 });
