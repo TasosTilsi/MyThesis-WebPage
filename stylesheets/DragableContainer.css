@@ -30,16 +30,15 @@
 }
 
 #dragable_container_manual {
-    /*top: 458px;*/
     left: 16px;
 }
 
 #dragable_container_step {
-    /*top: 458px;*/
     left: 950px;
 }
 
 #dragable_container_step_content {
+    resize: none;
     text-align: center;
 }
 
