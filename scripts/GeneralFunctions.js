@@ -39,8 +39,8 @@ function checkForGeneratedNumbers() {
                            }*/
 
             } else {
-                showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
                 document.getElementById("pause").click();
+                showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
             }
         } else {
             // Show this message

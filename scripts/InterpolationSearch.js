@@ -1,9 +1,9 @@
-var first_time_run_inter = true;
-var size;
-var low;
-var high;
-var delta;
-var position;
+let first_time_run_inter = true;
+let size;
+let low;
+let high;
+let delta;
+let position;
 
 function interpolationSearch(searching_array, asked_number) {
 
@@ -19,6 +19,7 @@ function interpolationSearch(searching_array, asked_number) {
         delta = (asked_number - searching_array[low]) / (searching_array[high] - searching_array[low]);
         position = low + Math.floor((high - low) * delta);
         document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
+        getValuesforIntepolationSteps(low, high, position, false);
         first_time_run_inter = false;
     }
 
@@ -27,9 +28,11 @@ function interpolationSearch(searching_array, asked_number) {
         delta = (asked_number - searching_array[low]) / (searching_array[high] - searching_array[low]);
         position = low + Math.floor((high - low) * delta);
         document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
+        getValuesforIntepolationSteps(low, high, position, false);
 
         if (searching_array[position] === asked_number) {
             document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "lightgreen";
+            getValuesforIntepolationSteps(low, high, position, true);
             showSnackBar("The number you searched found in position " + position);
             first_time_run_inter = true;
             only_at_next_search_run = true;
@@ -42,11 +45,13 @@ function interpolationSearch(searching_array, asked_number) {
             low = position + 1;
             document.querySelector(`[cell_id='${low}']`).style.backgroundColor = "lightblue";
             console.log("Setting the low " + low + " and high " + high);
+            getValuesforIntepolationSteps(low, high, position, false);
         } else {
             document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "white";
             high = position - 1;
             document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "lightblue";
             console.log("Setting the low " + low + " and high " + high);
+            getValuesforIntepolationSteps(low, high, position, false);
         }
     } else {
         showSnackBar("The number you searched for is not in the generated array!");
@@ -54,9 +59,17 @@ function interpolationSearch(searching_array, asked_number) {
         only_at_next_search_run = true;
         document.getElementById("pause").click();
         document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
+        getValuesforIntepolationSteps(low, high, position, false);
         return -1;
     }
 
+}
+
+function getValuesforIntepolationSteps(l, h, pos, found) {
+    let low = document.querySelector(`[cell_id='${l}']`);
+    let high = document.querySelector(`[cell_id='${h}']`);
+    let position = document.querySelector(`[cell_id='${pos}']`);
+    intepolationDrawSteps(low, high, position, found);
 }
 
 document.getElementById("interpolationSearch").addEventListener("click", () => {
@@ -66,7 +79,6 @@ document.getElementById("interpolationSearch").addEventListener("click", () => {
     searching_profile = "interpolation";
     let number = parseInt(document.getElementById("searchingNumber").value);
     if (!isNaN(number)) {
-        if (searching_number <= the_array[the_array.length - 1]) {
             if (first_time_run_inter) {
                 makeTheTableWhite();
                 size = the_array.length;
@@ -79,11 +91,8 @@ document.getElementById("interpolationSearch").addEventListener("click", () => {
                 position = low + Math.floor((high - low) * delta);
                 console.log("position " + position);
                 document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
+                getValuesforIntepolationSteps(low, high, position, false);
             }
-        } else {
-            showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
-            document.getElementById("pause").click();
-        }
     } else {
         // Show this message
         showSnackBar("Please <strong>Specify a Number</strong> for search");

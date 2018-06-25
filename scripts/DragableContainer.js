@@ -44,7 +44,7 @@ function dragElement(elmnt) {
 function showTheManual(title, message) {
     document.getElementById("search_title").innerHTML = title;
     document.getElementById("manual").innerHTML = message;
-    document.getElementById("dragable_container_step_content").scrollTop = 0;
+    document.getElementById("dragable_container_manual_content").scrollTop = 0;
 }
 
 function displayManualDiv() {

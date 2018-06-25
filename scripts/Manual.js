@@ -12,7 +12,7 @@ var manual = {
         "<li>If x doesn’t match with any of elements, return -1.</li>" +
         "</ul>" +
         "<b>Code:</b>" +
-        "<pre class='prettyprint lang-c'>// C code for linearly search x in arr[].  If x \n" +
+        "<pre class='prettyprint lang-c'><code>// C code for linearly search x in arr[].  If x \n" +
         "// is present  then return its  location,  otherwise\n" +
         "// return -1\n" +
         "int linearSearch(int arr[], int n, int x)\n" +
@@ -22,7 +22,7 @@ var manual = {
         "        if (arr[i] == x)\n" +
         "         return i;\n" +
         "    return -1;\n" +
-        "}</pre>"
+        "}</code></pre>"
     },
     BinarySearch: {
         title: "<b>Binary Search</b>",
@@ -39,7 +39,7 @@ var manual = {
         "<li> Else (x is smaller) recur for the left half.</li>\n" +
         "</ol>" +
         "<b>Code:</b>" +
-        "<pre class='prettyprint lang-c'> int binarySearch(int arr[], int l, int r, int x)\n" +
+        "<pre class='prettyprint lang-c'><code> int binarySearch(int arr[], int l, int r, int x)\n" +
         "{\n" +
         "   if (r >= l)\n" +
         "   {\n" +
@@ -63,7 +63,7 @@ var manual = {
         "   // We reach here when element is not \n" +
         "   // present in array\n" +
         "   return -1;\n" +
-        "}</pre>"
+        "}</code></pre>"
     },
     JumpSearch: {
         title: "<b>Jump Search</b>",
@@ -74,7 +74,7 @@ var manual = {
         "<b>Algorithm:</b></br>" +
         "For example, suppose we have an array arr[] of size n and block (to be jumped) size m. Then we search at the indexes arr[0], arr[m], arr[2m]…..arr[km] and so on. Once we find the interval (arr[km] < x < arr[(k+1)m]), we perform a linear search operation from the index km to find the element x." +
         "</br></br><b>Code:</b>" +
-        "<pre class='prettyprint lang-c'> int jumpSearch(int arr[], int x, int n)\n" +
+        "<pre class='prettyprint lang-c'><code> int jumpSearch(int arr[], int x, int n)\n" +
         "{\n" +
         "    // Finding block size to be jumped\n" +
         "    int step = sqrt(n);\n" +
@@ -107,7 +107,7 @@ var manual = {
         " \n" +
         "    return -1;\n" +
         "}" +
-        "}</pre>"
+        "}</code></pre>"
     },
     InterpolationSearch: {
         title: "<b>Interpolation Search</b>",
@@ -133,7 +133,7 @@ var manual = {
         "<li>Repeat until a match is found or the sub-array reduces to zero.</li>\n" +
         "</ol>" +
         "<b>Code:</b>" +
-        "<pre class='prettyprint lang-c'> // If x is present in arr[0..n-1], then returns\n" +
+        "<pre class='prettyprint lang-c'><code>// If x is present in arr[0..n-1], then returns\n" +
         "// index of it, else returns -1.\n" +
         "int interpolationSearch(int arr[], int n, int x)\n" +
         "{\n" +
@@ -162,7 +162,7 @@ var manual = {
         "            hi = pos - 1;\n" +
         "    }\n" +
         "    return -1;\n" +
-        "}</pre>"
+        "}</code></pre>"
     },
     ExponentialSearch: {
         title: "<b>Exponential Search</b>",
@@ -174,7 +174,7 @@ var manual = {
         "<p>Exponential search allows for searching through a sorted, unbounded list for a specified input value (the search \"key\"). The algorithm consists of two stages. The first stage determines a range in which the search key would reside if it were in the list. In the second stage, a binary search is performed on this range. In the first stage, assuming that the list is sorted in ascending order, the algorithm looks for the first exponent, j, where the value 2^j is greater than the search key. This value, 2^j becomes the upper bound for the binary search with the previous power of 2, 2^j - 1, being the lower bound for the binary search." +
         "In each step, the algorithm compares the search key value with the key value at the current search index. If the element at the current index is smaller than the search key, the algorithm repeats, skipping to the next search index by doubling it, calculating the next power of 2. If the element at the current index is larger than the search key, the algorithm now knows that the search key, if it is contained in the list at all, is located in the interval formed by the previous search index, 2^j - 1, and the current search index, 2^j. The binary search is then performed with the result of either a failure, if the search key is not in the list, or the position of the search key in the list.</p>" +
         "<b>Code:</b>" +
-        "<pre class='prettyprint lang-c'> // Returns position of first ocurrence of\n" +
+        "<pre class='prettyprint lang-c'><code>// Returns position of first ocurrence of\n" +
         "// x in array\n" +
         "int exponentialSearch(int arr[], int n, int x)\n" +
         "{\n" +
@@ -191,8 +191,8 @@ var manual = {
         "    //  Call binary search for the found range.\n" +
         "    return binarySearch(arr, i/2, min(i, n), x);\n" +
         "}" +
-        "}</pre>" +
-        "<pre class='prettyprint lang-c'>// A recursive binary search function. It returns\n" +
+        "}</code></pre>" +
+        "<pre class='prettyprint lang-c'><code>// A recursive binary search function. It returns\n" +
         "// location of x in  given array arr[l..r] is\n" +
         "// present, otherwise -1\n" +
         "int binarySearch(int arr[], int l, int r, int x)\n" +
@@ -219,7 +219,7 @@ var manual = {
         "    // We reach here when element is not present\n" +
         "    // in array\n" +
         "    return -1;\n" +
-        "}</pre>"
+        "}</code></pre>"
     },
     FibonacciSearch: {
         title: "<b>Fibonacci Search</b>",
@@ -242,7 +242,7 @@ var manual = {
         "<li>Since there might be a single element remaining for comparison, check if fibMm1 is 1. If Yes,  compare x with that remaining element. If match, return index.</li>\n" +
         "</ol>" +
         "<b>Code:</b>" +
-        "<pre class='prettyprint lang-c'> /* Returns index of x if present,  else returns -1 */\n" +
+        "<pre class='prettyprint lang-c'><code> /* Returns index of x if present,  else returns -1 */\n" +
         "int fibMonaccianSearch(int arr[], int x, int n)\n" +
         "{\n" +
         "    /* Initialize fibonacci numbers */\n" +
@@ -298,6 +298,6 @@ var manual = {
         " \n" +
         "    /*element not found. return -1 */\n" +
         "    return -1;\n" +
-        "}</pre>"
+        "}</code></pre>"
     }
 };

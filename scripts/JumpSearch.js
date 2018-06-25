@@ -1,39 +1,43 @@
-var first_time_run_jump = true;
-var size;
-var step;
-var previous;
+let first_time_run_jump = true;
+let jump_size;
+let step;
+let previous;
 
 function jumpSearch(searching_array, asked_number) {
 
     if (first_time_run_jump) {
         console.log("Starting the search...");
-        //Finding the array size
-        size = searching_array.length;
-        step = Math.floor(Math.sqrt(size));
+        //Finding the array jump_size
+        jump_size = searching_array.length;
+        step = Math.floor(Math.sqrt(jump_size));
         console.log("Setting the step " + step);
         document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "lightblue";
         previous = 0;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
         first_time_run_jump = false;
+        getValuesforJumpSteps(previous, step, false);
     }
 
-    if (searching_array[Math.min(step, size) - 1] < asked_number) {
+    if (searching_array[Math.min(step, jump_size) - 1] < asked_number) {
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "white";
         previous = step;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
+        getValuesforJumpSteps(previous, step, false);
 
-        if (step < size) {
+        if (step < jump_size) {
             document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "white";
-            step = Math.min(step + Math.floor(Math.sqrt(size)), size - 1);
+            step = Math.min(step + Math.floor(Math.sqrt(jump_size)), jump_size - 1);
             document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "lightblue";
             console.log("Setting the step " + step);
+            getValuesforJumpSteps(previous, step, false);
         }
 
-        if (previous > size) {
+        if (previous > jump_size) {
             showSnackBar("The number you searched for is not in the generated array!");
             first_time_run_jump = true;
             only_at_next_search_run = true;
             document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
+            getValuesforJumpSteps(previous, step, false);
             document.getElementById("pause").click();
             return -1;
         }
@@ -43,12 +47,14 @@ function jumpSearch(searching_array, asked_number) {
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "white";
         previous++;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
+        getValuesforJumpSteps(previous, step, false);
 
-        if (previous === size) {
+        if (previous === jump_size) {
             showSnackBar("The number you searched for is not in the generated array!");
             first_time_run_jump = true;
             only_at_next_search_run = true;
             document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
+            getValuesforJumpSteps(previous, step, false);
             document.getElementById("pause").click();
             return -1;
         }
@@ -59,6 +65,7 @@ function jumpSearch(searching_array, asked_number) {
         first_time_run_jump = true;
         only_at_next_search_run = true;
         document.getElementById("pause").click();
+        getValuesforJumpSteps(previous, step, true);
         return previous;
     } else {
         showSnackBar("The number you searched for is not in the generated array!");
@@ -66,8 +73,15 @@ function jumpSearch(searching_array, asked_number) {
         only_at_next_search_run = true;
         document.getElementById("pause").click();
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
+        getValuesforJumpSteps(previous, step, false);
         return -1;
     }
+}
+
+function getValuesforJumpSteps(index, step, found) {
+    let cell = document.querySelector(`[cell_id='${index}']`);
+    let stepCell = document.querySelector(`[cell_id='${step}']`);
+    jumpDrawSteps(cell, stepCell, found);
 }
 
 document.getElementById("jumpSearch").addEventListener("click", () => {
@@ -77,22 +91,18 @@ document.getElementById("jumpSearch").addEventListener("click", () => {
     searching_profile = "jump";
     let number = parseInt(document.getElementById("searchingNumber").value);
     if (!isNaN(number)) {
-        if (searching_number <= the_array[the_array.length - 1]) {
             if (first_time_run_jump) {
                 makeTheTableWhite();
                 console.log("Starting the search...");
-                //Finding the array size
-                size = the_array.length;
-                step = Math.floor(Math.sqrt(size));
+                //Finding the array jump_size
+                jump_size = the_array.length;
+                step = Math.floor(Math.sqrt(jump_size));
                 console.log("Setting the step " + step);
                 document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "lightblue";
                 previous = 0;
                 document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
+                getValuesforJumpSteps(previous, step, false);
             }
-        } else {
-            showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
-            document.getElementById("pause").click();
-        }
     } else {
         // Show this message
         showSnackBar("Please <strong>Specify a Number</strong> for search");
