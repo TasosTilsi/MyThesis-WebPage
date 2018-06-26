@@ -1,4 +1,4 @@
-<img src="https://github.com/TasosTilsi/MyThesis-Android-App/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"/> <img src="https://github.com/TasosTilsi/MyThesis-Android-App/blob/master/app/src/main/res/drawable/teiser_logo.png"/>
+<img src="https://github.com/TasosTilsi/MyThesis-WebPage/blob/master/resources/logo.png"/> <img src="https://github.com/TasosTilsi/MyThesis-WebPage/blob/master/resources/teiser_logo.png"/>
 <br/>
 <h1>MyThesis WebPage</h1>
 <h3>Title</h3>
@@ -199,7 +199,7 @@ int interpolationSearch(int arr[], int n, int x)
             lo = pos + 1;
         // If x is smaller, x is in the lower part
         else
-            hi = pos - 1;\n" +
+            hi = pos - 1;
     }
     return -1;
 }

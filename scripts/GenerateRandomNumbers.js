@@ -158,21 +158,36 @@ function sortArray(array) {
     return sortArray(left).concat(pivot, sortArray(right));
 };
 
+function resetSearches() {
+    document.getElementById("pause").click();
+    first_time_run_linear = true;
+    first_time_run_binary = true;
+    first_time_run_jump = true;
+    first_time_run_inter = true;
+    first_time_run_expo = true;
+    first_time_run_bin = true; // comes with expo
+    first_time_run_fib = true;
+}
+
 // Adding event listeners
 
 document.getElementById("generateNumbers").addEventListener("click", () => {
     generation_profile = "linear";
+    resetSearches();
     displayArray();
 });
 document.getElementById("exponential").addEventListener("click", () => {
     generation_profile = "exponential";
+    resetSearches();
     displayArray();
 });
 document.getElementById("logarithmic").addEventListener("click", () => {
     generation_profile = "logarithmic";
+    resetSearches();
     displayArray();
 });
 document.getElementById("geometric").addEventListener("click", () => {
     generation_profile = "geometric";
+    resetSearches();
     displayArray();
 });

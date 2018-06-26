@@ -20,6 +20,7 @@ function interpolationSearch(searching_array, asked_number) {
         position = low + Math.floor((high - low) * delta);
         document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
         getValuesforIntepolationSteps(low, high, position, false);
+        enableOrDisableInputs();
         first_time_run_inter = false;
     }
 
@@ -37,6 +38,7 @@ function interpolationSearch(searching_array, asked_number) {
             first_time_run_inter = true;
             only_at_next_search_run = true;
             document.getElementById("pause").click();
+            enableOrDisableInputs();
             return position;
         }
 
@@ -60,6 +62,7 @@ function interpolationSearch(searching_array, asked_number) {
         document.getElementById("pause").click();
         document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
         getValuesforIntepolationSteps(low, high, position, false);
+        enableOrDisableInputs();
         return -1;
     }
 

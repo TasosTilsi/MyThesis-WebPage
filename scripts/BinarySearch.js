@@ -1,7 +1,7 @@
-var first_time_run_binary = true;
-var firstIndex;
-var lastIndex;
-var middleIndex;
+let first_time_run_binary = true;
+let firstIndex;
+let lastIndex;
+let middleIndex;
 
 function binarySearch(searching_array, asked_number) {
     if (first_time_run_binary) {
@@ -13,6 +13,7 @@ function binarySearch(searching_array, asked_number) {
         document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
         first_time_run_binary = false;
         getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false);
+        enableOrDisableInputs();
     }
 
     if (searching_array[middleIndex] !== asked_number && firstIndex < lastIndex) {
@@ -37,6 +38,7 @@ function binarySearch(searching_array, asked_number) {
         getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, true);
         showSnackBar("The number you searched found in position " + middleIndex);
         only_at_next_search_run = true;
+        enableOrDisableInputs();
         first_time_run_binary = true;
         document.getElementById("pause").click();
         return middleIndex;
@@ -67,6 +69,7 @@ function binarySearch(searching_array, asked_number) {
         showSnackBar("The number you searched for is not in the generated array!");
         document.getElementById("pause").click();
         first_time_run_binary = true;
+        enableOrDisableInputs();
         only_at_next_search_run = true;
         return -1;
     }

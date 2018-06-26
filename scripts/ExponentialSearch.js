@@ -1,11 +1,11 @@
-var first_time_run_expo = true;
-var first_time_run_bin = true;
-var expo_i;
-var expo_size;
-var mid;
-var left;
-var right;
-var found_number;
+let first_time_run_expo = true;
+let first_time_run_bin = true;
+let expo_i;
+let expo_size;
+let mid;
+let left;
+let right;
+let found_number;
 
 function exponentialSearch(searching_array, asked_number) {
 
@@ -16,6 +16,7 @@ function exponentialSearch(searching_array, asked_number) {
         right = 0;
         document.querySelector(`[cell_id='${expo_i}']`).style.backgroundColor = "lightblue";
         expo_size = searching_array.length - 1;
+        enableOrDisableInputs();
         first_time_run_expo = false;
     }
 
@@ -24,6 +25,7 @@ function exponentialSearch(searching_array, asked_number) {
         showSnackBar("The number you searched found in position " + 0);
         only_at_next_search_run = true;
         first_time_run_expo = true;
+        enableOrDisableInputs();
         document.getElementById("pause").click();
         return 0;
     }
@@ -34,12 +36,18 @@ function exponentialSearch(searching_array, asked_number) {
 
     if (expo_i < expo_size && searching_array[expo_i] <= asked_number) {
         expo_i = expo_i * 2;
-        if (expo_i < expo_size) {
-            document.querySelector(`[cell_id='${expo_i}']`).style.backgroundColor = "red";
-        }
-        console.log(`expo_i = '${expo_i}'`);
+        document.querySelector(`[cell_id='${Math.min(expo_i, expo_size)}']`).style.backgroundColor = "red";
+        //console.log(`expo_i = '${expo_i}'`);
     }else{
         document.getElementById("pause").click();
+        if (first_time_run_bin) {
+            left = Math.floor(expo_i / 2);
+            document.querySelector(`[cell_id='${left}']`).style.backgroundColor = "lightblue";
+            right = Math.min(expo_i, expo_size);
+            document.querySelector(`[cell_id='${right}']`).style.backgroundColor = "lightblue";
+            mid = Math.floor((left + right) / 2);
+            document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "orange";
+        }
         runBinSearch(searching_array, asked_number);
     }
 
@@ -58,8 +66,8 @@ function binSearch(arr, x) {
         first_time_run_bin = false;
     }
 
-    console.log(`>>left = '${left}', right = '${right}', mid = '${mid}'`);
-    console.log(`>>arr[left] = '${arr[left]}', arr[right] = '${arr[right]}', arr[mid] = '${arr[mid]}', x = '${x}'`);
+    // console.log(`>>left = '${left}', right = '${right}', mid = '${mid}'`);
+    // console.log(`>>arr[left] = '${arr[left]}', arr[right] = '${arr[right]}', arr[mid] = '${arr[mid]}', x = '${x}'`);
     if (arr[mid] !== x && left <= right) {
         if (x < arr[mid]) {
             document.querySelector(`[cell_id='${right}']`).style.backgroundColor = "white";
@@ -74,14 +82,15 @@ function binSearch(arr, x) {
         mid = Math.floor((right + left) / 2);
         document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "orange";
     }
-    console.log(`>>>>left = '${left}', right = '${right}', mid = '${mid}'`);
-    console.log(`>>>>arr[left] = '${arr[left]}', arr[right] = '${arr[right]}', arr[mid] = '${arr[mid]}', x = '${x}'`);
+    // console.log(`>>>>left = '${left}', right = '${right}', mid = '${mid}'`);
+    // console.log(`>>>>arr[left] = '${arr[left]}', arr[right] = '${arr[right]}', arr[mid] = '${arr[mid]}', x = '${x}'`);
     if (arr[mid] === x) {
         document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "lightgreen";
         showSnackBar("The number you searched found in position " + mid);
         only_at_next_search_run = true;
         first_time_run_expo = true;
         first_time_run_bin = true;
+        enableOrDisableInputs();
         document.getElementById("pause").click();
         return mid;
     }
@@ -91,6 +100,7 @@ function binSearch(arr, x) {
         only_at_next_search_run = true;
         first_time_run_expo = true;
         first_time_run_bin = true;
+        enableOrDisableInputs();
         document.getElementById("pause").click();
         return left;
     }
@@ -100,6 +110,7 @@ function binSearch(arr, x) {
         only_at_next_search_run = true;
         first_time_run_expo = true;
         first_time_run_bin = true;
+        enableOrDisableInputs();
         document.getElementById("pause").click();
         return right;
     }
@@ -114,6 +125,7 @@ function binSearch(arr, x) {
         first_time_run_expo = true;
         first_time_run_bin = true;
         only_at_next_search_run = true;
+        enableOrDisableInputs();
         return -1;
     }
 }

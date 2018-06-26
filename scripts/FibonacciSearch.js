@@ -1,11 +1,11 @@
-var first_time_run_fib = true;
-var flag;
-var fib_size;
-var fib;
-var fib1;
-var fib2;
-var index;
-var offset;
+let first_time_run_fib = true;
+let flag;
+let fib_size;
+let fib;
+let fib1;
+let fib2;
+let index;
+let offset;
 
 function fibonacciSearch(searching_array, asked_number) {
 
@@ -16,9 +16,13 @@ function fibonacciSearch(searching_array, asked_number) {
         fib1 = 1;
         fib2 = 0;
         fib = fib2 + fib1;
+        document.querySelector(`[cell_id='${fib2}']`).style.backgroundColor = "red";
+        document.querySelector(`[cell_id='${fib1}']`).style.backgroundColor = "red";
+        document.querySelector(`[cell_id='${fib}']`).style.backgroundColor = "red";
         index = 0;
         offset = -1;
         first_time_run_fib = false;
+        enableOrDisableInputs();
         flag = 0;
     }
 
@@ -31,7 +35,7 @@ function fibonacciSearch(searching_array, asked_number) {
             fib2 = fib1;
             fib1 = fib;
             fib = fib1 + fib2;
-            console.log(">Setting the fib2 " + fib2 + " and fib1 " + fib1 + " and fib " + fib);
+            //console.log(">Setting the fib2 " + fib2 + " and fib1 " + fib1 + " and fib " + fib);
             if (fib2 < fib_size) {
                 document.querySelector(`[cell_id='${fib2}']`).style.backgroundColor = "red";
             }
@@ -50,7 +54,7 @@ function fibonacciSearch(searching_array, asked_number) {
             document.querySelector(`[cell_id='${index}']`).style.backgroundColor = "white";
             index = Math.min(offset + fib2, fib_size - 1);
             document.querySelector(`[cell_id='${index}']`).style.backgroundColor = "orange";
-            console.log(">>>Setting the index " + index);
+            //console.log(">>>Setting the index " + index);
             if (asked_number < searching_array[index]) {
                 if (fib2 < fib_size) {
                     document.querySelector(`[cell_id='${fib2}']`).style.backgroundColor = "white";
@@ -64,7 +68,7 @@ function fibonacciSearch(searching_array, asked_number) {
                 fib = fib2;
                 fib1 = fib1 - fib2;
                 fib2 = fib - fib1;
-                console.log(">>Setting the fib2 " + fib2 + " and fib1 " + fib1 + " and fib " + fib);
+                //console.log(">>Setting the fib2 " + fib2 + " and fib1 " + fib1 + " and fib " + fib);
                 if (fib2 < fib_size) {
                     document.querySelector(`[cell_id='${fib2}']`).style.backgroundColor = "lightblue";
                 }
@@ -100,7 +104,7 @@ function fibonacciSearch(searching_array, asked_number) {
                     document.querySelector(`[cell_id='${offset}']`).style.backgroundColor = "white";
                 }
                 offset = index;
-                console.log(">>>Setting the fib2 " + fib2 + " and fib1 " + fib1 + " and fib " + fib + " offset " + offset);
+                //console.log(">>>Setting the fib2 " + fib2 + " and fib1 " + fib1 + " and fib " + fib + " offset " + offset);
                 if (offset < fib_size) {
                     document.querySelector(`[cell_id='${offset}']`).style.backgroundColor = "orange";
                 }
@@ -113,6 +117,7 @@ function fibonacciSearch(searching_array, asked_number) {
                 only_at_next_search_run = true;
                 flag = 0;
                 document.getElementById("pause").click();
+                enableOrDisableInputs();
                 return index;
             }
         }
@@ -128,6 +133,7 @@ function fibonacciSearch(searching_array, asked_number) {
             only_at_next_search_run = true;
             flag = 0;
             document.getElementById("pause").click();
+            enableOrDisableInputs();
             return offset + 1;
         } else {
             showSnackBar("The number you searched for is not in the generated array!");
@@ -136,6 +142,7 @@ function fibonacciSearch(searching_array, asked_number) {
             flag = 0;
             document.getElementById("pause").click();
             document.querySelector(`[cell_id='${offset + 1}']`).style.backgroundColor = "orange";
+            enableOrDisableInputs();
             return -1;
         }
     }

@@ -8,6 +8,7 @@ function linearSearch(searching_array, asked_number) {
         document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "orange";
         getValuesforLinearSteps(searching_array, i, false);
         first_time_run_linear = false;
+        enableOrDisableInputs();
     } else {
         document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "white";
         i++;
@@ -22,6 +23,7 @@ function linearSearch(searching_array, asked_number) {
             document.getElementById("pause").click();
             first_time_run_linear = true;
             only_at_next_search_run = true;
+            enableOrDisableInputs();
             return i;
         } else if (asked_number < searching_array[i + 1]) {
             document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "orange";
@@ -31,6 +33,7 @@ function linearSearch(searching_array, asked_number) {
             document.getElementById("pause").click();
             first_time_run_linear = true;
             only_at_next_search_run = true;
+            enableOrDisableInputs();
             return -1;
         } else if (searching_array.length - 1 === i) {
             getValuesforLinearSteps(searching_array, i, false);
@@ -38,6 +41,7 @@ function linearSearch(searching_array, asked_number) {
             document.getElementById("pause").click();
             first_time_run_linear = true;
             only_at_next_search_run = true;
+            enableOrDisableInputs();
             return -1;
         } else {
             document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "orange";
