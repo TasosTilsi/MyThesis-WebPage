@@ -2,21 +2,20 @@ const DEFAULT_ARRAY_SIZE = 100;
 const DEFAULT_NUMBERS_RANGE = 300;
 const ARRAY_COLUMN_WIDTH = 20;
 
-var the_array;
-var generation_profile;
-var array_size;
-var numbers_range;
+let the_array;
+let generation_profile;
+let array_size;
+let numbers_range;
 
 // Generate the numbers
 
 function generateRandomNumbers(arraySize, numbersRange) {
-    var generatedNumbers = [];
+    let generatedNumbers = [];
 
     for (var i = 0; i < arraySize; i++) {
         // Linear Random numbers
-        var random_uniform = Math.floor(Math.random() * numbersRange);
         // doing this to find the range you give in the input
-        var random_with_profile = random_uniform;
+        let random_with_profile = Math.floor(Math.random() * numbersRange);
 
         if (generation_profile === "exponential") {
             // Exponential Random numbers β = N^(x/N)
@@ -156,10 +155,11 @@ function sortArray(array) {
     }
 
     return sortArray(left).concat(pivot, sortArray(right));
-};
+}
 
 function resetSearches() {
     document.getElementById("pause").click();
+    document.getElementById("searchingNumber").disabled = false;
     first_time_run_linear = true;
     first_time_run_binary = true;
     first_time_run_jump = true;

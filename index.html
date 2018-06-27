@@ -201,18 +201,27 @@
         <div id="stepButtons" class="btn-group" role="group">
             <!-- <button id="undo" type="button" class="btn btn-outline-secondary" disabled>Undo Step</button> -->
             <div class="btn-group" role="group">
-                <button id="options" type="button" class="btn btn-outline-secondary dropdown-toggle"
+                <button id="options" title="settings" type="button" class="btn btn-outline-secondary dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="material-icons">settings</i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <button class="dropdown-item" type="button" id="show_hide_manual">Show/Hide Help</button>
-                    <button class="dropdown-item" type="button" id="show_hide_step">Show/Hide Steps</button>
+                    <button class="dropdown-item" title="Show/Hide Help" type="button" id="show_hide_manual">Show/Hide
+                        Help
+                    </button>
+                    <button class="dropdown-item" title="Show/Hide Steps" type="button" id="show_hide_step">Show/Hide
+                        Steps
+                    </button>
                 </div>
             </div>
-            <button id="pause" type="button" class="btn btn-outline-secondary" disabled>Pause</button>
-            <button id="next" type="button" class="btn btn-outline-secondary" disabled>Next Step</button>
-            <button id="skipForward" type="button" class="btn btn-outline-secondary" disabled>Skip Forward</button>
+            <button id="pause" title="Pause the method" type="button" class="btn btn-outline-secondary" disabled>Pause
+            </button>
+            <button id="next" title="One step at time" type="button" class="btn btn-outline-secondary" disabled>Next
+                Step
+            </button>
+            <button id="skipForward" title="Press to Skip to the end" type="button" class="btn btn-outline-secondary"
+                    disabled>Skip Forward
+            </button>
             <div id="slider">
                 <input class="bar" type="range" id="rangeinput" value="1000" min="350" max="3000" step="50"
                        title="Animation Speed"/>
@@ -227,7 +236,7 @@
     </div>
 
     <!--Draggable DIV:-->
-    <div class="dragable_container" id="dragable_container_manual">
+    <div class="dragable_container" id="dragable_container_manual" title="Click and Drag">
         <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
         <div class="dragable_container_header" id="dragable_container_manual_header">
             <div id="collapse_manual" class="float-left"><i id="collapse_manual_icon"
@@ -245,7 +254,7 @@
     <!--Draggable DIV:-->
     <div class="dragable_container" id="dragable_container_step">
         <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
-        <div class="dragable_container_header" id="dragable_container_step_header">
+        <div class="dragable_container_header" id="dragable_container_step_header" title="Click and Drag">
             <div id="collapse_step" class="float-left"><i id="collapse_step_icon" class="material-icons">expand_more</i>
             </div>
             <div id="collapse_step_right" class="float-left" hidden><i class="material-icons">chevron_right</i></div>
@@ -253,8 +262,8 @@
             <div class="float-right"><i class="material-icons right" style="font-size:24px">drag_handle</i></div>
         </div>
         <div class="dragable_container_content" id="dragable_container_step_content">
-            <p>You will see the steps of every search you run... <br>(Not Implemented Yet for <br>Exponential and
-                Fibonacci Searches)</p>
+            <p>You will see the steps of every search you run... <br>(Not Implemented Yet for
+                Fibonacci Search)</p>
         </div>
     </div>
 

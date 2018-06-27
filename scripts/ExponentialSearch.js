@@ -22,6 +22,7 @@ function exponentialSearch(searching_array, asked_number) {
 
     if (asked_number === searching_array[0]) {
         document.querySelector(`[cell_id='${0}']`).style.backgroundColor = "lightgreen";
+        getValuesforExponentialSteps(0, 0, left, right, mid, expo_size, true);
         showSnackBar("The number you searched found in position " + 0);
         only_at_next_search_run = true;
         first_time_run_expo = true;
@@ -30,15 +31,16 @@ function exponentialSearch(searching_array, asked_number) {
         return 0;
     }
 
-    if (expo_i < expo_size) {
-        document.querySelector(`[cell_id='${expo_i}']`).style.backgroundColor = "white";
-    }
+    //if (expo_i < expo_size) {
+    document.querySelector(`[cell_id='${Math.min(expo_i, expo_size)}']`).style.backgroundColor = "white";
+    //
 
     if (expo_i < expo_size && searching_array[expo_i] <= asked_number) {
         expo_i = expo_i * 2;
         document.querySelector(`[cell_id='${Math.min(expo_i, expo_size)}']`).style.backgroundColor = "red";
+        getValuesforExponentialSteps(expo_i / 2, expo_i, left, right, mid, expo_size, false);
         //console.log(`expo_i = '${expo_i}'`);
-    }else{
+    } else {
         document.getElementById("pause").click();
         if (first_time_run_bin) {
             left = Math.floor(expo_i / 2);
@@ -48,6 +50,7 @@ function exponentialSearch(searching_array, asked_number) {
             mid = Math.floor((left + right) / 2);
             document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "orange";
         }
+        getValuesforExponentialSteps(expo_i / 2, expo_i, left, right, mid, expo_size, false);
         runBinSearch(searching_array, asked_number);
     }
 
@@ -64,6 +67,7 @@ function binSearch(arr, x) {
         mid = Math.floor((left + right) / 2);
         document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "orange";
         first_time_run_bin = false;
+        getValuesforExponentialSteps(expo_i / 2, expo_i, left, right, mid, expo_size, false);
     }
 
     // console.log(`>>left = '${left}', right = '${right}', mid = '${mid}'`);
@@ -82,6 +86,7 @@ function binSearch(arr, x) {
         mid = Math.floor((right + left) / 2);
         document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "orange";
     }
+    getValuesforExponentialSteps(expo_i / 2, expo_i, left, right, mid, expo_size, false);
     // console.log(`>>>>left = '${left}', right = '${right}', mid = '${mid}'`);
     // console.log(`>>>>arr[left] = '${arr[left]}', arr[right] = '${arr[right]}', arr[mid] = '${arr[mid]}', x = '${x}'`);
     if (arr[mid] === x) {
@@ -90,6 +95,7 @@ function binSearch(arr, x) {
         only_at_next_search_run = true;
         first_time_run_expo = true;
         first_time_run_bin = true;
+        getValuesforExponentialSteps(expo_i / 2, expo_i, left, right, mid, expo_size, true);
         enableOrDisableInputs();
         document.getElementById("pause").click();
         return mid;
@@ -100,6 +106,7 @@ function binSearch(arr, x) {
         only_at_next_search_run = true;
         first_time_run_expo = true;
         first_time_run_bin = true;
+        getValuesforExponentialSteps(expo_i / 2, expo_i, left, right, mid, expo_size, true);
         enableOrDisableInputs();
         document.getElementById("pause").click();
         return left;
@@ -110,13 +117,14 @@ function binSearch(arr, x) {
         only_at_next_search_run = true;
         first_time_run_expo = true;
         first_time_run_bin = true;
+        getValuesforExponentialSteps(expo_i / 2, expo_i, left, right, mid, expo_size, true);
         enableOrDisableInputs();
         document.getElementById("pause").click();
         return right;
     }
     if ((right === left ||
-            left === mid ||
-            right === mid) &&
+        left === mid ||
+        right === mid) &&
         (arr[mid] !== x &&
             (arr[left] > x && arr[left] !== x) &&
             (arr[right] < x && arr[right] !== x))) {
@@ -125,15 +133,26 @@ function binSearch(arr, x) {
         first_time_run_expo = true;
         first_time_run_bin = true;
         only_at_next_search_run = true;
+        getValuesforExponentialSteps(expo_i / 2, expo_i, left, right, mid, expo_size, false);
         enableOrDisableInputs();
         return -1;
     }
 }
 
-function runBinSearch(searching_array, asked_number){
+function runBinSearch(searching_array, asked_number) {
     intervalHandle = setInterval(() => {
         found_number = binSearch(searching_array, asked_number);
     }, intervalSpeed);
+}
+
+function getValuesforExponentialSteps(previous, expo_i, first, last, mid, size, found) {
+    let pr = document.querySelector(`[cell_id='${previous}']`);
+    let index = document.querySelector(`[cell_id='${Math.min(expo_i, size)}']`);
+    let f = document.querySelector(`[cell_id='${first}']`);
+    let l = document.querySelector(`[cell_id='${last}']`);
+    let m = document.querySelector(`[cell_id='${mid}']`);
+    //console.log(pr,index,f,l,m,found);
+    exponentialDrawSteps(pr, index, f, l, m, found);
 }
 
 // Add event listener
