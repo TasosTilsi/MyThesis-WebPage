@@ -7,38 +7,41 @@ function binarySearch(searching_array, asked_number) {
     if (first_time_run_binary) {
         firstIndex = 0;
         document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightblue";
-        lastIndex = searching_array.length - 1;
-        document.querySelector(`[cell_id='${lastIndex}']`).style.backgroundColor = "lightblue";
+        lastIndex = searching_array.length;
+        document.querySelector(`[cell_id='${Math.min(lastIndex, searching_array.length - 1)}']`).style.backgroundColor = "lightblue";
         middleIndex = Math.floor((lastIndex + firstIndex) / 2);
         document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
         first_time_run_binary = false;
-        getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false);
-        enableOrDisableInputs();
+        checks = 1;
+        getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false, checks);
+        document.getElementById("searchingNumber").disabled = true;
     }
 
     if (searching_array[middleIndex] !== asked_number && firstIndex < lastIndex) {
         if (asked_number < searching_array[middleIndex]) {
-            document.querySelector(`[cell_id='${lastIndex}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${Math.min(lastIndex, searching_array.length - 1)}']`).style.backgroundColor = "white";
             lastIndex = middleIndex - 1;
-            document.querySelector(`[cell_id='${lastIndex}']`).style.backgroundColor = "lightblue";
+            checks++;
+            document.querySelector(`[cell_id='${Math.min(lastIndex, searching_array.length - 1)}']`).style.backgroundColor = "lightblue";
         } else if (asked_number > searching_array[middleIndex]) {
             document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "white";
             firstIndex = middleIndex + 1;
             document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightblue";
+            checks++;
         }
         document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "white";
         middleIndex = Math.floor((lastIndex + firstIndex) / 2);
         document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
-        getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false);
+        getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false, checks);
         console.log(`firstIndex = '${firstIndex}', lastIndex = '${lastIndex}', middleIndex = '${middleIndex}'`);
     }
 
     if (searching_array[middleIndex] === asked_number) {
         document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "lightgreen";
-        getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, true);
+        getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, true, checks);
         showSnackBar("The number you searched found in position " + middleIndex);
         only_at_next_search_run = true;
-        enableOrDisableInputs();
+        document.getElementById("searchingNumber").disabled = false;
         first_time_run_binary = true;
         document.getElementById("pause").click();
         return middleIndex;
@@ -62,24 +65,36 @@ function binarySearch(searching_array, asked_number) {
     if ((lastIndex === firstIndex ||
         firstIndex === middleIndex ||
         lastIndex === middleIndex) &&
-        (searching_array[middleIndex] !== asked_number ||
+        (searching_array[middleIndex] !== asked_number &&
             (searching_array[firstIndex] > asked_number && searching_array[firstIndex] !== asked_number) &&
             (searching_array[lastIndex] < asked_number && searching_array[lastIndex] !== asked_number))) {
-        getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false);
+        getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false, checks);
         showSnackBar("The number you searched for is not in the generated array!");
         document.getElementById("pause").click();
         first_time_run_binary = true;
-        enableOrDisableInputs();
+        document.getElementById("searchingNumber").disabled = false;
+        only_at_next_search_run = true;
+        return -1;
+    }
+
+    if ((lastIndex === firstIndex &&
+        firstIndex === middleIndex &&
+        lastIndex === middleIndex) && searching_array[middleIndex] !== asked_number) {
+        getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false, checks);
+        showSnackBar("The number you searched for is not in the generated array!");
+        document.getElementById("pause").click();
+        first_time_run_binary = true;
+        document.getElementById("searchingNumber").disabled = false;
         only_at_next_search_run = true;
         return -1;
     }
 }
 
-function getValuesforBinarySteps(l, r, m, found) {
+function getValuesforBinarySteps(l, r, m, found, checks) {
     let left = document.querySelector(`[cell_id='${l}']`);
-    let right = document.querySelector(`[cell_id='${r}']`);
+    let right = document.querySelector(`[cell_id='${Math.min(r, the_array.length - 1)}']`);
     let middle = document.querySelector(`[cell_id='${m}']`);
-    binaryDrawSteps(left, right, middle, found);
+    binaryDrawSteps(left, right, middle, found, checks);
 }
 
 // Add event listener
@@ -91,16 +106,17 @@ document.getElementById("binarySearch").addEventListener("click", () => {
     searching_profile = "binary";
     let number = parseInt(document.getElementById("searchingNumber").value);
     if (!isNaN(number)) {
-            if (first_time_run_binary) {
-                makeTheTableWhite();
-                firstIndex = 0;
-                document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightblue";
-                lastIndex = the_array.length - 1;
-                document.querySelector(`[cell_id='${lastIndex}']`).style.backgroundColor = "lightblue";
-                middleIndex = Math.floor((lastIndex + firstIndex) / 2);
-                document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
-                getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false);
-            }
+        if (first_time_run_binary) {
+            makeTheTableWhite();
+            firstIndex = 0;
+            document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightblue";
+            lastIndex = the_array.length;
+            document.querySelector(`[cell_id='${Math.min(lastIndex, the_array.length - 1)}']`).style.backgroundColor = "lightblue";
+            middleIndex = Math.floor((lastIndex + firstIndex) / 2);
+            document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
+            checks = 1;
+            getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false, checks);
+        }
     } else {
         // Show this message
         showSnackBar("Please <strong>Specify a Number</strong> for search");

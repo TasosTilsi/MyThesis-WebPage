@@ -19,8 +19,9 @@ function interpolationSearch(searching_array, asked_number) {
         delta = (asked_number - searching_array[low]) / (searching_array[high] - searching_array[low]);
         position = low + Math.floor((high - low) * delta);
         document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
-        getValuesforIntepolationSteps(low, high, position, false);
-        enableOrDisableInputs();
+        checks = 0;
+        getValuesforIntepolationSteps(low, high, position, false, checks);
+        document.getElementById("searchingNumber").disabled = true;
         first_time_run_inter = false;
     }
 
@@ -29,16 +30,17 @@ function interpolationSearch(searching_array, asked_number) {
         delta = (asked_number - searching_array[low]) / (searching_array[high] - searching_array[low]);
         position = low + Math.floor((high - low) * delta);
         document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
-        getValuesforIntepolationSteps(low, high, position, false);
+        getValuesforIntepolationSteps(low, high, position, false, checks);
 
         if (searching_array[position] === asked_number) {
             document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "lightgreen";
-            getValuesforIntepolationSteps(low, high, position, true);
+            checks++;
+            getValuesforIntepolationSteps(low, high, position, true, checks);
             showSnackBar("The number you searched found in position " + position);
             first_time_run_inter = true;
             only_at_next_search_run = true;
             document.getElementById("pause").click();
-            enableOrDisableInputs();
+            document.getElementById("searchingNumber").disabled = false;
             return position;
         }
 
@@ -47,13 +49,15 @@ function interpolationSearch(searching_array, asked_number) {
             low = position + 1;
             document.querySelector(`[cell_id='${low}']`).style.backgroundColor = "lightblue";
             console.log("Setting the low " + low + " and high " + high);
-            getValuesforIntepolationSteps(low, high, position, false);
+            checks++;
+            getValuesforIntepolationSteps(low, high, position, false, checks);
         } else {
             document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "white";
             high = position - 1;
             document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "lightblue";
             console.log("Setting the low " + low + " and high " + high);
-            getValuesforIntepolationSteps(low, high, position, false);
+            checks++;
+            getValuesforIntepolationSteps(low, high, position, false, checks);
         }
     } else {
         showSnackBar("The number you searched for is not in the generated array!");
@@ -61,18 +65,19 @@ function interpolationSearch(searching_array, asked_number) {
         only_at_next_search_run = true;
         document.getElementById("pause").click();
         document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
-        getValuesforIntepolationSteps(low, high, position, false);
-        enableOrDisableInputs();
+        checks++;
+        getValuesforIntepolationSteps(low, high, position, false, checks);
+        document.getElementById("searchingNumber").disabled = false;
         return -1;
     }
 
 }
 
-function getValuesforIntepolationSteps(l, h, pos, found) {
+function getValuesforIntepolationSteps(l, h, pos, found, checks) {
     let low = document.querySelector(`[cell_id='${l}']`);
     let high = document.querySelector(`[cell_id='${h}']`);
     let position = document.querySelector(`[cell_id='${pos}']`);
-    intepolationDrawSteps(low, high, position, found);
+    interpolationDrawSteps(low, high, position, found, checks);
 }
 
 document.getElementById("interpolationSearch").addEventListener("click", () => {
@@ -94,7 +99,8 @@ document.getElementById("interpolationSearch").addEventListener("click", () => {
                 position = low + Math.floor((high - low) * delta);
                 console.log("position " + position);
                 document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
-                getValuesforIntepolationSteps(low, high, position, false);
+                checks = 0;
+                getValuesforIntepolationSteps(low, high, position, false, checks);
             }
     } else {
         // Show this message

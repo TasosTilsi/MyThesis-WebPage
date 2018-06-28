@@ -1,4 +1,6 @@
-function linearDrawSteps(cell, nextCell, found) {
+let checks;
+
+function linearDrawSteps(cell, nextCell, found, checks) {
 
     // Getting the div in the body to draw the array
     let container = document.getElementById("dragable_container_step_content");
@@ -87,9 +89,13 @@ function linearDrawSteps(cell, nextCell, found) {
     row.appendChild(col);
     // Finally append the row div at the table div
     container.appendChild(row);
+
+    let h6 = document.createElement("h6");
+    h6.innerHTML = "Number of Checks: <strong>" + checks + "</strong>";
+    container.appendChild(h6);
 }
 
-function binaryDrawSteps(first, last, mid, found) {
+function binaryDrawSteps(first, last, mid, found, checks) {
 
     // Getting the div in the body to draw the array
     let container = document.getElementById("dragable_container_step_content");
@@ -214,9 +220,13 @@ function binaryDrawSteps(first, last, mid, found) {
     row.appendChild(col);
     // Finally append the row div at the table div
     container.appendChild(row);
+
+    let h6 = document.createElement("h6");
+    h6.innerHTML = "Number of Checks: <strong>" + checks + "</strong>";
+    container.appendChild(h6);
 }
 
-function jumpDrawSteps(cell, stepCell, found) {
+function jumpDrawSteps(cell, stepCell, found, checks) {
 
     // Getting the div in the body to draw the array
     let container = document.getElementById("dragable_container_step_content");
@@ -305,9 +315,13 @@ function jumpDrawSteps(cell, stepCell, found) {
     row.appendChild(col);
     // Finally append the row div at the table div
     container.appendChild(row);
+
+    let h6 = document.createElement("h6");
+    h6.innerHTML = "Number of Checks: <strong>" + checks + "</strong>";
+    container.appendChild(h6);
 }
 
-function intepolationDrawSteps(first, last, mid, found) {
+function interpolationDrawSteps(first, last, mid, found, checks) {
 
     // Getting the div in the body to draw the array
     let container = document.getElementById("dragable_container_step_content");
@@ -432,6 +446,10 @@ function intepolationDrawSteps(first, last, mid, found) {
     row.appendChild(col);
     // Finally append the row div at the table div
     container.appendChild(row);
+
+    let h6 = document.createElement("h6");
+    h6.innerHTML = "Number of Checks: <strong>" + checks + "</strong>";
+    container.appendChild(h6);
 }
 
 function exponentialDrawSteps(previous, step, first, last, mid, found) {
@@ -650,9 +668,13 @@ function exponentialDrawSteps(previous, step, first, last, mid, found) {
     row.appendChild(col);
     // Finally append the row div at the table div
     container.appendChild(row);
+
+    let h6 = document.createElement("h6");
+    h6.innerHTML = "Number of Checks: <strong>" + checks + "</strong>";
+    container.appendChild(h6);
 }
 
-function fibonacciDrawSteps(fib1, fib2, fib, index, found) {
+function fibonacciDrawSteps(fib1, fib2, fib, index, found, checks) {
 
     // Getting the div in the body to draw the array
     let container = document.getElementById("dragable_container_step_content");
@@ -821,4 +843,8 @@ function fibonacciDrawSteps(fib1, fib2, fib, index, found) {
     row.appendChild(col);
     // Finally append the row div at the table div
     container.appendChild(row);
+
+    let h6 = document.createElement("h6");
+    h6.innerHTML = "Number of Checks: <strong>" + checks + "</strong>";
+    container.appendChild(h6);
 }

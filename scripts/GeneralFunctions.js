@@ -73,12 +73,6 @@ function enableStepButtons() {
     }
 }
 
-// Enable or Disable inputs if a method is running
-
-function enableOrDisableInputs() {
-    document.getElementById("searchingNumber").disabled = !document.getElementById("searchingNumber").disabled;
-}
-
 // Showing a message with this android like snackbar
 
 function showSnackBar(message) {

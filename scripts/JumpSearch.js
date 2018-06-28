@@ -15,22 +15,23 @@ function jumpSearch(searching_array, asked_number) {
         previous = 0;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
         first_time_run_jump = false;
-        getValuesforJumpSteps(previous, step, false);
-        enableOrDisableInputs();
+        checks = 1;
+        getValuesforJumpSteps(previous, step, false, checks);
+        document.getElementById("searchingNumber").disabled = true;
     }
 
     if (searching_array[Math.min(step, jump_size) - 1] < asked_number) {
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "white";
         previous = step;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
-        getValuesforJumpSteps(previous, step, false);
+        getValuesforJumpSteps(previous, step, false, checks);
 
         if (step < jump_size) {
             document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "white";
             step = Math.min(step + Math.floor(Math.sqrt(jump_size)), jump_size - 1);
             document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "lightblue";
             console.log("Setting the step " + step);
-            getValuesforJumpSteps(previous, step, false);
+            getValuesforJumpSteps(previous, step, false, checks);
         }
 
         if (previous > jump_size) {
@@ -38,9 +39,9 @@ function jumpSearch(searching_array, asked_number) {
             first_time_run_jump = true;
             only_at_next_search_run = true;
             document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
-            getValuesforJumpSteps(previous, step, false);
+            getValuesforJumpSteps(previous, step, false, checks);
             document.getElementById("pause").click();
-            enableOrDisableInputs();
+            document.getElementById("searchingNumber").disabled = false;
             return -1;
         }
     }
@@ -49,16 +50,18 @@ function jumpSearch(searching_array, asked_number) {
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "white";
         previous++;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
-        getValuesforJumpSteps(previous, step, false);
+        checks++;
+        getValuesforJumpSteps(previous, step, false, checks);
 
         if (previous === jump_size) {
             showSnackBar("The number you searched for is not in the generated array!");
             first_time_run_jump = true;
             only_at_next_search_run = true;
             document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
-            getValuesforJumpSteps(previous, step, false);
+            checks++;
+            getValuesforJumpSteps(previous, step, false, checks);
             document.getElementById("pause").click();
-            enableOrDisableInputs();
+            document.getElementById("searchingNumber").disabled = false;
             return -1;
         }
 
@@ -68,8 +71,9 @@ function jumpSearch(searching_array, asked_number) {
         first_time_run_jump = true;
         only_at_next_search_run = true;
         document.getElementById("pause").click();
-        getValuesforJumpSteps(previous, step, true);
-        enableOrDisableInputs();
+        checks++;
+        getValuesforJumpSteps(previous, step, true, checks);
+        document.getElementById("searchingNumber").disabled = false;
         return previous;
     } else {
         showSnackBar("The number you searched for is not in the generated array!");
@@ -77,16 +81,17 @@ function jumpSearch(searching_array, asked_number) {
         only_at_next_search_run = true;
         document.getElementById("pause").click();
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
-        getValuesforJumpSteps(previous, step, false);
-        enableOrDisableInputs();
+        checks++;
+        getValuesforJumpSteps(previous, step, false, checks);
+        document.getElementById("searchingNumber").disabled = false;
         return -1;
     }
 }
 
-function getValuesforJumpSteps(index, step, found) {
+function getValuesforJumpSteps(index, step, found, checks) {
     let cell = document.querySelector(`[cell_id='${index}']`);
     let stepCell = document.querySelector(`[cell_id='${step}']`);
-    jumpDrawSteps(cell, stepCell, found);
+    jumpDrawSteps(cell, stepCell, found, checks);
 }
 
 document.getElementById("jumpSearch").addEventListener("click", () => {
@@ -106,7 +111,8 @@ document.getElementById("jumpSearch").addEventListener("click", () => {
                 document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "lightblue";
                 previous = 0;
                 document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
-                getValuesforJumpSteps(previous, step, false);
+                checks = 1;
+                getValuesforJumpSteps(previous, step, false, checks);
             }
     } else {
         // Show this message
