@@ -1,10 +1,11 @@
 <img src="https://github.com/TasosTilsi/MyThesis-WebPage/blob/master/resources/logo.png" width="200" height="200" /> <img src="https://github.com/TasosTilsi/MyThesis-WebPage/blob/master/resources/teiser_logo.png" width="200" height="200"/>
 <br/>
-<h1>MyThesis WebPage</h1>
+<h1>VESM</h1>
 <h3>Title</h3>
+<b>V</b>isualized <b>E</b>nvironment for <b>S</b>earch <b>M</b>ethods
 <p> Development of an application for the Implemantation and use of search methods in a visualized environment</p>
 <h3>Live</h3>
-Click <a href="https://git.io/feqfK">here</a> to check this web app live!
+Click <a href="https://git.io/fNltq">here</a> to check this web app live!
 <h3>Description</h3>
 This is an Web Page developed for my thesis!
 
