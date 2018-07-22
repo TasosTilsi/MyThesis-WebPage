@@ -22,6 +22,33 @@ var intervalSpeed = document.getElementById("rangevalue").value;
     return 0;
 }*/
 
+function clearAll(){
+    document.getElementById("pause").click();
+    showTheManual("Press a Search Button","A manual for this search will appear hear");
+    document.getElementById("dragable_container_step_content").innerHTML = "<p>You will see the steps of every search you run...</p>";
+    document.getElementById("table_container").innerHTML= "";
+    document.getElementById("arraySize").value = "";
+    document.getElementById("numbersRange").value = "";
+    if(document.getElementById("searchingNumber").disabled){
+        document.getElementById("searchingNumber").disabled = false;
+        document.getElementById("searchingNumber").value = "";
+    }else{
+        document.getElementById("searchingNumber").value = "";
+    }
+    searching_profile = "";
+    only_at_next_search_run = true;
+    first_time_run_linear = true;
+    first_time_run_binary = true;
+    first_time_run_jump = true;
+    first_time_run_inter = true;
+    first_time_run_expo = true;
+    first_time_run_bin = true;
+    first_time_run_fibo = true;
+    document.getElementById("pause").disabled = true;
+    document.getElementById("next").disabled = true;
+    document.getElementById("skipForward").disabled = true;
+}
+
 function next() {
     checkForGeneratedNumbers();
     return 0;
@@ -39,6 +66,11 @@ function pause() {
     console.log("Undo Button Clicked");
     undo();
 });*/
+
+document.getElementById("clear_button").addEventListener("click", ()=>{
+    console.log("Clear Button Clicked");
+    clearAll();
+});
 
 document.getElementById("next").addEventListener("click", () => {
     console.log("Next Button Clicked");

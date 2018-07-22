@@ -1,4 +1,4 @@
-<img src="https://github.com/TasosTilsi/MyThesis-WebPage/blob/master/resources/logo.png"/> <img src="https://github.com/TasosTilsi/MyThesis-WebPage/blob/master/resources/teiser_logo.png"/>
+<img src="https://github.com/TasosTilsi/MyThesis-WebPage/blob/master/resources/logo.png" width="200" height="200" /> <img src="https://github.com/TasosTilsi/MyThesis-WebPage/blob/master/resources/teiser_logo.png" width="200" height="200"/>
 <br/>
 <h1>MyThesis WebPage</h1>
 <h3>Title</h3>
