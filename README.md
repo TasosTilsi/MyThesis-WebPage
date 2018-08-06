@@ -13,17 +13,17 @@ I developed this application for educational reasons and I am trying to show how
 
 The searches that I have implemented are:
 <ul>
-<li>Linear Search</li>
-<li>Binary Search</li>
-<li>Jump Search</li>
-<li>Interpolation Search</li>
-<li>Exponential Search</li>
-<li>Fibonacci Search</li>
+<li><a href="#linearSearch">Linear Search</a></li>
+<li><a href="#binarySearch">Binary Search</a></li>
+<li><a href="#jumpSearch">Jump Search</a></li>
+<li><a href="#interpolationSearch">Interpolation Search</a></li>
+<li><a href="#exponentialSearch">Exponential Search</a></li>
+<li><a href="#fibonacciSearch">Fibonacci Search</a></li>
 </ul>
 
 <h3>Documentation</h3>
 
-<h4>Linear Search</h4>
+<h4 id="linearSearch">Linear Search</h4>
 
 <b>Little Words:</b>
 
@@ -54,7 +54,7 @@ int linearSearch(int arr[], int n, int x)
 ```
         
         
-<h4>Binary Search</h4>
+<h4 id="binarySearch">Binary Search</h4>
 
 <b>Little Words:</b>
 
@@ -101,7 +101,7 @@ int binarySearch(int arr[], int l, int r, int x)
 }
 ```
 
-<h4>Jump Search</h4>
+<h4 id="jumpSearch">Jump Search</h4>
 
 <b>Little Words:</b>
 
@@ -147,7 +147,7 @@ int jumpSearch(int arr[], int x, int n)
 }
 ```
 
-<h4>Interpolation Search</h4>
+<h4 id="interpolationSearch">Interpolation Search</h4>
 
 <b>Little Words:</b>
 
@@ -206,7 +206,7 @@ int interpolationSearch(int arr[], int n, int x)
 }
 ```
 
-<h4>Exponential Search</h4>
+<h4 id="exponentialSearch">Exponential Search</h4>
 
 <b>Little Words:</b>
 
@@ -260,7 +260,7 @@ int binarySearch(int arr[], int l, int r, int x)
 }
 ```
 
-<h4>Fibonacci Search</h4>
+<h4 id="fibonacciSearch">Fibonacci Search</h4>
 
 <b>Little Words:</b>
 
