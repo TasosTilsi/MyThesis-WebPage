@@ -157,18 +157,6 @@ function sortArray(array) {
     return sortArray(left).concat(pivot, sortArray(right));
 }
 
-function resetSearches() {
-    document.getElementById("pause").click();
-    document.getElementById("searchingNumber").disabled = false;
-    first_time_run_linear = true;
-    first_time_run_binary = true;
-    first_time_run_jump = true;
-    first_time_run_inter = true;
-    first_time_run_expo = true;
-    first_time_run_bin = true; // comes with expo
-    first_time_run_fib = true;
-}
-
 // Adding event listeners
 
 document.getElementById("generateNumbers").addEventListener("click", () => {
