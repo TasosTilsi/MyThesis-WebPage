@@ -19,8 +19,8 @@
     <meta name="author" content="">
 
     <!-- css sheet for how the page is laid out -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <style>
@@ -36,6 +36,10 @@
     </style>
     <!-- /Bootstrap required Libraries-->
 
+    <!-- FontAwesome for About icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
@@ -49,267 +53,311 @@
 
 <body class="MainPageStyling">
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="resources/logo1.png" style="width: 30px; height: 30px;"/> Visualized Environment for Search Methods</a>
-        <button id="navBar_toggler" class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">
-                        <img src="resources/ic_action_home.png"/> Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#myModal">
-                        <img src="resources/ic_action_info.png"/> About</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <img src="resources/teiser_logo.png"/>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <table>
-                    <tr>
-                        <td>
-                            <img src="resources/ic_action_thesis.png"/>
-                        </td>
-                        <td>
-                            <b>
-                                <p>Thesis</p>
-                            </b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="resources/ic_action_subject.png"/>
-                        </td>
-                        <td>
-                            <p>Development of an application for the Implementation and use of search methods in a
-                                visualized environment
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="resources/ic_action_supervisor.png"/>
-                        </td>
-                        <td>
-                            <p>Supervisor Professor: <a href="http://teachers.teicm.gr/outsios/index.html">Evangelos
-                                Outsios</a></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="resources/ic_action_person.png"/>
-                        </td>
-                        <td>
-                            <p>Student: Anastasios Tilsizoglou</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="resources/ic_action_credit.png"/>
-                        </td>
-                        <td>
-                            <p>AEM: 3878</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="resources/ic_action_link.png"/>
-                        </td>
-                        <td>
-                            <a href="https://git.io/vAM41">Github Repository</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="resources/ic_action_public.png"/>
-                        </td>
-                        <td>
-                            <p>
-                                <a href="https://git.io/vAM4F">MIT License</a>
-                                <br/>Copyright &copy;
-                                <a href="https://git.io/vNjE6">Anastasios Tilsizoglou</a>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="resources/logo1.png" style="width: 30px; height: 30px;" /> Visualized Environment for Search
+                Methods</a>
+            <button id="navBar_toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">
+                            <img src="resources/ic_action_home.png" /> Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#myModal">
+                            <img src="resources/ic_action_info.png" /> About</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-</div>
-<!-- Page Content -->
-<div class="body_container">
+    </nav>
 
-    <div class="AlgorithmControlSection">
-        <div id="inputs" class="input-group" role="group">
-            <input class="form-control" min="0" max="9999" id="arraySize" type="number"
-                   placeholder="Specify Array Size (Default: 100)"/>
-            <input class="form-control" min="0" max="9999" id="numbersRange" type="number"
-                   placeholder="Specify Numbers Range (Default: 300)"/>
-            <div class="btn-group">
-                <button type="button" id="generateNumbers" class="btn btn-info">Generate Numbers</button>
-                <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <div class="dropdown-menu">
-                    <button class="dropdown-item" type="button" id="exponential">Exponential Distribution</button>
-                    <button class="dropdown-item" type="button" id="logarithmic">Logarithmic Distribution</button>
-                    <button class="dropdown-item" type="button" id="geometric">Geometric Distribution</button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" align="center">
+                    <p>
+                        <img src="resources/teiser_logo.png" />
+                    </p>
+                </div>
+                <div class="modal-body" align="center">
+                    <table>
+                        <tr>
+                            <td>
+                                <i class="fas fa-graduation-cap" style="font-size:50px"></i>
+                            </td>
+                            <td>
+                                <p>Development of an application for the Implementation and use of search methods in a
+                                    visualized
+                                    environment
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="far fa-user" style="font-size:50px"></i>
+                            </td>
+                            <td>
+                                <p>Supervisor Professor:
+                                    <a href="http://teachers.teicm.gr/outsios/index.html">Evangelos Outsios
+                                    </a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fas fa-user-graduate" style="font-size:50px"></i>
+                            </td>
+                            <td>
+                                <p>Student: Anastasios Tilsizoglou</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fas fa-id-card" style="font-size:50px"></i>
+                            </td>
+                            <td>
+                                <p>AEM: 3878</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fas fa-link" style="font-size:50px"></i>
+                            </td>
+                            <td>
+                                <a href="https://git.io/fpWvx">Github Repository</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="far fa-copyright" style="font-size:50px"></i>
+                            </td>
+                            <td>
+                                <p>
+                                    <a href="https://git.io/fpWff">MIT License</a>
+                                    <br />Copyright &copy;
+                                    <a href="https://git.io/vNjE6">Anastasios Tilsizoglou</a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fas fa-desktop" style="font-size:50px"></i>
+                            </td>
+                            <td>
+                                <p>
+                                    Check The Desktop Version
+                                    <a href="https://git.io/fALxo">Here</a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fas fa-user-circle" style="font-size:50px"></i>
+                            </td>
+                            <td align="center" style="padding: 7px 0 2px; ">
+                                <div align="center">
+                                    <table cellpadding="0" cellspacing="0" border="0" style="font-family: sans-serif; line-height: 13px; width: auto; border-collapse: collapse; color: #333;">
+                                        <tbody>
+                                            <tr>
+                                                <td valign="top" width="24" style="padding-right: 4px;">
+                                                    <p style="margin: 0.75pt;">
+                                                        <a href="http://www.linkedin.com/in/tasostilsi">
+                                                            <i class="fab fa-linkedin" style="font-size: 30px; color: #00008b"></i>
+                                                        </a>
+                                                    </p>
+                                                </td>
+                                                <td valign="top" width="24" style="padding-right: 4px;">
+                                                    <p style="margin: 0.75pt;">
+                                                        <a href="http://facebook.com/tasostilsi">
+                                                            <i class="fab fa-facebook-square" style="font-size: 30px; color: #0000ff"></i>
+                                                        </a>
+                                                    </p>
+                                                </td>
+                                                <td valign="top" width="24" style="padding-right: 4px;">
+                                                    <p style="margin: 0.75pt;">
+                                                        <a href="http://twitter.com/tasostilsi">
+                                                            <i class="fab fa-twitter-square" style="font-size: 30px; color: #20b2aa"></i>
+                                                        </a>
+                                                    </p>
+                                                </td>
+                                                <td valign="top" width="24" style="padding-right: 4px;">
+                                                    <p style="margin: 0.75pt;">
+                                                        <a href="http://instagram.com/tasostilsi">
+                                                            <i class="fab fa-instagram" style="font-size: 30px; color: #8b008b"></i>
+                                                        </a>
+                                                    </p>
+                                                </td>
+                                                <td valign="top" width="24" style="padding-right: 4px;">
+                                                    <p style="margin: 0.75pt;">
+                                                        <a href="http://github.com/tasostilsi">
+                                                            <i class="fab fa-github-square" style="font-size: 30px; color: #000000"></i>
+                                                        </a>
+                                                    </p>
+                                                </td>
+                                                <td valign="top" width="24" style="padding-right: 4px;">
+                                                    <p style="margin: 0.75pt;">
+                                                        <a href="http://twitch.tv/tasostilsi">
+                                                            <i class="fab fa-twitch" style="font-size: 30px; color: #800080"></i>
+                                                        </a>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
                 </div>
             </div>
-            <input class="form-control" min="0" max="9999" id="searchingNumber" type="number"
-                   placeholder="Specify Searching Number"/>
         </div>
+    </div>
+    <!-- Page Content -->
+    <div class="body_container">
 
-        <div id="searchButtons" class="btn-group" role="group">
-            <button id="linearSearch" type="button" class="btn btn-secondary">Linear Search</button>
-            <button id="binarySearch" type="button" class="btn btn-secondary">Binary Search</button>
-            <button id="jumpSearch" type="button" class="btn btn-secondary">Jump Search</button>
-            <button id="interpolationSearch" type="button" class="btn btn-secondary">Interpolation Search</button>
-            <button id="exponentialSearch" type="button" class="btn btn-secondary">Exponential Search</button>
-            <button id="fibonacciSearch" type="button" class="btn btn-secondary">Fibonacci Search</button>
-            <!--<button id="stratosSearch" type="button" class="btn btn-secondary">Stratos Search</button>-->
-        </div>
+        <div class="AlgorithmControlSection">
+            <div id="inputs" class="input-group" role="group">
+                <input class="form-control" min="0" max="9999" id="arraySize" type="number" placeholder="Specify Array Size (Default: 100)" />
+                <input class="form-control" min="0" max="9999" id="numbersRange" type="number" placeholder="Specify Numbers Range (Default: 300)" />
+                <div class="btn-group">
+                    <button type="button" id="generateNumbers" class="btn btn-info">Generate Numbers</button>
+                    <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" type="button" id="exponential">Exponential Distribution</button>
+                        <button class="dropdown-item" type="button" id="logarithmic">Logarithmic Distribution</button>
+                        <button class="dropdown-item" type="button" id="geometric">Geometric Distribution</button>
+                    </div>
+                </div>
+                <input class="form-control" min="0" max="9999" id="searchingNumber" type="number" placeholder="Specify Searching Number" />
+            </div>
 
-        <div id="stepButtons" class="btn-group" role="group">
-            <!-- <button id="undo" type="button" class="btn btn-outline-secondary" disabled>Undo Step</button> -->
-            <div class="btn-group" role="group">
-                <button id="options" title="settings" type="button" class="btn btn-outline-secondary dropdown-toggle"
+            <div id="searchButtons" class="btn-group" role="group">
+                <button id="linearSearch" type="button" class="btn btn-secondary">Linear Search</button>
+                <button id="binarySearch" type="button" class="btn btn-secondary">Binary Search</button>
+                <button id="jumpSearch" type="button" class="btn btn-secondary">Jump Search</button>
+                <button id="interpolationSearch" type="button" class="btn btn-secondary">Interpolation Search</button>
+                <button id="exponentialSearch" type="button" class="btn btn-secondary">Exponential Search</button>
+                <button id="fibonacciSearch" type="button" class="btn btn-secondary">Fibonacci Search</button>
+                <!--<button id="stratosSearch" type="button" class="btn btn-secondary">Stratos Search</button>-->
+            </div>
+
+            <div id="stepButtons" class="btn-group" role="group">
+                <!-- <button id="undo" type="button" class="btn btn-outline-secondary" disabled>Undo Step</button> -->
+                <div class="btn-group" role="group">
+                    <button id="options" title="settings" type="button" class="btn btn-outline-secondary dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="material-icons">settings</i>
+                        <i class="material-icons">settings</i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <button class="dropdown-item" title="Clear the cells and start over" type="button" id="clear_button">
+                            Clear
+                        </button>
+                        <button class="dropdown-item" title="Show/Hide Help" type="button" id="show_hide_manual">Show/Hide
+                            Help
+                        </button>
+                        <button class="dropdown-item" title="Show/Hide Steps" type="button" id="show_hide_step">Show/Hide
+                            Steps
+                        </button>
+                    </div>
+                </div>
+                <button id="pause" title="Pause the method" type="button" class="btn btn-outline-secondary" disabled>Pause
                 </button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <button class="dropdown-item" title="Clear the cells and start over" type="button" id="clear_button">
-                        Clear
-                    </button>
-                    <button class="dropdown-item" title="Show/Hide Help" type="button" id="show_hide_manual">Show/Hide
-                        Help
-                    </button>
-                    <button class="dropdown-item" title="Show/Hide Steps" type="button" id="show_hide_step">Show/Hide
-                        Steps
-                    </button>
+                <button id="next" title="One step at time" type="button" class="btn btn-outline-secondary" disabled>Next
+                    Step
+                </button>
+                <button id="skipForward" title="Press to Skip to the end" type="button" class="btn btn-outline-secondary"
+                    disabled>Skip Forward
+                </button>
+                <div id="slider">
+                    <input class="bar" type="range" id="rangeinput" value="1000" min="350" max="3000" step="50" title="Animation Speed" />
+                    <span class="highlight"></span>
+                    <output id="rangevalue">1000</output>
                 </div>
             </div>
-            <button id="pause" title="Pause the method" type="button" class="btn btn-outline-secondary" disabled>Pause
-            </button>
-            <button id="next" title="One step at time" type="button" class="btn btn-outline-secondary" disabled>Next
-                Step
-            </button>
-            <button id="skipForward" title="Press to Skip to the end" type="button" class="btn btn-outline-secondary"
-                    disabled>Skip Forward
-            </button>
-            <div id="slider">
-                <input class="bar" type="range" id="rangeinput" value="1000" min="350" max="3000" step="50"
-                       title="Animation Speed"/>
-                <span class="highlight"></span>
-                <output id="rangevalue">1000</output>
+        </div>
+
+        <div id="table_container" class="container-fluid" align="center">
+            <!--This container handled in javascript-->
+        </div>
+
+        <!--Draggable DIV:-->
+        <div class="dragable_container" id="dragable_container_manual" title="Click and Drag">
+            <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
+            <div class="dragable_container_header" id="dragable_container_manual_header">
+                <div id="collapse_manual" class="float-left"><i id="collapse_manual_icon" class="material-icons">expand_more</i></div>
+                <div id="collapse_manual_right" class="float-left" hidden><i class="material-icons">chevron_right</i></div>
+                Help
+                <div class="float-right"><i class="material-icons right" style="font-size:24px">drag_handle</i></div>
+            </div>
+            <div class="dragable_container_content" id="dragable_container_manual_content">
+                <h4 id="search_title">Press a Search Button</h4>
+                <p id="manual">A manual for this search will appear hear</p>
             </div>
         </div>
-    </div>
 
-    <div id="table_container" class="container-fluid" align="center">
-        <!--This container handled in javascript-->
-    </div>
-
-    <!--Draggable DIV:-->
-    <div class="dragable_container" id="dragable_container_manual" title="Click and Drag">
-        <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
-        <div class="dragable_container_header" id="dragable_container_manual_header">
-            <div id="collapse_manual" class="float-left"><i id="collapse_manual_icon"
-                                                            class="material-icons">expand_more</i></div>
-            <div id="collapse_manual_right" class="float-left" hidden><i class="material-icons">chevron_right</i></div>
-            Help
-            <div class="float-right"><i class="material-icons right" style="font-size:24px">drag_handle</i></div>
-        </div>
-        <div class="dragable_container_content" id="dragable_container_manual_content">
-            <h4 id="search_title">Press a Search Button</h4>
-            <p id="manual">A manual for this search will appear hear</p>
-        </div>
-    </div>
-
-    <!--Draggable DIV:-->
-    <div class="dragable_container" id="dragable_container_step">
-        <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
-        <div class="dragable_container_header" id="dragable_container_step_header" title="Click and Drag">
-            <div id="collapse_step" class="float-left"><i id="collapse_step_icon" class="material-icons">expand_more</i>
+        <!--Draggable DIV:-->
+        <div class="dragable_container" id="dragable_container_step">
+            <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
+            <div class="dragable_container_header" id="dragable_container_step_header" title="Click and Drag">
+                <div id="collapse_step" class="float-left"><i id="collapse_step_icon" class="material-icons">expand_more</i>
+                </div>
+                <div id="collapse_step_right" class="float-left" hidden><i class="material-icons">chevron_right</i></div>
+                Step by Step
+                <div class="float-right"><i class="material-icons right" style="font-size:24px">drag_handle</i></div>
             </div>
-            <div id="collapse_step_right" class="float-left" hidden><i class="material-icons">chevron_right</i></div>
-            Step by Step
-            <div class="float-right"><i class="material-icons right" style="font-size:24px">drag_handle</i></div>
+            <div class="dragable_container_content" id="dragable_container_step_content">
+                <p>You will see the steps of every search you run...</p>
+            </div>
         </div>
-        <div class="dragable_container_content" id="dragable_container_step_content">
-            <p>You will see the steps of every search you run...</p>
+
+        <div id="snackbar">This message handled in javascript</div>
+
+        <!--Footer-->
+        <div class="bg-dark navbar fixed-bottom footer">
+            <p class="m-0 text-center text-white">MIT License</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Anastasios Tilsizoglou 2018</p>
         </div>
+        <!--/.footer -->
+
     </div>
+    <!-- container -->
 
-    <div id="snackbar">This message handled in javascript</div>
-
-    <!--Footer-->
-    <div class="bg-dark navbar fixed-bottom footer">
-        <p class="m-0 text-center text-white">MIT License</p>
-        <p class="m-0 text-center text-white">Copyright &copy; Anastasios Tilsizoglou 2018</p>
-    </div>
-    <!--/.footer -->
-
-</div>
-<!-- container -->
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
 
-<!--http://chancejs.com for generate random numbers-->
-<!--<script src="http://chancejs.com/chance.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>-->
-
-<!--myScripts-->
-<script type="text/javascript" src="scripts/GenerateRandomNumbers.js"></script>
-<script type="text/javascript" src="scripts/GeneralFunctions.js"></script>
-<script type="text/javascript" src="scripts/LinearSearch.js"></script>
-<script type="text/javascript" src="scripts/BinarySearch.js"></script>
-<script type="text/javascript" src="scripts/JumpSearch.js"></script>
-<script type="text/javascript" src="scripts/InterpolationSearch.js"></script>
-<script type="text/javascript" src="scripts/ExponentialSearch.js"></script>
-<script type="text/javascript" src="scripts/FibonacciSearch.js"></script>
-<script type="text/javascript" src="scripts/StepButtons.js"></script>
-<script type="text/javascript" src="scripts/DragableContainer.js"></script>
-<script type="text/javascript" src="scripts/Manual.js"></script>
-<script type="text/javascript" src="scripts/Steps.js"></script>
+    <!--myScripts-->
+    <script type="text/javascript" src="scripts/GenerateRandomNumbers.js"></script>
+    <script type="text/javascript" src="scripts/GeneralFunctions.js"></script>
+    <script type="text/javascript" src="scripts/LinearSearch.js"></script>
+    <script type="text/javascript" src="scripts/BinarySearch.js"></script>
+    <script type="text/javascript" src="scripts/JumpSearch.js"></script>
+    <script type="text/javascript" src="scripts/InterpolationSearch.js"></script>
+    <script type="text/javascript" src="scripts/ExponentialSearch.js"></script>
+    <script type="text/javascript" src="scripts/FibonacciSearch.js"></script>
+    <script type="text/javascript" src="scripts/StepButtons.js"></script>
+    <script type="text/javascript" src="scripts/DragableContainer.js"></script>
+    <script type="text/javascript" src="scripts/Manual.js"></script>
+    <script type="text/javascript" src="scripts/Steps.js"></script>
 
 </body>
 

@@ -1,14 +1,32 @@
-.modal-header {
+.modal-content{
     background-color: green;
 }
 
+.modal-header {
+    background-color: green;
+    align-self: center;
+    padding: 20px;
+    border: 0rem;
+}
+
 .modal-header img {
-    display: block;
-    margin-left: 150px;
+    box-align: center;
+    vertical-align: center;
+}
+
+.modal-header p{
+    align-items: center;
+    text-align: center;
+}
+
+.modal-body {
+    background-color: white;
 }
 
 .modal-body td {
     text-align: center;
+    margin: 2%;
+    padding: 2%;
 }
 
 .modal-body p {
