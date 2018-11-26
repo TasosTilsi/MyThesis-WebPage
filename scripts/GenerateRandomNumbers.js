@@ -93,7 +93,7 @@ function draw(new_array, array_size) {
             // Create one div for a column
             var col = document.createElement("div");
             // Set attribute for this div
-            col.setAttribute("class", "col-sm with-number");
+            col.setAttribute("class", "col-sm with-number card-panel*/");
             // Create another div to put the array value in it
             var value_p = document.createElement("div");
             // Setting attributes
