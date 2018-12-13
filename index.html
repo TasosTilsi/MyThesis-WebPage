@@ -57,6 +57,8 @@
     <link rel="stylesheet" href="stylesheets/Modal.css">
     <link rel="stylesheet" href="stylesheets/Slider.css">
     <link rel="stylesheet" href="stylesheets/DragableContainer.css">
+    <link rel="stylesheet" href="stylesheets/Toggle.css">
+    <!-- <link rel="stylesheet" href="stylesheets/DarkTheme.css"> -->
 </head>
 
 <body class="MainPageStyling">
@@ -266,32 +268,52 @@
             <div id="stepButtons" class="btn-group" role="group">
                 <!-- <button id="undo" type="button" class="btn btn-outline-secondary" disabled>Undo Step</button> -->
                 <div class="btn-group" role="group">
-                    <button id="options" title="settings" type="button" class="btn btn-outline-secondary dropdown-toggle waves-effect waves-light"
+                    <button id="options" title="settings" type="button" class="btn btn-outline-secondary dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="material-icons">settings</i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <button class="dropdown-item waves-effect waves-light" title="Clear the cells and start over" type="button" id="clear_button">
-                            Clear
-                        </button>
-                        <button class="dropdown-item waves-effect waves-light" title="Show/Hide Help" type="button" id="show_hide_manual">Show/Hide
-                            Help
-                        </button>
-                        <button class="dropdown-item waves-effect waves-light" title="Show/Hide Steps" type="button" id="show_hide_step">Show/Hide
-                            Steps
-                        </button>
+                        <div class="col-sm">
+                            Dark Mode
+                            <button type="button" class="btn btn-toggle" data-toggle="button" title="Toggle Dark Theme"
+                                id="dark_theme" aria-pressed="false" autocomplete="off">
+                                <div class="handle"></div>
+                            </button>
+                        </div>
+                        <div class="col-sm">
+                            <button class="btn btn-outline-secondary" title="Clear the cells and start over" type="button"
+                                id="clear_button">
+                                Clear
+                            </button>
+                        </div>
+                        <div class="col-sm">
+                            Help Container
+                            <button type="button" class="btn btn-toggle" title="Toggle Help Container" id="show_hide_manual"
+                                data-toggle="button" aria-pressed="false" autocomplete="off">
+                                <div class="handle"></div>
+                            </button>
+                        </div>
+                        <div class="col-sm">
+                            Steps Container
+                            <button type="button" class="btn btn-toggle" title="Toggle Steps Container" id="show_hide_step"
+                                data-toggle="button" aria-pressed="false" autocomplete="off">
+                                <div class="handle"></div>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <button id="pause" title="Pause the method" type="button" class="btn btn-outline-secondary waves-effect waves-light" disabled>Pause
+                <button id="pause" title="Pause the method" type="button" class="btn btn-outline-secondary"
+                    disabled>Pause
                 </button>
-                <button id="next" title="One step at time" type="button" class="btn btn-outline-secondary waves-effect waves-light" disabled>Next
+                <button id="next" title="One step at time" type="button" class="btn btn-outline-secondary" disabled>Next
                     Step
                 </button>
-                <button id="skipForward" title="Press to Skip to the end" type="button" class="btn btn-outline-secondary waves-effect waves-light"
+                <button id="skipForward" title="Press to Skip to the end" type="button" class="btn btn-outline-secondary"
                     disabled>Skip Forward
                 </button>
                 <div id="slider">
-                    <input class="bar" type="range" id="rangeinput" value="1000" min="350" max="3000" step="50" title="Animation Speed" />
+                    <input class="bar" type="range" id="rangeinput" value="1000" min="350" max="3000" step="50"
+                        title="Animation Speed" />
                     <span class="highlight"></span>
                     <output id="rangevalue">1000</output>
                 </div>

@@ -1,12 +1,6 @@
-.modal-content{
-    background-color: green;
-}
-
 .modal-header {
     background-color: green;
-    align-self: center;
     padding: 20px;
-    border: 0rem;
 }
 
 .modal-header img {

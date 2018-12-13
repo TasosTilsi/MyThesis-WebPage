@@ -127,7 +127,16 @@ function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
+function toggleDarkLight() {
+  let body = document.getElementById("whole_body_div");
+  let currentClass = body.className;
+  console.log("before " + currentClass);
+  body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+  console.log("after " + body.className);
+}
+
 // Add event listeners
 document.getElementById("arraySize").addEventListener("input", onlyNumbersOnInput);
 document.getElementById("numbersRange").addEventListener("input", onlyNumbersOnInput);
 document.getElementById("searchingNumber").addEventListener("input", onlyNumbersOnInput);
+document.getElementById("dark_theme").addEventListener("click",toggleDarkLight);

@@ -24,10 +24,6 @@
     margin-bottom: 1rem;
 }
 
-.input-group{
-    flex-wrap: nowrap;
-}
-
 #inputs,
 #searchButtons,
 #stepButtons {
@@ -61,8 +57,6 @@
     border-radius: 0rem;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* margin: 0px;
-    padding: 0px; */
 }
 
 .row {
