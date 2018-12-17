@@ -30,9 +30,9 @@ function fibonacciSearch(searching_array, asked_number) {
 
     if (flag === 0) {
         if (fib < fib_size) {
-            document.querySelector(`[cell_id='${fib2}']`).style.backgroundColor = "white";
-            document.querySelector(`[cell_id='${fib1}']`).style.backgroundColor = "white";
-            document.querySelector(`[cell_id='${fib}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${fib2}']`).style.backgroundColor = "transparent";
+            document.querySelector(`[cell_id='${fib1}']`).style.backgroundColor = "transparent";
+            document.querySelector(`[cell_id='${fib}']`).style.backgroundColor = "transparent";
             fib2 = fib1;
             fib1 = fib;
             fib = fib1 + fib2;
@@ -53,7 +53,7 @@ function fibonacciSearch(searching_array, asked_number) {
         }
     } else if (flag === 1) {
         if (fib > 1) {
-            document.querySelector(`[cell_id='${index}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${index}']`).style.backgroundColor = "transparent";
             index = Math.min(offset + fib2, fib_size - 1);
             document.querySelector(`[cell_id='${index}']`).style.backgroundColor = "orange";
             checks++;
@@ -61,13 +61,13 @@ function fibonacciSearch(searching_array, asked_number) {
             //console.log(">>>Setting the index " + index);
             if (asked_number < searching_array[index]) {
                 if (fib2 < fib_size) {
-                    document.querySelector(`[cell_id='${fib2}']`).style.backgroundColor = "white";
+                    document.querySelector(`[cell_id='${fib2}']`).style.backgroundColor = "transparent";
                 }
                 if (fib1 < fib_size) {
-                    document.querySelector(`[cell_id='${fib1}']`).style.backgroundColor = "white";
+                    document.querySelector(`[cell_id='${fib1}']`).style.backgroundColor = "transparent";
                 }
                 if (fib < fib_size) {
-                    document.querySelector(`[cell_id='${fib}']`).style.backgroundColor = "white";
+                    document.querySelector(`[cell_id='${fib}']`).style.backgroundColor = "transparent";
                 }
                 fib = fib2;
                 fib1 = fib1 - fib2;
@@ -85,13 +85,13 @@ function fibonacciSearch(searching_array, asked_number) {
                 getValuesforFibonacciSteps(fib1, fib2, fib, index, fib_size, false, checks);
             } else if (asked_number > searching_array[index]) {
                 if (fib2 < fib_size) {
-                    document.querySelector(`[cell_id='${fib2}']`).style.backgroundColor = "white";
+                    document.querySelector(`[cell_id='${fib2}']`).style.backgroundColor = "transparent";
                 }
                 if (fib1 < fib_size) {
-                    document.querySelector(`[cell_id='${fib1}']`).style.backgroundColor = "white";
+                    document.querySelector(`[cell_id='${fib1}']`).style.backgroundColor = "transparent";
                 }
                 if (fib < fib_size) {
-                    document.querySelector(`[cell_id='${fib}']`).style.backgroundColor = "white";
+                    document.querySelector(`[cell_id='${fib}']`).style.backgroundColor = "transparent";
                 }
                 fib = fib1;
                 fib1 = fib2;
@@ -106,7 +106,7 @@ function fibonacciSearch(searching_array, asked_number) {
                     document.querySelector(`[cell_id='${fib}']`).style.backgroundColor = "lightblue";
                 }
                 if (offset < fib_size && offset > 0) {
-                    document.querySelector(`[cell_id='${offset}']`).style.backgroundColor = "white";
+                    document.querySelector(`[cell_id='${offset}']`).style.backgroundColor = "transparent";
                 }
                 offset = index;
                 //console.log(">>>Setting the fib2 " + fib2 + " and fib1 " + fib1 + " and fib " + fib + " offset " + offset);

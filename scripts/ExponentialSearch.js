@@ -34,7 +34,7 @@ function exponentialSearch(searching_array, asked_number) {
     }
 
     //if (expo_i < expo_size) {
-    document.querySelector(`[cell_id='${Math.min(expo_i, expo_size)}']`).style.backgroundColor = "white";
+    document.querySelector(`[cell_id='${Math.min(expo_i, expo_size)}']`).style.backgroundColor = "transparent";
     //
 
     if (expo_i < expo_size && searching_array[expo_i] <= asked_number) {
@@ -78,17 +78,17 @@ function binSearch(arr, x) {
     // console.log(`>>arr[left] = '${arr[left]}', arr[right] = '${arr[right]}', arr[mid] = '${arr[mid]}', x = '${x}'`);
     if (arr[mid] !== x && left <= right) {
         if (x < arr[mid]) {
-            document.querySelector(`[cell_id='${right}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${right}']`).style.backgroundColor = "transparent";
             right = mid - 1;
             document.querySelector(`[cell_id='${right}']`).style.backgroundColor = "lightblue";
             checks++;
         } else if (x > arr[mid]) {
-            document.querySelector(`[cell_id='${left}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${left}']`).style.backgroundColor = "transparent";
             left = mid + 1;
             document.querySelector(`[cell_id='${left}']`).style.backgroundColor = "lightblue";
             checks++;
         }
-        document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "white";
+        document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "transparent";
         mid = Math.floor((right + left) / 2);
         document.querySelector(`[cell_id='${mid}']`).style.backgroundColor = "orange";
     }

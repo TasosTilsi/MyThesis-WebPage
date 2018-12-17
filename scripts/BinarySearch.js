@@ -19,17 +19,17 @@ function binarySearch(searching_array, asked_number) {
 
     if (searching_array[middleIndex] !== asked_number && firstIndex < lastIndex) {
         if (asked_number < searching_array[middleIndex]) {
-            document.querySelector(`[cell_id='${Math.min(lastIndex, searching_array.length - 1)}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${Math.min(lastIndex, searching_array.length - 1)}']`).style.backgroundColor = "transparent";
             lastIndex = middleIndex - 1;
             checks++;
             document.querySelector(`[cell_id='${Math.min(lastIndex, searching_array.length - 1)}']`).style.backgroundColor = "lightblue";
         } else if (asked_number > searching_array[middleIndex]) {
-            document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "transparent";
             firstIndex = middleIndex + 1;
             document.querySelector(`[cell_id='${firstIndex}']`).style.backgroundColor = "lightblue";
             checks++;
         }
-        document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "white";
+        document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "transparent";
         middleIndex = Math.floor((lastIndex + firstIndex) / 2);
         document.querySelector(`[cell_id='${middleIndex}']`).style.backgroundColor = "orange";
         getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false, checks);
@@ -63,8 +63,8 @@ function binarySearch(searching_array, asked_number) {
         return lastIndex;
     }*/
     if ((lastIndex === firstIndex ||
-        firstIndex === middleIndex ||
-        lastIndex === middleIndex) &&
+            firstIndex === middleIndex ||
+            lastIndex === middleIndex) &&
         (searching_array[middleIndex] !== asked_number &&
             (searching_array[firstIndex] > asked_number && searching_array[firstIndex] !== asked_number) &&
             (searching_array[lastIndex] < asked_number && searching_array[lastIndex] !== asked_number))) {
@@ -78,8 +78,8 @@ function binarySearch(searching_array, asked_number) {
     }
 
     if ((lastIndex === firstIndex &&
-        firstIndex === middleIndex &&
-        lastIndex === middleIndex) && searching_array[middleIndex] !== asked_number) {
+            firstIndex === middleIndex &&
+            lastIndex === middleIndex) && searching_array[middleIndex] !== asked_number) {
         getValuesforBinarySteps(firstIndex, lastIndex, middleIndex, false, checks);
         showSnackBar("The number you searched for is not in the generated array!");
         document.getElementById("pause").click();

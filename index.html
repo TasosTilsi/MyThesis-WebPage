@@ -51,6 +51,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
+
+    <!-- CSS for DarkTheme
+    <link href=http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic
+        rel=stylesheet>
+    <link href=http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic
+        rel=stylesheet>
+    <link href=http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,600,700,900 rel=stylesheet>
+    <link href=http://staticresource.com/basic.css rel=stylesheet>
+    <link href=http://staticresource.com/data-buttons.css rel=stylesheet> -->
+
     <!--MyCss-->
     <link rel="stylesheet" href="stylesheets/HomeScreen.css">
     <link rel="stylesheet" href="stylesheets/SnackBar.css">
@@ -58,7 +68,7 @@
     <link rel="stylesheet" href="stylesheets/Slider.css">
     <link rel="stylesheet" href="stylesheets/DragableContainer.css">
     <link rel="stylesheet" href="stylesheets/Toggle.css">
-    <!-- <link rel="stylesheet" href="stylesheets/DarkTheme.css"> -->
+    <link rel="stylesheet" href="stylesheets/DarkTheme.css">
 </head>
 
 <body class="MainPageStyling">
@@ -67,7 +77,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="resources/logo1.png" style="width: 30px; height: 30px;" /> Visualized Environment for Search
+                <img src="resources/logo1.png" style="width: 30px; height: 30px;" /> Visualized Environment for
+                Search
                 Methods</a>
             <button id="navBar_toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,7 +117,8 @@
                                 <i class="fas fa-graduation-cap" style="font-size:50px"></i>
                             </td>
                             <td>
-                                <p>Development of an application for the Implementation and use of search methods in a
+                                <p>Development of an application for the Implementation and use of search methods
+                                    in a
                                     visualized
                                     environment
                                 </p>
@@ -241,27 +253,37 @@
                 <input class="form-control" min="0" max="9999" id="arraySize" type="number" placeholder="Specify Array Size (Default: 100)" />
                 <input class="form-control" min="0" max="9999" id="numbersRange" type="number" placeholder="Specify Numbers Range (Default: 300)" />
                 <div class="btn-group">
-                    <button type="button" id="generateNumbers" class="btn btn-info waves-effect waves-light">Generate Numbers</button>
-                    <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <button type="button" id="generateNumbers" class="btn btn-info waves-effect waves-light">Generate
+                        Numbers</button>
+                    <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split waves-effect waves-light"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">
-                        <button class="dropdown-item waves-effect waves-light" type="button" id="exponential">Exponential Distribution</button>
-                        <button class="dropdown-item waves-effect waves-light" type="button" id="logarithmic">Logarithmic Distribution</button>
-                        <button class="dropdown-item waves-effect waves-light" type="button" id="geometric">Geometric Distribution</button>
+                        <button class="dropdown-item waves-effect waves-light" type="button" id="exponential">Exponential
+                            Distribution</button>
+                        <button class="dropdown-item waves-effect waves-light" type="button" id="logarithmic">Logarithmic
+                            Distribution</button>
+                        <button class="dropdown-item waves-effect waves-light" type="button" id="geometric">Geometric
+                            Distribution</button>
                     </div>
                 </div>
                 <input class="form-control" min="0" max="9999" id="searchingNumber" type="number" placeholder="Specify Searching Number" />
             </div>
 
             <div id="searchButtons" class="btn-group" role="group">
-                <button id="linearSearch" type="button" class="btn btn-secondary waves-effect waves-light">Linear Search</button>
-                <button id="binarySearch" type="button" class="btn btn-secondary waves-effect waves-light">Binary Search</button>
-                <button id="jumpSearch" type="button" class="btn btn-secondary waves-effect waves-light">Jump Search</button>
-                <button id="interpolationSearch" type="button" class="btn btn-secondary waves-effect waves-light">Interpolation Search</button>
-                <button id="exponentialSearch" type="button" class="btn btn-secondary waves-effect waves-light">Exponential Search</button>
-                <button id="fibonacciSearch" type="button" class="btn btn-secondary waves-effect waves-light">Fibonacci Search</button>
+                <button id="linearSearch" type="button" class="btn btn-secondary waves-effect waves-light">Linear
+                    Search</button>
+                <button id="binarySearch" type="button" class="btn btn-secondary waves-effect waves-light">Binary
+                    Search</button>
+                <button id="jumpSearch" type="button" class="btn btn-secondary waves-effect waves-light">Jump
+                    Search</button>
+                <button id="interpolationSearch" type="button" class="btn btn-secondary waves-effect waves-light">Interpolation
+                    Search</button>
+                <button id="exponentialSearch" type="button" class="btn btn-secondary waves-effect waves-light">Exponential
+                    Search</button>
+                <button id="fibonacciSearch" type="button" class="btn btn-secondary waves-effect waves-light">Fibonacci
+                    Search</button>
                 <!--<button id="stratosSearch" type="button" class="btn btn-secondary">Stratos Search</button>-->
             </div>
 
@@ -302,8 +324,7 @@
                         </div>
                     </div>
                 </div>
-                <button id="pause" title="Pause the method" type="button" class="btn btn-outline-secondary"
-                    disabled>Pause
+                <button id="pause" title="Pause the method" type="button" class="btn btn-outline-secondary" disabled>Pause
                 </button>
                 <button id="next" title="One step at time" type="button" class="btn btn-outline-secondary" disabled>Next
                     Step
@@ -312,9 +333,7 @@
                     disabled>Skip Forward
                 </button>
                 <div id="slider">
-                    <input class="bar" type="range" id="rangeinput" value="1000" min="350" max="3000" step="50"
-                        title="Animation Speed" />
-                    <span class="highlight"></span>
+                    <input class="bar" type="range" id="rangeinput" value="1000" min="350" max="3000" step="50" title="Animation Speed" />
                     <output id="rangevalue">1000</output>
                 </div>
             </div>

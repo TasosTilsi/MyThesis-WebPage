@@ -21,13 +21,13 @@ function jumpSearch(searching_array, asked_number) {
     }
 
     if (searching_array[Math.min(step, jump_size) - 1] < asked_number) {
-        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "white";
+        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "transparent";
         previous = step;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
         getValuesforJumpSteps(previous, step, false, checks);
 
         if (step < jump_size) {
-            document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "transparent";
             step = Math.min(step + Math.floor(Math.sqrt(jump_size)), jump_size - 1);
             document.querySelector(`[cell_id='${step}']`).style.backgroundColor = "lightblue";
             console.log("Setting the step " + step);
@@ -47,7 +47,7 @@ function jumpSearch(searching_array, asked_number) {
     }
 
     if (searching_array[previous] < asked_number) {
-        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "white";
+        document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "transparent";
         previous++;
         document.querySelector(`[cell_id='${previous}']`).style.backgroundColor = "orange";
         checks++;

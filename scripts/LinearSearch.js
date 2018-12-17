@@ -11,7 +11,7 @@ function linearSearch(searching_array, asked_number) {
         first_time_run_linear = false;
         document.getElementById("searchingNumber").disabled = true;
     } else {
-        document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "white";
+        document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "transparent";
         i++;
         first_time_run_linear = false;
     }

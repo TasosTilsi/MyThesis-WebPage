@@ -102,9 +102,9 @@ function showSnackBar(message) {
 function makeTheTableWhite() {
     for (let i = 0; i < the_array.length; i++) {
         let cell = document.querySelector(`[cell_id='${i}']`).style.backgroundColor;
-        if (cell.length > 0 && cell !== "white") {
+        if (cell.length > 0 && cell !== "transparent") {
             console.log("Clearing " + i + " cell");
-            document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${i}']`).style.backgroundColor = "transparent";
         }
     }
 }
@@ -128,15 +128,40 @@ function isNumber(n) {
 }
 
 function toggleDarkLight() {
-  let body = document.getElementById("whole_body_div");
-  let currentClass = body.className;
-  console.log("before " + currentClass);
-  body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
-  console.log("after " + body.className);
+    if (document.getElementById("dark_theme").getAttribute("aria-pressed")=="true"){
+        document.getElementsByTagName("html")[0].setAttribute("data-theme", "default");
+    }else{
+        document.getElementsByTagName("html")[0].setAttribute("data-theme", "dark");
+    }
+    // document.getElementsByTagName("html")[0].setAttribute("data-theme", "default");
+    // let body = document.getElementById("body");
+    // let currentClass = body.className;
+    // console.log("before " + currentClass);
+    // body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+    // console.log("after " + body.className);
 }
+
+/* Theme Switcher */
+// function toggleDarkLight() {
+//     var theme = document.getElementsByTagName("html")[0].getAttribute("data-theme");
+//     theme = theme == "default" ? "default" : "dark";
+//     document.documentElement.setAttribute('data-theme', theme);
+// }
+// /* Persisting Data Plugin */
+// var field = document.querySelectorAll('[data-persist]');
+// for (i = 0; i < field.length; i++) {
+//     var stored = localStorage.getItem(field[i].getAttribute('data-persist'));
+//     if (stored) field[i].value = stored;
+//     field[i].addEventListener('input', function () {
+//         localStorage.setItem(this.getAttribute('data-persist'), this.value);
+//     })
+// }
+
+
+
 
 // Add event listeners
 document.getElementById("arraySize").addEventListener("input", onlyNumbersOnInput);
 document.getElementById("numbersRange").addEventListener("input", onlyNumbersOnInput);
 document.getElementById("searchingNumber").addEventListener("input", onlyNumbersOnInput);
-document.getElementById("dark_theme").addEventListener("click",toggleDarkLight);
+document.getElementById("dark_theme").addEventListener("click", toggleDarkLight);

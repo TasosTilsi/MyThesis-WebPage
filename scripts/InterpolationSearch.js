@@ -26,7 +26,7 @@ function interpolationSearch(searching_array, asked_number) {
     }
 
     if (low <= high && asked_number >= searching_array[low] && asked_number <= searching_array[high]) {
-        document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "white";
+        document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "transparent";
         delta = (asked_number - searching_array[low]) / (searching_array[high] - searching_array[low]);
         position = low + Math.floor((high - low) * delta);
         document.querySelector(`[cell_id='${position}']`).style.backgroundColor = "orange";
@@ -45,14 +45,14 @@ function interpolationSearch(searching_array, asked_number) {
         }
 
         if (searching_array[position] < asked_number) {
-            document.querySelector(`[cell_id='${low}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${low}']`).style.backgroundColor = "transparent";
             low = position + 1;
             document.querySelector(`[cell_id='${low}']`).style.backgroundColor = "lightblue";
             console.log("Setting the low " + low + " and high " + high);
             checks++;
             getValuesforIntepolationSteps(low, high, position, false, checks);
         } else {
-            document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "white";
+            document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "transparent";
             high = position - 1;
             document.querySelector(`[cell_id='${high}']`).style.backgroundColor = "lightblue";
             console.log("Setting the low " + low + " and high " + high);
