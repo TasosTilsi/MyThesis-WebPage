@@ -34,10 +34,6 @@ function checkForGeneratedNumbers() {
                 } else if (searching_profile === "fibonacci") {
                     fibonacciSearch(the_array, searching_number);
                 }
-                /*else if (searching_profile === "stratos") {
-
-                           }*/
-
             } else {
                 document.getElementById("pause").click();
                 showSnackBar("Please <strong>Specify a Number</strong> within the <strong>Numbers Range</strong>");
@@ -133,32 +129,7 @@ function toggleDarkLight() {
     }else{
         document.getElementsByTagName("html")[0].setAttribute("data-theme", "dark");
     }
-    // document.getElementsByTagName("html")[0].setAttribute("data-theme", "default");
-    // let body = document.getElementById("body");
-    // let currentClass = body.className;
-    // console.log("before " + currentClass);
-    // body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
-    // console.log("after " + body.className);
 }
-
-/* Theme Switcher */
-// function toggleDarkLight() {
-//     var theme = document.getElementsByTagName("html")[0].getAttribute("data-theme");
-//     theme = theme == "default" ? "default" : "dark";
-//     document.documentElement.setAttribute('data-theme', theme);
-// }
-// /* Persisting Data Plugin */
-// var field = document.querySelectorAll('[data-persist]');
-// for (i = 0; i < field.length; i++) {
-//     var stored = localStorage.getItem(field[i].getAttribute('data-persist'));
-//     if (stored) field[i].value = stored;
-//     field[i].addEventListener('input', function () {
-//         localStorage.setItem(this.getAttribute('data-persist'), this.value);
-//     })
-// }
-
-
-
 
 // Add event listeners
 document.getElementById("arraySize").addEventListener("input", onlyNumbersOnInput);
